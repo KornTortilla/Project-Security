@@ -10,7 +10,7 @@ public class EntityHealth : MonoBehaviour
 
     private void Start()
     {
-        CurrentHealth = 10;
+        CurrentHealth = maxHealth;
     }
 
     private void Update() {
