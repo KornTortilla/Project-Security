@@ -16,6 +16,9 @@ public class LineOfSight : MonoBehaviour
     private void Update() {
         CastLineOfSight();
         DebugDictionary();
+
+        // This should always be the last thing called
+        objectsInSight.Clear();
     }
 
     private void CastLineOfSight() {
@@ -39,6 +42,10 @@ public class LineOfSight : MonoBehaviour
         foreach (KeyValuePair<string, List<GameObject>> entry in objectsInSight)
         {
             Debug.Log(entry.Key + ": " + entry.Value.Count);
+            foreach (GameObject obj in entry.Value)
+            {
+                Debug.Log(entry.Key + ": " + obj.name);
+            }
         }
     }
 
