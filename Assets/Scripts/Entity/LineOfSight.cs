@@ -5,63 +5,45 @@ using UnityEngine;
 public class LineOfSight : MonoBehaviour
 {
     [SerializeField][Min(0)]
-    private float range = 5f;
-    [SerializeField][Range(0, 180)]
-    private float halfAngle = 45f;
-    [SerializeField][Min(1)]
-    private float angleBetweenRays = 5f;
+    float radius = 5f;
+    [SerializeField][Range(0, 180)][Tooltip("The field of view of the entity on one side")]
+    private float halfFOV = 45f;
+    private bool playerInSight = false;
+    public GameObject player {get; private set;} = null;
 
-    Dictionary<string, List<GameObject>> objectsInSight = new();
-
-    private void Update() {
-        CastLineOfSight();
-        DebugDictionary();
-
-        // This should always be the last thing called
-        objectsInSight.Clear();
+    private void Awake() {
     }
 
-    private void CastLineOfSight() {
-        Vector3 direction = transform.forward;
-        direction = Quaternion.AngleAxis(-halfAngle, transform.up) * transform.forward;
-        for (float i = -halfAngle; i < halfAngle; i += angleBetweenRays)
+    private void Update()
+    {
+        DetectPlayer();
+        if (player != null && PlayerIsWithinView())
         {
-            direction = Quaternion.AngleAxis(i, transform.up) * transform.forward;
-            if(Physics.Raycast(transform.position, direction, out RaycastHit hitInfo, range)) {
-                if (objectsInSight.TryAdd(hitInfo.collider.tag, new List<GameObject>())) {
-                    objectsInSight[hitInfo.collider.tag].Add(hitInfo.collider.gameObject);
-                } else if(!objectsInSight[hitInfo.collider.tag].Contains(hitInfo.collider.gameObject)) {
-                    objectsInSight[hitInfo.collider.tag].Add(hitInfo.collider.gameObject);
-                }
-            }
+            Physics.Raycast(transform.position, (player.transform.position - transform.position).normalized, out RaycastHit hit, radius, LayerMask.GetMask("Player"));
+            playerInSight = hit.collider != null && hit.collider.gameObject == player;
+        } else {
+            playerInSight = false;
         }
     }
 
-    private void DebugDictionary() {
-        // ObjectsInSight Dict
-        foreach (KeyValuePair<string, List<GameObject>> entry in objectsInSight)
+    private void DetectPlayer()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, LayerMask.GetMask("Player"));
+        if (colliders.Length > 0)
         {
-            Debug.Log(entry.Key + ": " + entry.Value.Count);
-            foreach (GameObject obj in entry.Value)
-            {
-                Debug.Log(entry.Key + ": " + obj.name);
-            }
+            player = colliders[0].gameObject;
         }
     }
 
-    // private void OnDrawGizmosSelected() { 
-    //     Vector3 direction = transform.forward;
-    //     direction = Quaternion.AngleAxis(-halfAngle, transform.up) * transform.forward;
-    //     for (float i = -halfAngle; i < halfAngle; i += angleBetweenRays)
-    //     {
-    //         Gizmos.color = Color.red;
-    //         direction = Quaternion.AngleAxis(i, transform.up) * transform.forward;
-    //         if(Physics.Raycast(transform.position, direction, out RaycastHit hitInfo, range)) {
-    //             Gizmos.color = Color.blue;
-    //             Gizmos.DrawRay(transform.position, direction * hitInfo.distance);
-    //         } else {
-    //             Gizmos.DrawRay(transform.position, direction * range);
-    //         }
-    //     }
-    // }
+    private bool PlayerIsWithinView()
+    {
+        Vector3 vecA = transform.forward;
+        vecA.y = 0;
+        Vector3 vecB = player.transform.position - transform.position;
+        vecB.y = 0;
+        vecB.Normalize();
+        float angle = Vector3.Angle(vecA, vecB);
+        return angle < halfFOV;
+    }
 }
+    
