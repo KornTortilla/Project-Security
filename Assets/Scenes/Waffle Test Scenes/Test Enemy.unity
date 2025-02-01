@@ -4891,7 +4891,7 @@ GameObject:
   - component: {fileID: 1714366348}
   m_Layer: 0
   m_Name: TempPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5266,6 +5266,7 @@ Transform:
   - {fileID: 1538424883}
   - {fileID: 1653717569}
   - {fileID: 1850567337}
+  - {fileID: 2095406036}
   - {fileID: 1248811886}
   - {fileID: 946069529}
   - {fileID: 338073767}
@@ -5637,6 +5638,7 @@ GameObject:
   - component: {fileID: 2068722857}
   - component: {fileID: 2068722856}
   - component: {fileID: 2068722860}
+  - component: {fileID: 2068722861}
   m_Layer: 0
   m_Name: BasicEnemyTemplate (1)
   m_TagString: Untagged
@@ -5697,6 +5699,7 @@ MonoBehaviour:
   m_BlackboardVariableOverridesList:
   - rid: 9075358619179941964
   - rid: 9075358619179941965
+  - rid: 9075358702001717317
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -5717,7 +5720,15 @@ MonoBehaviour:
           m_Value0: 17511486900409473802
           m_Value1: 9898889975250619662
         Name: Target
-        m_Value: {fileID: 1714366343}
+        m_Value: {fileID: 0}
+    - rid: 9075358702001717317
+      type: {class: 'BlackboardVariable`1[[LineOfSight, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 18043377975728716421
+          m_Value1: 11391597236067687743
+        Name: New Line Of Sight
+        m_Value: {fileID: 2068722860}
 --- !u!4 &2068722859
 Transform:
   m_ObjectHideFlags: 0
@@ -5742,14 +5753,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068722855}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb39e976896791042adaba7f5199c472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  halfAngle: 22.3
+  halfAngle: 45
   angleBetweenRays: 5
+--- !u!114 &2068722861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068722855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b4bf72264b100c4e909dc94b19f1cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2079445066
 GameObject:
   m_ObjectHideFlags: 0
@@ -5805,6 +5828,63 @@ MonoBehaviour:
   m_CostModifier: 1
   m_IsOverridingCost: 0
   m_Bidirectional: 1
+  m_AutoUpdatePosition: 0
+  m_Area: 0
+--- !u!1 &2095406035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2095406036}
+  - component: {fileID: 2095406037}
+  m_Layer: 0
+  m_Name: Links (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2095406036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095406035}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 5.91, y: 3.83, z: 7.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1844709990}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &2095406037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095406035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 1
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0.015563011, y: -0.59919214, z: 1.1286945}
+  m_EndPoint: {x: 0.13755608, y: -3.8167152, z: -6.461465}
+  m_StartTransform: {fileID: 0}
+  m_EndTransform: {fileID: 0}
+  m_Activated: 1
+  m_Width: 0
+  m_CostModifier: 1
+  m_IsOverridingCost: 0
+  m_Bidirectional: 0
   m_AutoUpdatePosition: 0
   m_Area: 0
 --- !u!1660057539 &9223372036854775807

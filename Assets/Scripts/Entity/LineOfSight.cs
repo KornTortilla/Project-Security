@@ -49,19 +49,19 @@ public class LineOfSight : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected() { 
-        Vector3 direction = transform.forward;
-        direction = Quaternion.AngleAxis(-halfAngle, transform.up) * transform.forward;
-        for (float i = -halfAngle; i < halfAngle; i += angleBetweenRays)
-        {
-            Gizmos.color = Color.red;
-            direction = Quaternion.AngleAxis(i, transform.up) * transform.forward;
-            if(Physics.Raycast(transform.position, direction, out RaycastHit hitInfo, range)) {
-                Gizmos.color = Color.blue;
-                Gizmos.DrawRay(transform.position, direction * hitInfo.distance);
-            } else {
-                Gizmos.DrawRay(transform.position, direction * range);
-            }
-        }
-    }
+    // private void OnDrawGizmosSelected() { 
+    //     Vector3 direction = transform.forward;
+    //     direction = Quaternion.AngleAxis(-halfAngle, transform.up) * transform.forward;
+    //     for (float i = -halfAngle; i < halfAngle; i += angleBetweenRays)
+    //     {
+    //         Gizmos.color = Color.red;
+    //         direction = Quaternion.AngleAxis(i, transform.up) * transform.forward;
+    //         if(Physics.Raycast(transform.position, direction, out RaycastHit hitInfo, range)) {
+    //             Gizmos.color = Color.blue;
+    //             Gizmos.DrawRay(transform.position, direction * hitInfo.distance);
+    //         } else {
+    //             Gizmos.DrawRay(transform.position, direction * range);
+    //         }
+    //     }
+    // }
 }
