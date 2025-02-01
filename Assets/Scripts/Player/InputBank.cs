@@ -8,6 +8,7 @@ namespace ProjectSecurity.Gameplay
     public enum ButtonInput
     {
         None,
+        Jump,
         Attack,
         Dash,
         Activate
@@ -18,12 +19,17 @@ namespace ProjectSecurity.Gameplay
         [SerializeField]
         private float bufferTime = 0.2f;
 
+        public static Action PauseTriggered;
+
         public Vector2 RawMoveInput { get; private set; }
-        public Vector2 LookInput { get; private set; }
-        public bool JumpTriggered { get; private set; }
-        public bool AttackTriggered { get; private set; }
-        public bool DashTriggered { get; private set; }
-        public bool ActivationTriggered { get; private set; }
+
+        public Vector3 CameraMoveInput { get; private set; }
+
+        public ButtonInput LastButtonInput { get; private set; }
+
+        public bool JumpHeld { get; private set; }
+
+        private Coroutine bufferLastInputCoroutine;
 
         private float scrollInput;
         public float ScrollInput
@@ -36,45 +42,18 @@ namespace ProjectSecurity.Gameplay
             }
         }
 
-        public static Action PauseTriggered;
-
-        public ButtonInput LastButtonInput { get; private set; }
-
-        private Coroutine bufferLastInputCoroutine;
-
-        public Vector3 CameraMoveInput
-        {
-            get
-            {
-                Vector3 cameraForward = Camera.main.transform.forward;
-                cameraForward.y = 0f;
-                cameraForward.Normalize();
-
-                Vector3 cameraRight = Camera.main.transform.right;
-                cameraRight.y = 0f;
-                cameraRight.Normalize();
-
-                Vector3 forwardMovementInput = cameraForward * RawMoveInput.y;
-                Vector3 rightMovementInput = cameraRight * RawMoveInput.x;
-
-                return (forwardMovementInput + rightMovementInput).normalized;
-            }
-        }
-
         public void OnMove(InputAction.CallbackContext context)
         {
             if (context.performed)
+            {
                 RawMoveInput = context.ReadValue<Vector2>();
+                SetMovementToCamera();
+            }
             else
+            {
                 RawMoveInput = Vector2.zero;
-        }
-
-        public void OnLook(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-                LookInput = context.ReadValue<Vector2>();
-            else
-                LookInput = Vector2.zero;
+                CameraMoveInput = Vector3.zero;
+            }
         }
 
         public void OnScroll(InputAction.CallbackContext context)
@@ -89,11 +68,14 @@ namespace ProjectSecurity.Gameplay
         {
             if (context.performed)
             {
-                JumpTriggered = true;
+                JumpHeld = true;
+
+                LastButtonInput = ButtonInput.Jump;
+                StartBufferLastInput();
             }
-            else if (context.canceled)
+            else if(context.canceled)
             {
-                JumpTriggered = false;
+                JumpHeld = false;
             }
         }
 
@@ -101,7 +83,6 @@ namespace ProjectSecurity.Gameplay
         {
             if (context.performed)
             {
-                AttackTriggered = true;
                 LastButtonInput = ButtonInput.Attack;
                 StartBufferLastInput();
             }
@@ -111,7 +92,6 @@ namespace ProjectSecurity.Gameplay
         {
             if (context.performed)
             {
-                DashTriggered = true;
                 LastButtonInput = ButtonInput.Dash;
                 StartBufferLastInput();
             }
@@ -121,7 +101,6 @@ namespace ProjectSecurity.Gameplay
         {
             if (context.performed)
             {
-                DashTriggered = true;
                 LastButtonInput = ButtonInput.Activate;
                 StartBufferLastInput();
             }
@@ -135,6 +114,22 @@ namespace ProjectSecurity.Gameplay
             }
         }
 
+        private void SetMovementToCamera()
+        {
+            Vector3 cameraForward = Camera.main.transform.forward;
+            cameraForward.y = 0f;
+            cameraForward.Normalize();
+
+            Vector3 cameraRight = Camera.main.transform.right;
+            cameraRight.y = 0f;
+            cameraRight.Normalize();
+
+            Vector3 forwardMovementInput = cameraForward * RawMoveInput.y;
+            Vector3 rightMovementInput = cameraRight * RawMoveInput.x;
+
+            CameraMoveInput = (forwardMovementInput + rightMovementInput).normalized;
+        }
+
         private void StartBufferLastInput()
         {
             if (bufferLastInputCoroutine != null) StopCoroutine(bufferLastInputCoroutine);
@@ -144,7 +139,15 @@ namespace ProjectSecurity.Gameplay
         private IEnumerator BufferInput(Action action)
         {
             yield return new WaitForSeconds(bufferTime);
+
             action();
+        }
+
+        public void UseLastButtonInput()
+        {
+            StopCoroutine(bufferLastInputCoroutine);
+
+            LastButtonInput = ButtonInput.None;
         }
     }
 }
