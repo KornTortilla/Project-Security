@@ -5028,7 +5028,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1734388597
 GameObject:
@@ -5747,7 +5747,7 @@ MonoBehaviour:
           m_Value0: 17511486900409473802
           m_Value1: 9898889975250619662
         Name: Target
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 1714366343}
     - rid: 9075358702001717317
       type: {class: 'BlackboardVariable`1[[LineOfSight, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -5786,8 +5786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 5
-  halfAngle: 45
-  angleBetweenRays: 5
+  halfFOV: 45
 --- !u!1 &2079445066
 GameObject:
   m_ObjectHideFlags: 0
