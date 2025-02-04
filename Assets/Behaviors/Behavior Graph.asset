@@ -24,8 +24,8 @@ MonoBehaviour:
   m_DebugInfo: {fileID: 2501168677733404946}
   m_RuntimeGraph: {fileID: 2081696227496646515}
   AssetID:
-    m_Value0: 6062619393695653597
-    m_Value1: 17155234413646002729
+    m_Value0: 11872487010812736425
+    m_Value1: 17600525648249957113
   Story:
     Story: 
     StoryVariableNames: []
@@ -671,7 +671,7 @@ MonoBehaviour:
         AuthoringAssetID:
           m_Value0: 6062619393695653597
           m_Value1: 17155234413646002729
-        m_DebugInfo: {fileID: 0}
+        m_DebugInfo: {fileID: 2501168677733404946}
         Root:
           rid: 9052891706716061697
         BlackboardReference:
@@ -901,8 +901,8 @@ MonoBehaviour:
   m_Name: Behavior Graph Blackboard
   m_EditorClassIdentifier: 
   AssetID:
-    m_Value0: 6062619393695653597
-    m_Value1: 17155234413646002729
+    m_Value0: 11872487010812736425
+    m_Value1: 17600525648249957113
   m_Variables:
   - rid: 9075358619179941890
   - rid: 9075358619179941947

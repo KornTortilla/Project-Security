@@ -9,21 +9,21 @@ public class LineOfSight : MonoBehaviour
     [SerializeField][Range(0, 180)][Tooltip("The field of view of the entity on one side")]
     private float halfFOV = 45f;
     private bool playerInSight = false;
-    public GameObject player {get; private set;} = null;
+    public GameObject Player {get; private set;} = null;
 
-    private void Awake() {
-    }
-
-    private void Update()
+    public bool PlayerIsInSight()
     {
         DetectPlayer();
-        if (player != null && PlayerIsWithinView())
+        if (Player != null && PlayerIsWithinView())
         {
-            Physics.Raycast(transform.position, (player.transform.position - transform.position).normalized, out RaycastHit hit, radius, LayerMask.GetMask("Player"));
-            playerInSight = hit.collider != null && hit.collider.gameObject == player;
-        } else {
+            Physics.Raycast(transform.position, (Player.transform.position - transform.position).normalized, out RaycastHit hit, radius, LayerMask.GetMask("Player"));
+            playerInSight = hit.collider != null && hit.collider.gameObject == Player;
+        }
+        else
+        {
             playerInSight = false;
         }
+        return playerInSight;
     }
 
     private void DetectPlayer()
@@ -31,7 +31,7 @@ public class LineOfSight : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius, LayerMask.GetMask("Player"));
         if (colliders.Length > 0)
         {
-            player = colliders[0].gameObject;
+            Player = colliders[0].gameObject;
         }
     }
 
@@ -39,7 +39,7 @@ public class LineOfSight : MonoBehaviour
     {
         Vector3 vecA = transform.forward;
         vecA.y = 0;
-        Vector3 vecB = player.transform.position - transform.position;
+        Vector3 vecB = Player.transform.position - transform.position;
         vecB.y = 0;
         vecB.Normalize();
         float angle = Vector3.Angle(vecA, vecB);
