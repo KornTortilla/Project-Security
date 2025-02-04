@@ -11,6 +11,7 @@ public partial class LineOfSightCheckCondition : Condition
 
     public override bool IsTrue()
     {
+        Lineofsight.Value.PlayerIsInSight();
         return Lineofsight.Value.Player != null;
     }
 }

@@ -16,7 +16,7 @@ public class LineOfSight : MonoBehaviour
         DetectPlayer();
         if (Player != null && PlayerIsWithinView())
         {
-            Physics.Raycast(transform.position, (Player.transform.position - transform.position).normalized, out RaycastHit hit, radius, LayerMask.GetMask("Player"));
+            Physics.Raycast(transform.position, (Player.transform.position - transform.position).normalized, out RaycastHit hit, radius);
             playerInSight = hit.collider != null && hit.collider.gameObject == Player;
         }
         else
@@ -44,6 +44,19 @@ public class LineOfSight : MonoBehaviour
         vecB.Normalize();
         float angle = Vector3.Angle(vecA, vecB);
         return angle < halfFOV;
+    }
+
+    private void OnDrawGizmos() {
+        if (Player == null) return;
+        Physics.Raycast(transform.position, (Player.transform.position - transform.position).normalized, out RaycastHit hit, radius);
+        if (hit.collider != null) {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, hit.point);
+        }
+        else {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(transform.position, transform.position + transform.forward * radius);
+        }
     }
 }
     
