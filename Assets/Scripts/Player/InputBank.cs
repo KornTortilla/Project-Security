@@ -143,7 +143,7 @@ namespace ProjectSecurity.Gameplay
             action();
         }
 
-        public void UseLastButtonInput()
+        public void ConsumeLastButtonInput()
         {
             StopCoroutine(bufferLastInputCoroutine);
 
