@@ -5836,9 +5836,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5452595894324852261, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
+      propertyPath: managedReferences[9075358702001717317].Name
+      value: LOS
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452595894324852261, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: managedReferences[9075358619179941965].m_Value
       value: 
-      objectReference: {fileID: 1714366343}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
