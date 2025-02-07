@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Sword : MonoBehaviour
+public class Sword : Weapon
 {
     Collider bladeCollider;
 
@@ -8,20 +8,9 @@ public class Sword : MonoBehaviour
         bladeCollider = GetComponentsInChildren<Collider>()[0];
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag("Player")) return;
         Debug.Log($"Sword collided with {other.gameObject.name}");
-        other.GetComponent<EntityHealth>().TakeDamage(10);
+        other.GetComponent<EntityHealth>().TakeDamage(Damage);
     }
 }
