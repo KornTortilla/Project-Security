@@ -14,7 +14,6 @@ public partial class FindTargetAction : Action
     protected override Status OnUpdate()
     {
         Target.Value = LineOfSight.Value.PlayerIsInSight() ? LineOfSight.Value.Player : null;
-        Debug.Log($"Target: {Target.Value}");
         return Status.Success;
     }
 }
