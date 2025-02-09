@@ -4194,7 +4194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5452595894324852261, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: m_BlackboardVariableOverridesList.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5452595894324852261, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: managedReferences[9052891833043517823].m_Value
@@ -4248,7 +4248,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 1b67627e42269f94389dd557fa3826ff, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1555309334229123152, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5232,9 +5233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2f29ae3ad04284496339f7b494346c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  ClickToHeal: 0
-  ClickToDamage: 0
 --- !u!54 &1714366349
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5983,7 +5981,8 @@ PrefabInstance:
       propertyPath: managedReferences[9075358619179941965].m_Value
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1555309334229123152, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4349704808084206442, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}

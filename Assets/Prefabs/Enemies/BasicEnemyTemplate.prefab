@@ -478,9 +478,9 @@ GameObject:
   - component: {fileID: 5452595894324852261}
   - component: {fileID: 9150369762657774023}
   - component: {fileID: 9152129565232073329}
-  - component: {fileID: 1555309334229123152}
-  - component: {fileID: 4995192922441161475}
   - component: {fileID: 3175274868085497359}
+  - component: {fileID: 4995192922441161475}
+  - component: {fileID: 2912994119905023273}
   m_Layer: 6
   m_Name: BasicEnemyTemplate
   m_TagString: Untagged
@@ -596,35 +596,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1555309334229123152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5351776747823038619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e2f29ae3ad04284496339f7b494346c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  ClickToHeal: 0
-  ClickToDamage: 0
---- !u!114 &4995192922441161475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5351776747823038619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb39e976896791042adaba7f5199c472, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 5
-  halfFOV: 45
 --- !u!54 &3175274868085497359
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -652,6 +623,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4995192922441161475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5351776747823038619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb39e976896791042adaba7f5199c472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 5
+  halfFOV: 45
+--- !u!114 &2912994119905023273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5351776747823038619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce82d0a937611d546968311d65e76b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  ClickToHeal: 0
+  ClickToDamage: 0
 --- !u!1 &6320809028704263577
 GameObject:
   m_ObjectHideFlags: 0

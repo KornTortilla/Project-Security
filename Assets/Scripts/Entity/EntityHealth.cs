@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public class EntityHealth : MonoBehaviour
+public abstract class EntityHealth : MonoBehaviour
 {
+    [Header("Health Settings")]
     [SerializeField]
-    private float maxHealth = 100f;
-    public float CurrentHealth { get; private set; }
+    protected float maxHealth = 100f;
+    public float CurrentHealth { get; protected set; }
+
+    [Header("For Testing Purposes")]
     public bool ClickToHeal = false;
     public bool ClickToDamage = false;
 
-    private void Start()
+    protected virtual void Start()
     {
         CurrentHealth = maxHealth;
     }
 
-    private void Update() {
+    protected virtual void Update() {
         // For testing purposes
         if (ClickToHeal) {
             ClickToHeal = false;
@@ -25,7 +28,7 @@ public class EntityHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public virtual  void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
         Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
@@ -34,14 +37,13 @@ public class EntityHealth : MonoBehaviour
             Die();
         }
     }
-
-    private void Die()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void Heal(float healAmount)
+    public virtual void Heal(float healAmount)
     {
         CurrentHealth = Mathf.Clamp(CurrentHealth + healAmount , 0, maxHealth);
     }
+
+    protected virtual void Die()
+    {
+        gameObject.SetActive(false);
+    }    
 }
