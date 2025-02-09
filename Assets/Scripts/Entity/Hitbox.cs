@@ -17,11 +17,11 @@ namespace ProjectSecurity.Gameplay
 
             Debug.Log("Triggering");
 
-            EntityDamage entityDamage = other.GetComponent<EntityDamage>();
+            EntityHealth entityHealth = other.GetComponent<EntityHealth>();
 
-            if (!entityDamage) return;
+            if (!entityHealth) return;
 
-            entityDamage.TakeDamage(damageInfo);
+            entityHealth.TakeDamage(damageInfo.damage);
         }
     }
 }
