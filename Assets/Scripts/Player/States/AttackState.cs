@@ -18,7 +18,7 @@ namespace ProjectSecurity.Gameplay
             characterController.DisableInputs();
             characterController.OverrideVelocity(new Vector3(5f, 3f, 0f), true);
 
-            stateMachine.hitboxController.InitalizeCurrentHitbox(attackData.damageInfo);
+            stateMachine.hitboxController.InitalizeDefaultHitbox(attackData.damageInfo);
         }
     }
 }

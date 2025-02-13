@@ -8,6 +8,7 @@ namespace ProjectSecurity.Gameplay
         [HideInInspector] public InputBank inputBank;
         [HideInInspector] public Animator animator;
         [HideInInspector] public HitboxController hitboxController;
+        [HideInInspector] public ActionController actionController;
 
         [SerializeField] private BasePlayerAttackData[] attackDatas;
 
@@ -22,6 +23,7 @@ namespace ProjectSecurity.Gameplay
             characterController = GetComponent<PlayerCharacterController>();
             inputBank = GetComponent<InputBank>();
             hitboxController = GetComponent<HitboxController>();
+            actionController = GetComponent<ActionController>();
 
             SetStateToDefault();
         }
@@ -62,8 +64,20 @@ namespace ProjectSecurity.Gameplay
 
         private void CheckInputs()
         {
-            if (inputBank.LastButtonInput != ButtonInput.Attack) return;
+            switch(inputBank.LastButtonInput)
+            {
+                case ButtonInput.Attack:
+                    TryAttackState();
+                    break;
 
+                case ButtonInput.Activate:
+                    TryActionState();
+                    break;
+            }
+        }
+
+        private void TryAttackState()
+        {
             BasePlayerAttackData attackData = attackDatas[attackIndex];
 
             if (attackIndex + 1 != attackDatas.Length)
@@ -73,8 +87,21 @@ namespace ProjectSecurity.Gameplay
 
             bool setState = TryNewState(new AttackState(attackData));
 
-            if(setState)
+            if (setState)
                 inputBank.ConsumeLastButtonInput();
+        }
+
+        private void TryActionState()
+        {
+            if (!canCancel) return;
+
+            ActionData actionData = actionController.ActivateAction();
+
+            if (actionData == null) return;
+
+            inputBank.ConsumeLastButtonInput();
+
+            SetState(new DefaultActionState(actionData));
         }
 
         public void CanCancel()
