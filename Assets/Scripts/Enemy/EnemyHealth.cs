@@ -1,14 +1,34 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyHealth : EntityHealth
 {
+    NavMeshAgent navMeshAgent;
+    Rigidbody rb;
+    [Header("Testing Purposes")]
+    public bool KnockBack;
+    public float DamageRecieved;
+    public float KnockBackForce;
+
+    private void Awake() {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();    
+    }
+
+    protected override void Update() {
+        base.Update();
+        // For testing purposes
+        if (KnockBack) {
+            KnockBack = false;
+            TakeDamage(DamageRecieved, transform.forward * KnockBackForce);
+        }
+    }
+
     protected override void Die()
     {
         gameObject.SetActive(false);
         Debug.Log("Enemy has been defeated!");
-<<<<<<< Updated upstream
-    }    
-=======
     }
     public override void TakeDamage(float damage)
     {
@@ -42,6 +62,6 @@ public class EnemyHealth : EntityHealth
             yield return Time.fixedDeltaTime;
         }
         navMeshAgent.enabled = true;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
->>>>>>> Stashed changes
 }

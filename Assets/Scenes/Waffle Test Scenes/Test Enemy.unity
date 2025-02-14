@@ -4152,7 +4152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4995192922441161475, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: radius
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4995192922441161475, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: halfFOV
@@ -5219,7 +5219,7 @@ Transform:
   m_GameObject: {fileID: 1714366343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.95, y: 0.93, z: -20.99}
+  m_LocalPosition: {x: -24.51, y: 0.93, z: 10.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5917,8 +5917,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< Updated upstream
-=======
     - target: {fileID: 2912994119905023273, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: KnockBack
       value: 0
@@ -5931,18 +5929,17 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
->>>>>>> Stashed changes
     - target: {fileID: 4349704808084206442, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.79
+      value: -13.88
       objectReference: {fileID: 0}
     - target: {fileID: 4349704808084206442, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.44
+      value: 8.15
       objectReference: {fileID: 0}
     - target: {fileID: 4349704808084206442, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.99
+      value: 19.62
       objectReference: {fileID: 0}
     - target: {fileID: 4349704808084206442, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5974,11 +5971,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4995192922441161475, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: radius
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4995192922441161475, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: halfFOV
-      value: 90
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5351776747823038619, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: m_Name
