@@ -101,7 +101,8 @@ namespace ProjectSecurity.Gameplay
 
             inputBank.ConsumeLastButtonInput();
 
-            SetState(new DefaultActionState(actionData));
+            SetState(actionData.InstantiateNewState());
+            animator.Play(actionData.animationName);
         }
 
         public void CanCancel()

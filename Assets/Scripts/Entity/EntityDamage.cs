@@ -11,9 +11,11 @@ namespace ProjectSecurity.Gameplay
             rigidbody = GetComponent<Rigidbody>();
         }
 
-        public void TakeDamage(DamageInfo damageInfo)
+        public void TakeDamage(float damage, Vector3 knockbackVector)
         {
-            rigidbody.linearVelocity = damageInfo.knockbackVector;
+            Debug.Log(knockbackVector);
+
+            rigidbody.linearVelocity = knockbackVector;
         }
     }
 }

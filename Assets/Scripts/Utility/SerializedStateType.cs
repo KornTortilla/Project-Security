@@ -26,6 +26,7 @@ namespace ProjectSecurity.Gameplay
 
             Type type = Type.GetType("ProjectSecurity.Gameplay." + typeName);
             this.stateType = ((type != null && type.IsSubclassOf(typeof(BaseState))) ? type : null);
+            Debug.Log(stateType);
         }
     }
 }

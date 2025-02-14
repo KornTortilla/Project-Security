@@ -1560,7 +1560,7 @@ PrefabInstance:
       objectReference: {fileID: 2071907373}
     - target: {fileID: 1105008421883850258, guid: 94a787fe7cae68c448ecceccb8a59c51, type: 3}
       propertyPath: actionDatas.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1105008421883850258, guid: 94a787fe7cae68c448ecceccb8a59c51, type: 3}
       propertyPath: 'actionDatas.Array.data[0]'
@@ -1569,7 +1569,7 @@ PrefabInstance:
     - target: {fileID: 1105008421883850258, guid: 94a787fe7cae68c448ecceccb8a59c51, type: 3}
       propertyPath: 'actionDatas.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: c0ddf11dd0fc97e448674ba8eb054c75, type: 2}
+      objectReference: {fileID: 11400000, guid: 6c3139c1fb670784a9e22460c86c18a5, type: 2}
     - target: {fileID: 1105008421883850258, guid: 94a787fe7cae68c448ecceccb8a59c51, type: 3}
       propertyPath: 'actionDatas.Array.data[2]'
       value: 
@@ -1596,16 +1596,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3088905163498160873, guid: 94a787fe7cae68c448ecceccb8a59c51, type: 3}
       propertyPath: attackDatas.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3088905163498160873, guid: 94a787fe7cae68c448ecceccb8a59c51, type: 3}
       propertyPath: 'attackDatas.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 3daffa91f9988164a8e255e19f460613, type: 2}
+      objectReference: {fileID: 11400000, guid: 5e82951bc776aca48bd265266803388e, type: 2}
     - target: {fileID: 3088905163498160873, guid: 94a787fe7cae68c448ecceccb8a59c51, type: 3}
       propertyPath: 'attackDatas.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 021e20f36cd467245b1ced598798d59d, type: 2}
+      objectReference: {fileID: 11400000, guid: 3ec1abd919c9ad24e8e8c4342da034b4, type: 2}
     - target: {fileID: 3088905163498160873, guid: 94a787fe7cae68c448ecceccb8a59c51, type: 3}
       propertyPath: 'attackDatas.Array.data[2]'
       value: 

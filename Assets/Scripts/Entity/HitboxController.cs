@@ -8,11 +8,18 @@ namespace ProjectSecurity.Gameplay
         [SerializeField] private Transform hitboxStoringTransform;
         [SerializeField] private Hitbox defaultHitbox;
 
+        private PlayerCharacterController playerCharacterController;
+
         private Dictionary<string, List<Hitbox>> hitboxDict;
         private string currentActionName;
         private HitboxData[] currentHitboxDatas;
         private Hitbox currentHitbox;
         private int hitboxDataIndex = -1;
+
+        private void Awake()
+        {
+            playerCharacterController = GetComponent<PlayerCharacterController>();
+        }
 
         public void InitializeHitboxList(ActionData[] actionDatas)
         {
@@ -59,7 +66,8 @@ namespace ProjectSecurity.Gameplay
             currentHitbox = hitboxDict[currentActionName][hitboxIndex];
 
             currentHitbox.gameObject.SetActive(true);
-            currentHitbox.Initialize(currentHitboxDatas[hitboxDataIndex].damageInfo);
+            DamageInfo damageInfo = currentHitboxDatas[hitboxDataIndex].damageInfo;
+            currentHitbox.Initialize(damageInfo.damage, OrientKnockback(damageInfo.knockbackVector));
         }
 
         public void ReuseLastHitbox()
@@ -69,7 +77,7 @@ namespace ProjectSecurity.Gameplay
 
         public void InitalizeDefaultHitbox(DamageInfo damageInfo)
         {
-            defaultHitbox.Initialize(damageInfo);
+            defaultHitbox.Initialize(damageInfo.damage, OrientKnockback(damageInfo.knockbackVector));
         }
 
         public void EnableDefaultHitbox()
@@ -81,6 +89,12 @@ namespace ProjectSecurity.Gameplay
         public void StopCurrentHitbox()
         {
             currentHitbox.gameObject.SetActive(false);
+        }
+
+        private Vector3 OrientKnockback(Vector3 knockbackVector)
+        {
+            return VectorUtility.OrientVectorHorizontal(knockbackVector, 
+                playerCharacterController.CharacterForward, playerCharacterController.CharacterRight);
         }
     }
 }

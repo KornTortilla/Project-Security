@@ -2,17 +2,19 @@ using UnityEngine;
 
 namespace ProjectSecurity.Gameplay
 {
-    public class DefaultActionState : BaseState
+    public class OscillatorState : BaseState
     {
         private ActionData actionData;
 
         public override void Enter()
         {
-            // animator.Play(actionData.animationName);
-
             characterController.DisableInputs();
             // characterController.OverrideVelocity(0f);
         }
+
+        public override void Update()
+        {
+            characterController.OverrideVelocity(2f);
+        }
     }
 }
-

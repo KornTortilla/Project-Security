@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ProjectSecurity.Gameplay
 {
-	public static class EntityStateCatalog
+	public static class PlayerStateCatalog
 	{
 		public static BaseState InstantiateState(Type stateType)
 		{

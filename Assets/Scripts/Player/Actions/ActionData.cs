@@ -16,7 +16,7 @@ namespace ProjectSecurity.Gameplay
 
         public BaseState InstantiateNewState()
         {
-            return EntityStateCatalog.InstantiateState(stateToEnter.StateType);
+            return PlayerStateCatalog.InstantiateState(stateToEnter.StateType);
         }
     }
 }
