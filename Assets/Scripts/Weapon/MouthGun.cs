@@ -20,12 +20,12 @@ public class MouthGun : Weapon
         projectilePool = new ObjectPool<SimpleProjectile>(CreateProjectile, OnGetFromPool, OnReleaseToPool, OnDestroyPooledObject, collectionCheck, defaultCapacity, maxSize);
     }
 
-    private void FixedUpdate()
+    public bool Shoot()
     {
         if (Time.time > nextTimeToShoot && projectilePool != null) {
             SimpleProjectile projectileObj = projectilePool.Get();
 
-            if (projectileObj == null) return;
+            if (projectileObj == null) return false;
 
             projectileObj.transform.SetPositionAndRotation(muzzlePosition.position, muzzlePosition.rotation);
 
@@ -34,7 +34,9 @@ public class MouthGun : Weapon
             projectileObj.Deactivate();
 
             nextTimeToShoot = Time.time + cooldownWindow;
+            return true;
         }
+        return false;
     }
 
     private SimpleProjectile CreateProjectile() 
