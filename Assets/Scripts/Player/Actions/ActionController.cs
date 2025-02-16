@@ -41,7 +41,7 @@ namespace ProjectSecurity.Gameplay
 
             index = IntUtility.Wrap(index + 1, actionDatas.Length - 1);
 
-            view.Scroll(-1);
+            view.Scroll(index, -1);
 
             return specialAction.data;
         }
@@ -54,7 +54,9 @@ namespace ProjectSecurity.Gameplay
 
                 index = IntUtility.Wrap(index + direction, actionDatas.Length - 1);
 
-                view.Scroll(direction);
+                // Debug.Log("Direction: " + direction);
+
+                view.Scroll(index, -direction);
             }
         }
 

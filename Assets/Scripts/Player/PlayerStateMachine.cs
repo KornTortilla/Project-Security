@@ -70,6 +70,10 @@ namespace ProjectSecurity.Gameplay
                     TryAttackState();
                     break;
 
+                case ButtonInput.Dash:
+                    TryNewState(new DashState());
+                    break;
+
                 case ButtonInput.Activate:
                     TryActionState();
                     break;
@@ -80,15 +84,17 @@ namespace ProjectSecurity.Gameplay
         {
             BasePlayerAttackData attackData = attackDatas[attackIndex];
 
-            if (attackIndex + 1 != attackDatas.Length)
-                attackIndex++;
-            else
-                attackIndex = 0;
-
             bool setState = TryNewState(new AttackState(attackData));
 
             if (setState)
+            {
                 inputBank.ConsumeLastButtonInput();
+
+                if (attackIndex + 1 != attackDatas.Length)
+                    attackIndex++;
+                else
+                    attackIndex = 0;
+            }
         }
 
         private void TryActionState()
@@ -102,7 +108,7 @@ namespace ProjectSecurity.Gameplay
             inputBank.ConsumeLastButtonInput();
 
             SetState(actionData.InstantiateNewState());
-            animator.Play(actionData.animationName);
+            animator.Play(actionData.animationName, -1, 0f);
         }
 
         public void CanCancel()

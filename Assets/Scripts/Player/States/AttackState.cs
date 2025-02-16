@@ -13,7 +13,7 @@ namespace ProjectSecurity.Gameplay
 
         public override void Enter()
         {
-            animator.Play(attackData.animationName);
+            animator.Play(attackData.animationName, -1, 0f);
 
             characterController.DisableInputs();
             characterController.OverrideVelocity(new Vector3(5f, 3f, 0f), true);

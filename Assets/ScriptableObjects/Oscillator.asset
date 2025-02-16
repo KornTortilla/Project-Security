@@ -21,10 +21,10 @@ MonoBehaviour:
   - hitboxIndex: 0
     damageInfo:
       damage: 1
-      knockbackVector: {x: 2, y: 1, z: 0}
+      knockbackVector: {x: 3, y: 1, z: 0}
   - hitboxIndex: 0
     damageInfo:
       damage: 1
-      knockbackVector: {x: 15, y: 0, z: 0}
+      knockbackVector: {x: 15, y: 3, z: 0}
   stateToEnter:
     typeName: OscillatorState

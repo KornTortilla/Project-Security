@@ -12,11 +12,8 @@ namespace ProjectSecurity.Gameplay
         private RectTransform rectTransform;
         private Slider slider;
 
-        private int currentHeight;
-        private int maxHeight;
-        private float separationAmount;
+        private Vector2 targetPosition;
         private Coroutine moveCoroutine;
-        private bool hasMovedThisFrame;
 
         private void Awake()
         {
@@ -24,15 +21,11 @@ namespace ProjectSecurity.Gameplay
             slider = GetComponent<Slider>();
         }
 
-        public void Initialize(string name, int height, int maxHeight, float separationAmount)
+        public void Initialize(string name, Vector2 position)
         {
             textMesh.text = name;
 
-            currentHeight = height;
-            this.maxHeight = maxHeight;
-            this.separationAmount = separationAmount;
-
-            rectTransform.anchoredPosition = new Vector2(0, separationAmount * height);
+            rectTransform.anchoredPosition = targetPosition = position;
         }
 
         public void UpdateFill(float progress)
@@ -40,31 +33,30 @@ namespace ProjectSecurity.Gameplay
             slider.value = progress;
         }
 
-        public void StartMove(int direction, float time)
+        public void StartMove(Vector2 newPosition, float time, float currentHeight = 0)
         {
-            if (hasMovedThisFrame) return;
+            if (currentHeight != 0)
+            {
+                Debug.Log("New height: " + currentHeight);
+                targetPosition = new Vector2(0f, currentHeight);
+            }
 
-            int projection = currentHeight + direction;
-            if (projection == maxHeight) currentHeight = -2;
-            else if (projection == -2) currentHeight = maxHeight;
-
-            rectTransform.anchoredPosition = GetCurrentHeightPosition();
-
-            currentHeight += direction;
+            rectTransform.anchoredPosition = targetPosition;
 
             if (moveCoroutine != null)
                 StopCoroutine(moveCoroutine);
 
-            moveCoroutine = StartCoroutine(Move(time));
-
-            hasMovedThisFrame = true;
-            StartCoroutine(DelayMoveUpdate());
+            moveCoroutine = StartCoroutine(Move(newPosition, time));
         }
 
-        private IEnumerator Move(float time)
+        private IEnumerator Move(Vector2 newPosition, float time)
         {
             Vector2 startingPosition = rectTransform.anchoredPosition;
-            Vector2 targetPosition = GetCurrentHeightPosition();
+
+            targetPosition = newPosition;
+
+            Debug.Log(startingPosition);
+            Debug.Log(newPosition);
 
             float timer = 0f;
             while (timer < time)
@@ -83,12 +75,7 @@ namespace ProjectSecurity.Gameplay
         {
             yield return false;
 
-            hasMovedThisFrame = false;
-        }
-
-        private Vector2 GetCurrentHeightPosition()
-        {
-            return new Vector2(0, separationAmount * currentHeight);
+            // hasMovedThisFrame = false;
         }
     }
 }

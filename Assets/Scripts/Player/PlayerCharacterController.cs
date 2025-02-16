@@ -290,5 +290,10 @@ namespace ProjectSecurity.Gameplay
 
             overroteVelocity = true;
         }
+
+        public void OverrideRotationToCurrentInput()
+        {
+            lastMoveVector = inputBank.CameraMoveInput;
+        }
     }
 }
