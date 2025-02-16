@@ -4,24 +4,24 @@ namespace ProjectSecurity.Gameplay
 {
     public class Hitbox : MonoBehaviour
     {
-        private DamageInfo damageInfo;
+        private float damage;
+        private Vector3 knockbackVector;
 
-        public void Initialize(DamageInfo damageInfo)
+        public void Initialize(float damage, Vector3 knockbackVector)
         {
-            this.damageInfo = damageInfo;
+            this.damage = damage;
+            this.knockbackVector = knockbackVector;
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag != "Enemy") return;
 
-            Debug.Log("Triggering");
+            EntityDamage entityDamage = other.GetComponent<EntityDamage>();
 
-            EntityHealth entityHealth = other.GetComponent<EntityHealth>();
+            if (!entityDamage) return;
 
-            if (!entityHealth) return;
-
-            entityHealth.TakeDamage(damageInfo.damage);
+            entityDamage.TakeDamage(damage, knockbackVector);
         }
     }
 }

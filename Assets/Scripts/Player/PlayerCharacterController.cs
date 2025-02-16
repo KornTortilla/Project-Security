@@ -37,6 +37,16 @@ namespace ProjectSecurity.Gameplay
 
         private Vector3 gravity;
 
+        public Vector3 CharacterForward
+        {
+            get { return Motor.CharacterForward; }
+        }
+
+        public Vector3 CharacterRight
+        {
+            get { return Motor.CharacterRight; }
+        }
+
         private void Start()
         {
             Motor.CharacterController = this;
@@ -48,15 +58,21 @@ namespace ProjectSecurity.Gameplay
 
         private void Update()
         {
-            if (inputsGathering)
-                GetInputs();
+            GetInputs();
         }
 
         public void GetInputs()
         {
-            moveVector = inputBank.CameraMoveInput;
+            if (inputsGathering)
+            {
+                moveVector = inputBank.CameraMoveInput;
 
-            tryJump = true;
+                tryJump = true;
+            }
+            else
+            {
+                moveVector = Vector3.zero;
+            }
         }
 
         public void EnableInputs()
@@ -157,7 +173,7 @@ namespace ProjectSecurity.Gameplay
             }
 
             // Ground movement
-            if (Motor.GroundingStatus.IsStableOnGround && inputsGathering)
+            if (Motor.GroundingStatus.IsStableOnGround)
             {
                 Vector3 targetMovementVelocity = moveVector * maxMoveSpeed;
 
@@ -258,17 +274,10 @@ namespace ProjectSecurity.Gameplay
 
         public void OverrideVelocity(Vector3 newVelocity, bool applyToCharacterForward)
         {
-            if(applyToCharacterForward)
+            if (applyToCharacterForward)
             {
-                float oldY = newVelocity.y;
-
-                Vector3 forwardVector = Motor.CharacterForward * newVelocity.x;
-                Vector3 rightVector = Motor.CharacterRight * newVelocity.z;
-
-                newVelocity = forwardVector + rightVector;
-                newVelocity.y = oldY;
+                newVelocity = VectorUtility.OrientVectorHorizontal(newVelocity, CharacterForward, CharacterRight);
             }
-
 
             overridingVelocity = newVelocity;
 
@@ -280,6 +289,11 @@ namespace ProjectSecurity.Gameplay
             overridingVelocity = Motor.CharacterForward * magnitude;
 
             overroteVelocity = true;
+        }
+
+        public void OverrideRotationToCurrentInput()
+        {
+            lastMoveVector = inputBank.CameraMoveInput;
         }
     }
 }
