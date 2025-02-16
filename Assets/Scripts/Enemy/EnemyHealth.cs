@@ -44,6 +44,7 @@ public class EnemyHealth : EntityHealth
     {
         CurrentHealth -= damage;
         navMeshAgent.enabled = false;
+        rb.constraints = RigidbodyConstraints.None;
         rb.AddForce(knockBackForce, ForceMode.Impulse);
         Debug.Log($"Linear Velocity: {rb.linearVelocity}");
         StartCoroutine(EnableNavMesh());
@@ -61,5 +62,6 @@ public class EnemyHealth : EntityHealth
             yield return Time.fixedDeltaTime;
         }
         navMeshAgent.enabled = true;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 }

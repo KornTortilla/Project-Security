@@ -504,6 +504,7 @@ Transform:
   - {fileID: 7150141671529678352}
   - {fileID: 324090247771811311}
   - {fileID: 6406589935714916787}
+  - {fileID: 3001115877706990446}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 2.115, y: 134.027, z: -2.506}
 --- !u!114 &5452595894324852261
@@ -518,16 +519,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Graph: {fileID: 2081696227496646515, guid: dd9e9fa937c02254293aed8fcea213ee, type: 2}
+  m_Graph: {fileID: 2081696227496646515, guid: 6924affd0af4d014dbc50324b6539c30, type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 9075358619179941964
   - rid: 9075358619179941965
   - rid: 9075358702001717317
+  - rid: 9052891833043517705
+  - rid: 9052892004349378761
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
     version: 2
     RefIds:
+    - rid: 9052891833043517705
+      type: {class: 'BlackboardVariable`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 4443843078052744522
+          m_Value1: 1283611474785687210
+        Name: Waypoints
+        m_Value:
+        - {fileID: 0}
+        - {fileID: 0}
+    - rid: 9052892004349378761
+      type: {class: 'BlackboardVariable`1[[MouthGun, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 12272411958017528525
+          m_Value1: 14812825422114418400
+        Name: MouthGun
+        m_Value: {fileID: 1087468905409148159}
     - rid: 9075358619179941964
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -584,7 +605,7 @@ Animator:
   m_GameObject: {fileID: 5351776747823038619}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 94b7ef48a87cd194a9987070efa8d3d5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1b67627e42269f94389dd557fa3826ff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -621,7 +642,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &4995192922441161475
 MonoBehaviour:
@@ -635,8 +656,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb39e976896791042adaba7f5199c472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
-  halfFOV: 45
+  radius: 50
+  halfFOV: 90
 --- !u!114 &2912994119905023273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,6 +673,9 @@ MonoBehaviour:
   maxHealth: 100
   ClickToHeal: 0
   ClickToDamage: 0
+  KnockBack: 0
+  DamageRecieved: 0
+  KnockBackForce: 0
 --- !u!1 &6320809028704263577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +1025,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b1181b47455ef344aba1fd5b90592eef, type: 2}
+  - {fileID: 2100000, guid: f7f320504f3b7934fb2f133a1bea9b5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1185,3 +1209,76 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &3362343548137340373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4349704808084206442}
+    m_Modifications:
+    - target: {fileID: 508743312963796667, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 508743312963796667, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 508743312963796667, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 508743312963796667, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 508743312963796667, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 508743312963796667, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 508743312963796667, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 508743312963796667, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 508743312963796667, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 508743312963796667, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6147109616657937656, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+      propertyPath: m_Name
+      value: MouthGun
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+--- !u!114 &1087468905409148159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2431388069954095402, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+  m_PrefabInstance: {fileID: 3362343548137340373}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3275f46cb5d08428d03030548ad80a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &3001115877706990446 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 508743312963796667, guid: 50b560d61cb09f44fa803accc1f55b4e, type: 3}
+  m_PrefabInstance: {fileID: 3362343548137340373}
+  m_PrefabAsset: {fileID: 0}

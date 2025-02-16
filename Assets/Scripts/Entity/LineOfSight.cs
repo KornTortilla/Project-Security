@@ -17,6 +17,7 @@ public class LineOfSight : MonoBehaviour
         if (Player != null && PlayerIsWithinView())
         {
             Physics.Raycast(transform.position, (Player.transform.position - transform.position).normalized, out RaycastHit hit, radius);
+            Debug.Log("Hit: " + hit);
             playerInSight = hit.collider != null && hit.collider.gameObject == Player;
         }
         else
