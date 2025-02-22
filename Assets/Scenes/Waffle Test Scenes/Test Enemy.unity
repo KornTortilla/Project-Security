@@ -6190,6 +6190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicMeleeEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1715691116525660289, guid: a085aff8aec5c004394f44f0f87beca3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1790306322191266585, guid: a085aff8aec5c004394f44f0f87beca3, type: 3}
       propertyPath: halfFOV
       value: 120
@@ -6293,7 +6297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4770122201130157769, guid: dd1147ff485231e4fb21f9978a0b09d5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4889844134407123063, guid: dd1147ff485231e4fb21f9978a0b09d5, type: 3}
       propertyPath: 'managedReferences[9052891833043517705].m_Value.Array.data[0]'
