@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Pool;
 
 public class EnemyHealth : EntityHealth
 {
@@ -10,6 +11,12 @@ public class EnemyHealth : EntityHealth
     public bool KnockBack;
     public float DamageRecieved;
     public float KnockBackForce;
+
+
+    [Header("ObjectPooling")]
+    [SerializeField] protected float timeoutDelay = 3f;
+    protected IObjectPool<EnemyHealth> objectPool;
+    public IObjectPool<EnemyHealth> ObjectPool { set => objectPool = value; }
 
     private void Awake() {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -27,7 +34,7 @@ public class EnemyHealth : EntityHealth
 
     protected override void Die()
     {
-        gameObject.SetActive(false);
+        objectPool.Release(this);
         Debug.Log("Enemy has been defeated!");
     }
     public override void TakeDamage(float damage)
