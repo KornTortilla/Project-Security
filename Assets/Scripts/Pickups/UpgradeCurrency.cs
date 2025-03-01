@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public abstract class UpgradeCurrency : MonoBehaviour, IPickupable
 {
-    [SerializeField][Min(0)] protected int value;
+    [Min(0)] public int value;
     Collider collider;
 
     private void Awake() {

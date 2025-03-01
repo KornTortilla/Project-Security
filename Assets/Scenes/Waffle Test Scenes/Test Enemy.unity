@@ -4118,6 +4118,11 @@ MonoBehaviour:
   collectionCheck: 1
   defaultCapacity: 20
   maxSize: 100
+--- !u!1 &942469901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5053554218881357710, guid: 138144ab181a3bc488d3bde01aee5d7f, type: 3}
+  m_PrefabInstance: {fileID: 5977066499985130915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &946069528
 GameObject:
   m_ObjectHideFlags: 0
@@ -4801,6 +4806,11 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1279180117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6802527359935509633, guid: 7d5a95a03ced897499870a154a8318cc, type: 3}
+  m_PrefabInstance: {fileID: 6752484659156101429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1307693713
 Mesh:
   m_ObjectHideFlags: 0
@@ -5556,6 +5566,8 @@ MonoBehaviour:
   DamageRecieved: 0
   KnockBackForce: 0
   timeoutDelay: 3
+  heapObj: {fileID: 0}
+  stackObj: {fileID: 0}
 --- !u!1 &1734388597
 GameObject:
   m_ObjectHideFlags: 0
@@ -6314,6 +6326,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.506
       objectReference: {fileID: 0}
+    - target: {fileID: 8495767837733010739, guid: a085aff8aec5c004394f44f0f87beca3, type: 3}
+      propertyPath: heapObj
+      value: 
+      objectReference: {fileID: 1279180117}
+    - target: {fileID: 8495767837733010739, guid: a085aff8aec5c004394f44f0f87beca3, type: 3}
+      propertyPath: stackObj
+      value: 
+      objectReference: {fileID: 942469901}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6518,5 +6538,5 @@ SceneRoots:
   - {fileID: 642093274}
   - {fileID: 575744089}
   - {fileID: 938637299}
-  - {fileID: 5977066499985130915}
   - {fileID: 6752484659156101429}
+  - {fileID: 5977066499985130915}

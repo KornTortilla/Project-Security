@@ -18,9 +18,19 @@ public class EnemyHealth : EntityHealth
     protected IObjectPool<EnemyHealth> objectPool;
     public IObjectPool<EnemyHealth> ObjectPool { set => objectPool = value; }
 
+    [Header("Drop Objects")]
+    [SerializeField] GameObject heapObj;
+    [SerializeField] GameObject stackObj;
+
     private void Awake() {
         navMeshAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();    
+    }
+
+    protected override void Start() {
+        base.Start();
+        if (heapObj) heapObj.SetActive(false);
+        if (stackObj) stackObj.SetActive(false);
     }
 
     protected override void Update() {
@@ -34,8 +44,18 @@ public class EnemyHealth : EntityHealth
 
     protected override void Die()
     {
-        objectPool.Release(this);
         Debug.Log("Enemy has been defeated!");
+        if (heapObj) {
+            heapObj.transform.position = transform.position;
+            heapObj.SetActive(true);
+        }
+        if (stackObj) {
+            stackObj.transform.position = transform.position;
+            stackObj.SetActive(true);
+        }
+
+        if(objectPool != null) objectPool.Release(this);
+        else gameObject.SetActive(false);
     }
     public override void TakeDamage(float damage)
     {
