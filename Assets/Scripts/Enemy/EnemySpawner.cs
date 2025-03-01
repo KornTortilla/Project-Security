@@ -33,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
             EnemyHealth enemyObj = enemyPool.Get();
             if (enemyObj == null) return;
             NavMesh.SamplePosition(spawnPosition.position, out NavMeshHit hit, 5f, NavMesh.AllAreas);
-            Debug.Log("Hit Pos: " + hit.position);
+            // Debug.Log("Hit Pos: " + hit.position);
             enemyObj.transform.SetPositionAndRotation(hit.position, quaternion.identity);
             nextTimeToSpawn = Time.time + cooldownWindow;
         }
