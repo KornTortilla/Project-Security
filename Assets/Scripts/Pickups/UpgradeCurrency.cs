@@ -1,0 +1,26 @@
+using UnityEngine;
+
+[RequireComponent(typeof(Collider))]
+public abstract class UpgradeCurrency : MonoBehaviour, IPickupable
+{
+    [SerializeField][Min(0)] protected int value;
+    Collider collider;
+
+    private void Awake() {
+        collider = GetComponent<Collider>();
+    }
+
+    void Start()
+    {
+        collider.isTrigger = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        Debug.Log("Player is picking up " + this.name);
+        ProcessPickUp(other.gameObject);
+    }
+
+    public abstract void ProcessPickUp(GameObject playerObj);
+}
