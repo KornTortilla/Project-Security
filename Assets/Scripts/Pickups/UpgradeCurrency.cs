@@ -17,7 +17,6 @@ public abstract class UpgradeCurrency : MonoBehaviour, IPickupable
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        Debug.Log(name + " colliding with " + other.name);
         if (!other.CompareTag("Player")) return;
         Debug.Log("Player is picking up " + this.name);
         ProcessPickUp(other.gameObject);
