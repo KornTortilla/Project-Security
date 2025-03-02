@@ -37,7 +37,7 @@ namespace ProjectSecurity.Gameplay
         {
             if (currentHeight != 0)
             {
-                Debug.Log("New height: " + currentHeight);
+                // Debug.Log("New height: " + currentHeight);
                 targetPosition = new Vector2(0f, currentHeight);
             }
 
@@ -55,8 +55,8 @@ namespace ProjectSecurity.Gameplay
 
             targetPosition = newPosition;
 
-            Debug.Log(startingPosition);
-            Debug.Log(newPosition);
+            // Debug.Log(startingPosition);
+            // Debug.Log(newPosition);
 
             float timer = 0f;
             while (timer < time)

@@ -23,7 +23,24 @@ namespace ProjectSecurity.Gameplay
 
         public Vector2 RawMoveInput { get; private set; }
 
-        public Vector3 CameraMoveInput { get; private set; }
+        public Vector3 CameraMoveInput 
+        { 
+            get
+            {
+                Vector3 cameraForward = Camera.main.transform.forward;
+                cameraForward.y = 0f;
+                cameraForward.Normalize();
+
+                Vector3 cameraRight = Camera.main.transform.right;
+                cameraRight.y = 0f;
+                cameraRight.Normalize();
+
+                Vector3 forwardMovementInput = cameraForward * RawMoveInput.y;
+                Vector3 rightMovementInput = cameraRight * RawMoveInput.x;
+
+                return (forwardMovementInput + rightMovementInput).normalized;
+            }
+        }
 
         public ButtonInput LastButtonInput { get; private set; }
 
@@ -47,12 +64,10 @@ namespace ProjectSecurity.Gameplay
             if (context.performed)
             {
                 RawMoveInput = context.ReadValue<Vector2>();
-                SetMovementToCamera();
             }
             else
             {
                 RawMoveInput = Vector2.zero;
-                CameraMoveInput = Vector3.zero;
             }
         }
 
@@ -75,6 +90,7 @@ namespace ProjectSecurity.Gameplay
             }
             else if(context.canceled)
             {
+                Debug.Log("Hehe");
                 JumpHeld = false;
             }
         }
@@ -112,22 +128,6 @@ namespace ProjectSecurity.Gameplay
             {
                 PauseTriggered?.Invoke();
             }
-        }
-
-        private void SetMovementToCamera()
-        {
-            Vector3 cameraForward = Camera.main.transform.forward;
-            cameraForward.y = 0f;
-            cameraForward.Normalize();
-
-            Vector3 cameraRight = Camera.main.transform.right;
-            cameraRight.y = 0f;
-            cameraRight.Normalize();
-
-            Vector3 forwardMovementInput = cameraForward * RawMoveInput.y;
-            Vector3 rightMovementInput = cameraRight * RawMoveInput.x;
-
-            CameraMoveInput = (forwardMovementInput + rightMovementInput).normalized;
         }
 
         private void StartBufferLastInput()

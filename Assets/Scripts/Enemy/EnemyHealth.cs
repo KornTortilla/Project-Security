@@ -71,8 +71,9 @@ public class EnemyHealth : EntityHealth
     {
         CurrentHealth -= damage;
         navMeshAgent.enabled = false;
-        rb.constraints = RigidbodyConstraints.None;
-        rb.AddForce(knockBackForce, ForceMode.Impulse);
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        rb.linearVelocity = knockBackForce;
+        Debug.Log("Knockback Vector: " + knockBackForce);
         Debug.Log($"Linear Velocity: {rb.linearVelocity}");
         StartCoroutine(EnableNavMesh());
         Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
@@ -83,11 +84,14 @@ public class EnemyHealth : EntityHealth
     }
 
     private IEnumerator EnableNavMesh() {
+        float timer = 0f;
         yield return Time.fixedDeltaTime;
-        while (rb.linearVelocity.magnitude > 0f) {
+        while (rb.linearVelocity.magnitude > 0f || timer < 0.2f) {
             Debug.Log($"Linear Velocity: {rb.linearVelocity}");
+            timer += Time.fixedDeltaTime;
             yield return Time.fixedDeltaTime;
         }
+
         navMeshAgent.enabled = true;
         rb.constraints = RigidbodyConstraints.FreezeAll;
     }

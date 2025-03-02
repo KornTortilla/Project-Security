@@ -9,6 +9,29 @@ namespace ProjectSecurity.Gameplay
             characterController.EnableInputs();
         }
 
+        public override void Update()
+        {
+            if(characterController.hasJumpedThisFrame)
+                animator.Play("JumpSquat");
+
+            if (characterController.hasHitGroundThisFrame)
+                animator.Play("Land");
+                
+
+            if (characterController.IsGrounded)
+            {
+                if (inputBank.CameraMoveInput.magnitude > 0f)
+                    animator.Play("Idle");
+
+                animator.SetFloat("Ground Speed", characterController.Velocity.magnitude);
+            }
+            else if(!characterController.IsGrounded)
+            {
+                animator.Play("Airborne");
+                animator.SetFloat("Vertical Speed", characterController.Velocity.y);
+            }
+        }
+
         public override void Exit()
         {
             characterController.DisableInputs();

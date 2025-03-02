@@ -9,6 +9,7 @@ namespace ProjectSecurity.Gameplay
         [HideInInspector] public Animator animator;
         [HideInInspector] public HitboxController hitboxController;
         [HideInInspector] public ActionController actionController;
+        [HideInInspector] public LockOnController lockOnController;
 
         [SerializeField] private BasePlayerAttackData[] attackDatas;
 
@@ -17,6 +18,16 @@ namespace ProjectSecurity.Gameplay
         private bool canCancel;
         private int attackIndex;
 
+        private void OnEnable()
+        {
+            HitboxController.OnHit += NotifyHitboxHit;
+        }
+
+        private void OnDisable()
+        {
+            HitboxController.OnHit -= NotifyHitboxHit;
+        }
+
         private void Awake()
         {
             animator = GetComponentInChildren<Animator>();
@@ -24,6 +35,7 @@ namespace ProjectSecurity.Gameplay
             inputBank = GetComponent<InputBank>();
             hitboxController = GetComponent<HitboxController>();
             actionController = GetComponent<ActionController>();
+            lockOnController = GetComponent<LockOnController>();
 
             SetStateToDefault();
         }
@@ -44,6 +56,8 @@ namespace ProjectSecurity.Gameplay
         public void SetState(BaseState newState)
         {
             // if (currentState != null) currentState.Exit();
+
+            hitboxController.StopCurrentHitbox();
 
             if(newState.GetType() ==  typeof(IdleState))
                 canCancel = true;
@@ -109,6 +123,16 @@ namespace ProjectSecurity.Gameplay
 
             SetState(actionData.InstantiateNewState());
             animator.Play(actionData.animationName, -1, 0f);
+        }
+
+        public void NotifyHitboxHit()
+        {
+            currentState.HandleHitboxHit();
+        }
+
+        public void NotifyMove()
+        {
+            currentState.Move();
         }
 
         public void CanCancel()

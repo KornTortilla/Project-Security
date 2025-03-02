@@ -10,21 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f3a5dba208e6a244bec5f0135f349d2, type: 3}
-  m_Name: Oscillator
+  m_Name: Spin
   m_EditorClassIdentifier: 
-  actionName: Oscillator
-  rechargeDuration: 5
-  animationName: Oscillator
+  actionName: Spin
+  rechargeDuration: 0
+  animationName: SpinStart
   hitboxPrefabs:
-  - {fileID: 1148473764464180722, guid: 70aec0004a7ff5d4eb28e5200a4d32fb, type: 3}
+  - {fileID: 8096533765994862660, guid: 9e723c8eec4ed434aa3904bb9012d33d, type: 3}
   hitboxDatas:
   - hitboxIndex: 0
     damageInfo:
-      damage: 1
-      knockbackVector: {x: 1, y: 1, z: 0}
-  - hitboxIndex: 0
-    damageInfo:
-      damage: 1
-      knockbackVector: {x: 5, y: 3, z: 0}
+      damage: 0
+      knockbackVector: {x: 3, y: 0, z: 0}
   stateToEnter:
-    typeName: OscillatorState
+    typeName: SpinIntroState
