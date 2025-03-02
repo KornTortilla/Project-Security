@@ -19,7 +19,7 @@ namespace ProjectSecurity.Gameplay
         private void Start()
         {
             hitboxController = GetComponent<HitboxController>();
-            hitboxController.InitializeHitboxList(actionDatas);
+            hitboxController.InitializeActionHitboxList(actionDatas);
 
             view.Initialize(actionDatas);
 

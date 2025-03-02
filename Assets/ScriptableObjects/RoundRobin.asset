@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64728b34856139a459be974f5358bf2c, type: 3}
-  m_Name: Player Attack Data 1
+  m_Script: {fileID: 11500000, guid: 9f3a5dba208e6a244bec5f0135f349d2, type: 3}
+  m_Name: RoundRobin
   m_EditorClassIdentifier: 
-  animationName: Attack1
-  damageInfo:
-    damage: 1
-    knockbackVector: {x: 0, y: 10, z: 0}
+  actionName: Round Robin
+  rechargeDuration: 5
+  animationName: Throw
+  hitboxPrefabs: []
+  hitboxDatas: []
+  stateToEnter:
+    typeName: DefaultActionState

@@ -11,6 +11,11 @@ namespace ProjectSecurity.Gameplay
             get { return stateMachine.characterController; }
         }
 
+        public HitboxController hitboxController
+        {
+            get { return stateMachine.hitboxController; }
+        }
+
         public Animator animator
         {
             get { return stateMachine.animator; }
@@ -19,6 +24,11 @@ namespace ProjectSecurity.Gameplay
         public InputBank inputBank
         {
             get { return stateMachine.inputBank; }
+        }
+
+        public LockOnController lockOnController
+        {
+            get { return stateMachine.lockOnController; }
         }
 
         public virtual void Enter()
@@ -31,9 +41,33 @@ namespace ProjectSecurity.Gameplay
 
         }
 
+        public virtual void Move()
+        {
+
+        }
+
+        public virtual void HandleHitboxHit()
+        {
+
+        }
+
         public virtual void Exit()
         {
             stateMachine.SetStateToDefault();
+        }
+
+        public void ReorientToMove()
+        {
+            if (inputBank.CameraMoveInput.magnitude > 0)
+                characterController.OverrideRotation(inputBank.CameraMoveInput);
+        }
+
+        public void ReorientToLockOnOrMove()
+        {
+            if (lockOnController.isLockedOn)
+                characterController.OverrideRotation(lockOnController.GetVectorToTarget());
+            else if (inputBank.CameraMoveInput.magnitude > 0)
+                characterController.OverrideRotation(inputBank.CameraMoveInput);
         }
     }
 }

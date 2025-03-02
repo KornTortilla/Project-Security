@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,9 @@ namespace ProjectSecurity.Gameplay
     {
         [SerializeField] private Transform hitboxStoringTransform;
         [SerializeField] private Hitbox defaultHitbox;
+
+        // Own event to signal
+        public static event Action OnHit;
 
         private PlayerCharacterController playerCharacterController;
 
@@ -19,15 +23,18 @@ namespace ProjectSecurity.Gameplay
         private void Awake()
         {
             playerCharacterController = GetComponent<PlayerCharacterController>();
+
+            defaultHitbox.AddOnHitListener(() => OnHit?.Invoke());
         }
 
-        public void InitializeHitboxList(ActionData[] actionDatas)
+        public void InitializeActionHitboxList(ActionData[] actionDatas)
         {
             hitboxDict = new Dictionary<string, List<Hitbox>>();
 
             foreach(ActionData actionData in actionDatas)
             {
                 if (hitboxDict.ContainsKey(actionData.actionName)) continue;
+                if (actionData.hitboxDatas.Length == 0) continue;
 
                 Transform actionStoringTransform = new GameObject().transform;
                 actionStoringTransform.name = actionData.actionName;
@@ -36,8 +43,11 @@ namespace ProjectSecurity.Gameplay
                 List<Hitbox> hitboxList = new List<Hitbox>();
                 foreach (GameObject hitboxPrefab in actionData.hitboxPrefabs)
                 {
-                    GameObject hitboxObject = Instantiate(hitboxPrefab, actionStoringTransform);
+                    GameObject hitboxObject = Instantiate(hitboxPrefab, transform.root.position, Quaternion.identity, actionStoringTransform);
+                    hitboxObject.transform.localPosition += hitboxPrefab.transform.localPosition;
+
                     Hitbox hitbox = hitboxObject.GetComponent<Hitbox>();
+                    hitbox.AddOnHitListener(() => OnHit?.Invoke());
                     hitboxObject.SetActive(false);
 
                     hitboxList.Add(hitbox);
@@ -86,8 +96,11 @@ namespace ProjectSecurity.Gameplay
             currentHitbox.gameObject.SetActive(true);
         }
 
+
         public void StopCurrentHitbox()
         {
+            if (currentHitbox == null) return;
+
             currentHitbox.gameObject.SetActive(false);
         }
 

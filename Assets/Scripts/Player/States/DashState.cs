@@ -5,31 +5,36 @@ namespace ProjectSecurity.Gameplay
     public class DashState : BaseState
     {
         private float timer;
-        private float exitTime = 0.2f;
+        private float velocity;
+
+        private float velocityTime = 0.6f;
+        private float exitTime = 0.8f;
 
         public override void Enter()
         {
             timer = 0f;
 
-            characterController.OverrideRotationToCurrentInput();
+            animator.Play("Dash", -1, 0f);
+
+            base.ReorientToMove();
+
             characterController.DisableInputs();
         }
 
         public override void Update()
         {
-            characterController.OverrideVelocity(15f);
+            if(timer <= velocityTime)
+            {
+                velocity = Mathf.Lerp(15f, 5f, timer / velocityTime);
+
+                characterController.OverrideVelocity(velocity);
+
+            }
 
             timer += Time.deltaTime;
 
             if (timer >= exitTime)
                 Exit();
-        }
-
-        public override void Exit()
-        {
-
-
-            base.Exit();
         }
     }
 }

@@ -34,6 +34,10 @@ namespace ProjectSecurity.Gameplay
         private Vector3 overridingVelocity = Vector3.zero;
         private bool overroteVelocity = false;
         private Vector3 internalVelocityAdd = Vector3.zero;
+        private bool wasGroundedLast = false;
+
+        public bool hasJumpedThisFrame = false;
+        public bool hasHitGroundThisFrame = false;
 
         private Vector3 gravity;
 
@@ -45,6 +49,16 @@ namespace ProjectSecurity.Gameplay
         public Vector3 CharacterRight
         {
             get { return Motor.CharacterRight; }
+        }
+
+        public Vector3 Velocity
+        {
+            get { return Motor.Velocity; }
+        }
+
+        public bool IsGrounded
+        {
+            get { return Motor.GroundingStatus.IsStableOnGround; }
         }
 
         private void Start()
@@ -104,7 +118,10 @@ namespace ProjectSecurity.Gameplay
 
         void ICharacterController.BeforeCharacterUpdate(float deltaTime)
         {
+            hasJumpedThisFrame = false;
+            hasHitGroundThisFrame = false;
 
+            wasGroundedLast = Motor.GroundingStatus.IsStableOnGround;
         }
 
         bool ICharacterController.IsColliderValidForCollisions(Collider coll)
@@ -119,7 +136,8 @@ namespace ProjectSecurity.Gameplay
 
         void ICharacterController.OnGroundHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
-
+            if (!wasGroundedLast)
+                hasHitGroundThisFrame = true;
         }
 
         void ICharacterController.OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
@@ -242,6 +260,8 @@ namespace ProjectSecurity.Gameplay
                 // See if we actually are allowed to jump
                 if (((allowJumpingWhenSliding ? Motor.GroundingStatus.FoundAnyGround : Motor.GroundingStatus.IsStableOnGround) || timeSinceLastAbleToJump <= jumpPostGroundingGraceTime))
                 {
+                    hasJumpedThisFrame = true;
+
                     // Calculate jump direction before ungrounding
                     Vector3 jumpDirection = Motor.CharacterUp;
                     if (Motor.GroundingStatus.FoundAnyGround && !Motor.GroundingStatus.IsStableOnGround)
@@ -278,6 +298,10 @@ namespace ProjectSecurity.Gameplay
             {
                 newVelocity = VectorUtility.OrientVectorHorizontal(newVelocity, CharacterForward, CharacterRight);
             }
+            else if(newVelocity.y > 0)
+            {
+                Motor.ForceUnground();
+            }
 
             overridingVelocity = newVelocity;
 
@@ -291,9 +315,9 @@ namespace ProjectSecurity.Gameplay
             overroteVelocity = true;
         }
 
-        public void OverrideRotationToCurrentInput()
+        public void OverrideRotation(Vector3 newForward)
         {
-            lastMoveVector = inputBank.CameraMoveInput;
+            lastMoveVector = newForward;
         }
     }
 }
