@@ -11,7 +11,8 @@ namespace ProjectSecurity.Gameplay
         [HideInInspector] public ActionController actionController;
         [HideInInspector] public LockOnController lockOnController;
 
-        [SerializeField] private BasePlayerAttackData[] attackDatas;
+        [SerializeField] private BasePlayerAttackData[] groundAttackDatas;
+        [SerializeField] private BasePlayerAttackData[] airAttackDatas;
 
         private BaseState currentState;
 
@@ -94,20 +95,34 @@ namespace ProjectSecurity.Gameplay
             }
         }
 
+        private bool CanCancelCheck()
+        {
+            return canCancel;
+        }
+
         private void TryAttackState()
         {
-            BasePlayerAttackData attackData = attackDatas[attackIndex];
+            if (!CanCancelCheck()) return;
 
-            bool setState = TryNewState(new AttackState(attackData));
+            inputBank.ConsumeLastButtonInput();
 
-            if (setState)
+            if (currentState.GetType() == typeof(AttackManagerState))
             {
-                inputBank.ConsumeLastButtonInput();
+                AttackManagerState attackManagerState = (AttackManagerState)currentState;
+                attackManagerState.Continue();
 
-                if (attackIndex + 1 != attackDatas.Length)
-                    attackIndex++;
-                else
-                    attackIndex = 0;
+                canCancel = false;
+
+                return;
+            }
+
+            if (characterController.IsGrounded)
+            {
+                SetState(new AttackManagerState(groundAttackDatas));
+            } 
+            else
+            {
+                SetState(new AttackManagerState(airAttackDatas));
             }
         }
 
@@ -123,6 +138,11 @@ namespace ProjectSecurity.Gameplay
 
             SetState(actionData.InstantiateNewState());
             animator.Play(actionData.animationName, -1, 0f);
+        }
+
+        public void Land()
+        {
+            SetState(new LandState());
         }
 
         public void NotifyHitboxHit()

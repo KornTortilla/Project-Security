@@ -7,5 +7,6 @@ namespace ProjectSecurity.Gameplay
     {
         public string animationName;
         public DamageInfo damageInfo;
+        public Vector3 movementVector;
     }
 }

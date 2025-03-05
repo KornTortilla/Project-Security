@@ -17,5 +17,7 @@ MonoBehaviour:
   animationName: Throw
   hitboxPrefabs: []
   hitboxDatas: []
+  projectileObjects:
+  - {fileID: 923460658851389583, guid: 6ffa7fe00069cd34fb0432d0a92c26e7, type: 3}
   stateToEnter:
     typeName: DefaultActionState

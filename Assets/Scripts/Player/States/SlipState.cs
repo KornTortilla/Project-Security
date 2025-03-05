@@ -26,7 +26,7 @@ namespace ProjectSecurity.Gameplay
             {
                 velocity = Mathf.Lerp(12f, 0, timer / velocityTime);
 
-                characterController.OverrideVelocity(velocity);
+                characterController.OverrideHorizontalVelocity(velocity);
 
                 timer += Time.deltaTime;
 

@@ -11,6 +11,7 @@ namespace ProjectSecurity.Gameplay
         [SerializeField] private ActionView view;
 
         private HitboxController hitboxController;
+        private ProjectileSpawner projectileSpawner;
 
         private List<SpecialAction> specialActions = new List<SpecialAction>();
 
@@ -20,6 +21,9 @@ namespace ProjectSecurity.Gameplay
         {
             hitboxController = GetComponent<HitboxController>();
             hitboxController.InitializeActionHitboxList(actionDatas);
+
+            projectileSpawner = GetComponent<ProjectileSpawner>();
+            projectileSpawner.InitializeProjectiles(actionDatas);
 
             view.Initialize(actionDatas);
 
@@ -38,6 +42,7 @@ namespace ProjectSecurity.Gameplay
             specialAction.StartCooldown();
 
             hitboxController.SetCurrentAction(specialAction.data);
+            projectileSpawner.SetCurrentAction(specialAction.data);
 
             index = IntUtility.Wrap(index + 1, actionDatas.Length - 1);
 

@@ -16,3 +16,4 @@ MonoBehaviour:
   damageInfo:
     damage: 1
     knockbackVector: {x: 3, y: 0, z: 0}
+  movementVector: {x: 5, y: 0, z: 0}

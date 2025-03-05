@@ -6,6 +6,8 @@ namespace ProjectSecurity.Gameplay
     {
         public PlayerStateMachine stateMachine;
 
+        public bool changeStateOnLand = false;
+
         public PlayerCharacterController characterController
         {
             get { return stateMachine.characterController; }
@@ -38,7 +40,8 @@ namespace ProjectSecurity.Gameplay
 
         public virtual void Update()
         {
-
+            if (changeStateOnLand && characterController.hasHitGroundThisFrame)
+                stateMachine.Land();
         }
 
         public virtual void Move()

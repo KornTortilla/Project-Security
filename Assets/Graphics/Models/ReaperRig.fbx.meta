@@ -141,6 +141,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.14893617
+        functionName: NotifyMove
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -193,6 +200,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.5896095
         functionName: ExitState
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.1356383
+        functionName: NotifyMove
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
         floatParameter: 0
@@ -342,7 +356,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.25256673
+        functionName: ExitState
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -434,6 +455,13 @@ ModelImporter:
         functionName: ExitState
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.25265956
+        functionName: Spawn
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c337ff9510cbe4e4e90960ed0034b9d6, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -567,6 +595,13 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.122340426
+        functionName: NotifyMove
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.2587269
         functionName: NextHitbox
         data: 
@@ -574,7 +609,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.65935606
+      - time: 0.6306086
         functionName: CanCancel
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
@@ -588,15 +623,200 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.82978725
+      - time: 0.7620255
         functionName: ExitState
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.122340426
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RSoraAir1
+      takeName: Armature|RSoraAir1
+      internalID: -5665889848785885254
+      firstFrame: 0
+      lastFrame: 52
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
         functionName: NotifyMove
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.1480733
+        functionName: EnableDefaultHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.19316594
+        functionName: CanCancel
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.21248744
+        functionName: StopCurrentHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.41447854
+        functionName: ExitState
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RSoraAir2
+      takeName: Armature|RSoraAir2
+      internalID: 1547139681847295299
+      firstFrame: 0
+      lastFrame: 52
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: NotifyMove
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.11704312
+        functionName: EnableDefaultHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.19498996
+        functionName: CanCancel
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.21841826
+        functionName: StopCurrentHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.37523478
+        functionName: ExitState
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RSoraAir3
+      takeName: Armature|RSoraAir3
+      internalID: 7137602191825914301
+      firstFrame: 0
+      lastFrame: 62
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.03285421
+        functionName: NotifyMove
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.13141684
+        functionName: EnableDefaultHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.16624251
+        functionName: CanCancel
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.19583096
+        functionName: StopCurrentHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.32390013
+        functionName: ExitState
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
         floatParameter: 0
