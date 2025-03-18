@@ -39,6 +39,7 @@ namespace ProjectSecurity.Gameplay
 
             if (index < attackDatas.Length)
             {
+                hitboxController.StopCurrentHitbox();
                 PlayNewAttack();
             }
         }

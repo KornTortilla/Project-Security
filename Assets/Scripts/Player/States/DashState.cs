@@ -16,7 +16,7 @@ namespace ProjectSecurity.Gameplay
 
             animator.Play("Dash", -1, 0f);
 
-            base.ReorientToMove();
+            ReorientToMove();
 
             characterController.DisableInputs();
         }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spin
   m_EditorClassIdentifier: 
   actionName: Spin
-  rechargeDuration: 0
+  rechargeDuration: 5
   animationName: SpinStart
   hitboxPrefabs:
   - {fileID: 8096533765994862660, guid: 9e723c8eec4ed434aa3904bb9012d33d, type: 3}
@@ -22,5 +22,6 @@ MonoBehaviour:
     damageInfo:
       damage: 0
       knockbackVector: {x: 3, y: 0, z: 0}
+  projectileObjects: []
   stateToEnter:
     typeName: SpinIntroState

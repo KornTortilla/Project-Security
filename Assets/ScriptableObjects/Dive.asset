@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3a5dba208e6a244bec5f0135f349d2, type: 3}
+  m_Name: Dive
+  m_EditorClassIdentifier: 
+  actionName: Dive
+  rechargeDuration: 1
+  animationName: Dive
+  hitboxPrefabs:
+  - {fileID: 3830848376307689901, guid: 3ae553613d7188e4d9d4ac3ba7b66874, type: 3}
+  hitboxDatas:
+  - hitboxIndex: 0
+    damageInfo:
+      damage: 1
+      knockbackVector: {x: 20, y: 2, z: 0}
+  projectileObjects: []
+  stateToEnter:
+    typeName: DiveState

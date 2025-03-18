@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Slip
   m_EditorClassIdentifier: 
   actionName: Slip
-  rechargeDuration: 0
+  rechargeDuration: 5
   animationName: Slip
   hitboxPrefabs:
   - {fileID: 7345818995251373035, guid: cc470e1349c0831408d2b50898ac11b4, type: 3}

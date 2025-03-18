@@ -68,7 +68,7 @@ namespace ProjectSecurity.Gameplay
         public void ReorientToLockOnOrMove()
         {
             if (lockOnController.isLockedOn)
-                characterController.OverrideRotation(lockOnController.GetVectorToTarget());
+                characterController.OverrideRotation(lockOnController.GetDirectionToTarget());
             else if (inputBank.CameraMoveInput.magnitude > 0)
                 characterController.OverrideRotation(inputBank.CameraMoveInput);
         }

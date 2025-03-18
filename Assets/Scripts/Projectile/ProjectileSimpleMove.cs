@@ -8,7 +8,7 @@ namespace ProjectSecurity.Gameplay
 
         private Vector3 direction = Vector3.forward;
 
-        public void SetDirection(Vector3 direction)
+        public void SetMoveDirection(Vector3 direction)
         {
             this.direction = direction;
         }

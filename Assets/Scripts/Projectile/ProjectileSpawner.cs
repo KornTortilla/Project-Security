@@ -23,8 +23,12 @@ namespace ProjectSecurity.Gameplay
 
             foreach (ActionData actionData in actionDatas)
             {
+                Debug.Log(actionData.actionName);
+
                 if (projectileDict.ContainsKey(actionData.actionName)) continue;
+                if (actionData.projectileObjects == null) continue;
                 if (actionData.projectileObjects.Length == 0) continue;
+
 
                 List<GameObject> projectileList = new List<GameObject>();
                 foreach (GameObject projectilePrefab in actionData.projectileObjects)
@@ -46,11 +50,11 @@ namespace ProjectSecurity.Gameplay
         public void Spawn()
         {
             Vector3 position = transform.position + playerCharacterController.CharacterForward;
-            position.y = 1f;
+            position.y += 1f;
 
             GameObject projectile = Instantiate(projectileDict[currentActionName][0], position, Quaternion.identity);
-            projectile.GetComponent<ProjectileSimpleMove>().SetDirection(playerCharacterController.CharacterForward);
-            projectile.GetComponent<ProjectileRepeatHitbox>().SetDirection(playerCharacterController.CharacterForward);
+            projectile.GetComponent<ProjectileSimpleMove>().SetMoveDirection(playerCharacterController.CharacterForward);
+            projectile.GetComponent<ProjectileRepeatHitbox>().SetHitDirection(playerCharacterController.CharacterForward);
         }
     }
 }

@@ -1071,6 +1071,9 @@ PrefabInstance:
       addedObject: {fileID: 1724347896654910666}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 834131552002548850}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1184135351296485498}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}
       insertIndex: -1
@@ -1098,7 +1101,16 @@ PrefabInstance:
       addedObject: {fileID: 3681291928225286624}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1216680885776696250}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1941111438577138524}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2564919944959474207}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2696661165629453095}
   m_SourcePrefab: {fileID: 100100000, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}
 --- !u!4 &1428011909263727261 stripped
 Transform:
@@ -1133,6 +1145,27 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!135 &834131552002548850
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772872268431573031}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &1184135351296485498
 Animator:
   serializedVersion: 7
@@ -1197,7 +1230,19 @@ MonoBehaviour:
     m_ActionId: 351f2ccd-1f9f-44bf-9bec-d62ac5c5f408
     m_ActionName: 'Player/Move[/XInputControllerWindows/leftStick,/DualSenseGamepadHID/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6627392825462867988}
+        m_TargetAssemblyTypeName: ProjectSecurity.Gameplay.InputBank, Assembly-CSharp
+        m_MethodName: OnLook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6b444451-8a00-4d00-a97e-f47457f736a8
     m_ActionName: 'Player/Look[/XInputControllerWindows/rightStick,/DualSenseGamepadHID/rightStick,/Mouse/delta]'
   - m_PersistentCalls:
@@ -1340,6 +1385,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c26ff684-9334-4381-b6df-283643631275
     m_ActionName: 'Player/Lock On[/Mouse/middleButton,/DualSenseGamepadHID/rightShoulder]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6627392825462867988}
+        m_TargetAssemblyTypeName: ProjectSecurity.Gameplay.InputBank, Assembly-CSharp
+        m_MethodName: OnLockOnSwitch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8b6bdc41-0aff-438f-9bb5-d72cd81afaf2
+    m_ActionName: 'Player/Lock On Switch[/DualSenseGamepadHID/rightTrigger]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2564919944959474207}
+        m_TargetAssemblyTypeName: ProjectSecurity.Gameplay.MeterManager, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8c721dfc-8dfe-4b28-b9bc-84dab90d7fce
+    m_ActionName: 'Player/Cancel[/DualSenseGamepadHID/leftTrigger]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1379,7 +1456,7 @@ MonoBehaviour:
   MaxStableSlopeAngle: 60
   StableGroundLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 183
   DiscreteCollisionEvents: 0
   StepHandling: 1
   MaxStepHeight: 0.5
@@ -1419,13 +1496,13 @@ MonoBehaviour:
   airMovementSharpness: 2
   airAccelerationSpeed: 30
   orientationSharpness: 10
-  gravityScale: 25
-  drag: 0.5
-  jumpUpSpeed: 10
+  gravityScale: 15
+  drag: 0.01
+  jumpUpSpeed: 8
   jumpMinimumTime: 0.08
   jumpPreGroundingGraceTime: 0
   jumpPostGroundingGraceTime: 0
-  gravityLockoutTime: 0.2
+  gravityLockoutTime: 0.3
   allowJumpingWhenSliding: 0
   hasJumpedThisFrame: 0
   hasHitGroundThisFrame: 0
@@ -1450,6 +1527,7 @@ MonoBehaviour:
   groundAttackDatas:
   - {fileID: 11400000, guid: 5e82951bc776aca48bd265266803388e, type: 2}
   - {fileID: 11400000, guid: 3ec1abd919c9ad24e8e8c4342da034b4, type: 2}
+  - {fileID: 11400000, guid: a263e224d9f80084d8a30efd70af07ac, type: 2}
   airAttackDatas:
   - {fileID: 11400000, guid: a5b467ba9e6a3da40a1663266eca2757, type: 2}
   - {fileID: 11400000, guid: 9c8137bd1776b774e962027d84b0a08a, type: 2}
@@ -1467,9 +1545,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionDatas:
-  - {fileID: 11400000, guid: 6c3139c1fb670784a9e22460c86c18a5, type: 2}
-  - {fileID: 11400000, guid: c0ddf11dd0fc97e448674ba8eb054c75, type: 2}
-  - {fileID: 11400000, guid: 6c3139c1fb670784a9e22460c86c18a5, type: 2}
+  - {fileID: 11400000, guid: 33b695dd882359e47bd4c536a1f15a60, type: 2}
+  - {fileID: 11400000, guid: 9dcf02a1e5a96ee4692b260485120f06, type: 2}
+  - {fileID: 11400000, guid: d892fafeebac437418097d8a76788ddb, type: 2}
+  - {fileID: 11400000, guid: 7d9aed15a7e41d042bf1fa0c607f1152, type: 2}
+  - {fileID: 11400000, guid: b33159e46c604ae479416e0abddfddb2, type: 2}
   view: {fileID: 0}
 --- !u!114 &1573670419216044100
 MonoBehaviour:
@@ -1497,11 +1577,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829721cb2e4d2bc4e997fa6ef417d6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   lockOnCameraObject: {fileID: 0}
   lockOnSpriteObject: {fileID: 0}
+  targetGroup: {fileID: 0}
   maxDistanceToTarget: 15
+  thresholdAngleToSuperseed: 30
   isLockedOn: 0
+--- !u!114 &1216680885776696250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772872268431573031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1c64e0fb736684fb44d35d3a300aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyUI: {fileID: 0}
 --- !u!114 &1941111438577138524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1514,6 +1608,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c337ff9510cbe4e4e90960ed0034b9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2564919944959474207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772872268431573031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cda6609b0735e54a9c6cf5814aa184e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meterUI: {fileID: 0}
+  startingMeter: 30
+  tickTime: 1
+  meterLossPerTick: 1
+--- !u!114 &2696661165629453095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772872268431573031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0e935bf47e3284db14bd0fbcf1023b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  ClickToHeal: 0
+  ClickToDamage: 0
 --- !u!4 &9166957222248970418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1482674693049317948, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}

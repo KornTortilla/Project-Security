@@ -10,6 +10,7 @@ namespace ProjectSecurity.Gameplay
         [HideInInspector] public HitboxController hitboxController;
         [HideInInspector] public ActionController actionController;
         [HideInInspector] public LockOnController lockOnController;
+        [HideInInspector] public MeterManager meterManager;
 
         [SerializeField] private BasePlayerAttackData[] groundAttackDatas;
         [SerializeField] private BasePlayerAttackData[] airAttackDatas;
@@ -37,6 +38,7 @@ namespace ProjectSecurity.Gameplay
             hitboxController = GetComponent<HitboxController>();
             actionController = GetComponent<ActionController>();
             lockOnController = GetComponent<LockOnController>();
+            meterManager = GetComponent<MeterManager>();
 
             SetStateToDefault();
         }
@@ -59,6 +61,7 @@ namespace ProjectSecurity.Gameplay
             // if (currentState != null) currentState.Exit();
 
             hitboxController.StopCurrentHitbox();
+            characterController.EnableEnemyCollision();
 
             if(newState.GetType() ==  typeof(IdleState))
                 canCancel = true;
@@ -91,6 +94,10 @@ namespace ProjectSecurity.Gameplay
 
                 case ButtonInput.Activate:
                     TryActionState();
+                    break;
+
+                case ButtonInput.Cancel:
+                    TryOverrideCancel();
                     break;
             }
         }
@@ -140,9 +147,26 @@ namespace ProjectSecurity.Gameplay
             animator.Play(actionData.animationName, -1, 0f);
         }
 
+        private void TryOverrideCancel()
+        {
+            if(meterManager.TryCancel())
+            {
+                SetStateToDefault();
+                characterController.OverrideVelocity(0f);
+                animator.Play("Idle");
+
+                inputBank.ConsumeLastButtonInput();
+            }
+        }
+
         public void Land()
         {
             SetState(new LandState());
+        }
+
+        public void Hurt()
+        {
+            SetState(new HurtState());
         }
 
         public void NotifyHitboxHit()

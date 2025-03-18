@@ -15,8 +15,9 @@ namespace ProjectSecurity.Gameplay
         {
             timer = 0f;
 
-            base.ReorientToLockOnOrMove();
+            ReorientToLockOnOrMove();
 
+            characterController.DisableEnemyCollision();
             characterController.DisableInputs();
         }
 
@@ -29,13 +30,21 @@ namespace ProjectSecurity.Gameplay
                 characterController.OverrideHorizontalVelocity(velocity);
 
                 timer += Time.deltaTime;
-
             }
         }
 
         public override void Move()
         {
+            Debug.Log("Movin.");
+
             canMove = true;
+        }
+
+        public override void Exit()
+        {
+            characterController.EnableEnemyCollision();
+
+            base.Exit();
         }
     }
 }

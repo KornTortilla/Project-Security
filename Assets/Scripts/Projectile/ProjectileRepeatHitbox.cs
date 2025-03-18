@@ -14,7 +14,7 @@ namespace ProjectSecurity.Gameplay
             timer = interval;
         }
 
-        public void SetDirection(Vector3 direction)
+        public void SetHitDirection(Vector3 direction)
         {
             hitboxObject.GetComponent<Hitbox>().Initialize(1f, direction);
         }

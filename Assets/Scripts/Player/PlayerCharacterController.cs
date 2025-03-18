@@ -43,6 +43,8 @@ namespace ProjectSecurity.Gameplay
         public bool hasJumpedThisFrame = false;
         public bool hasHitGroundThisFrame = false;
 
+        private bool ignoreEnemies = false;
+
         private Vector3 gravity;
 
         public Vector3 CharacterForward
@@ -142,6 +144,8 @@ namespace ProjectSecurity.Gameplay
 
         bool ICharacterController.IsColliderValidForCollisions(Collider coll)
         {
+            if (ignoreEnemies && coll.gameObject.layer == 6)
+                return false;
             return true;
         }
 
@@ -187,7 +191,7 @@ namespace ProjectSecurity.Gameplay
 
         void ICharacterController.UpdateVelocity(ref Vector3 currentVelocity, float deltaTime)
         {
-            if (overridingVelocity.magnitude > 1)
+            if (overridingVelocity.magnitude > 1 || overroteVelocity)
             {
                 currentVelocity = overridingVelocity;
                 overridingVelocity = Vector3.zero;
@@ -328,7 +332,8 @@ namespace ProjectSecurity.Gameplay
             {
                 newVelocity = VectorUtility.OrientVectorHorizontal(newVelocity, CharacterForward, CharacterRight);
             }
-            else if(newVelocity.y > 0)
+
+            if (newVelocity.y > 0f)
             {
                 Motor.ForceUnground();
             }
@@ -370,9 +375,21 @@ namespace ProjectSecurity.Gameplay
 
         public void GravityLockout()
         {
-            Debug.Log("Gravity Locked Out.");
-
             gravityLockout = true;
+        }
+
+        public void DisableEnemyCollision()
+        {
+            Physics.IgnoreLayerCollision(6, 7);
+
+            ignoreEnemies = true;
+        }
+
+        public void EnableEnemyCollision()
+        {
+            Physics.IgnoreLayerCollision(6, 7, false);
+
+            ignoreEnemies = false;
         }
     }
 }
