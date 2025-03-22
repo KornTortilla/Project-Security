@@ -12,34 +12,26 @@ namespace ProjectSecurity.Gameplay
 
         private string currentActionName;
 
-        private void Start()
+        private void Awake()
         {
             playerCharacterController = GetComponent<PlayerCharacterController>();
+
+            projectileDict = new Dictionary<string, List<GameObject>>();
         }
 
-        public void InitializeProjectiles(ActionData[] actionDatas)
+        public void AddProjectileList(ActionData actionData)
         {
-            projectileDict = new Dictionary<string, List<GameObject>>();
+            if (projectileDict.ContainsKey(actionData.actionName)) return;
+            if (actionData.projectileObjects == null) return;
+            if (actionData.projectileObjects.Length == 0) return;
 
-            foreach (ActionData actionData in actionDatas)
+            List<GameObject> projectileList = new List<GameObject>();
+            foreach (GameObject projectilePrefab in actionData.projectileObjects)
             {
-                Debug.Log(actionData.actionName);
-
-                if (projectileDict.ContainsKey(actionData.actionName)) continue;
-                if (actionData.projectileObjects == null) continue;
-                if (actionData.projectileObjects.Length == 0) continue;
-
-
-                List<GameObject> projectileList = new List<GameObject>();
-                foreach (GameObject projectilePrefab in actionData.projectileObjects)
-                {
-                    projectileList.Add(projectilePrefab);
-
-                    Debug.Log(actionData.actionName);
-                }
-
-                projectileDict.Add(actionData.actionName, projectileList);
+                projectileList.Add(projectilePrefab);
             }
+
+            projectileDict.Add(actionData.actionName, projectileList);
         }
 
         public void SetCurrentAction(ActionData actionData)

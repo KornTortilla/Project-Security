@@ -26,37 +26,34 @@ namespace ProjectSecurity.Gameplay
             playerCharacterController = GetComponent<PlayerCharacterController>();
             meterManager = GetComponent<MeterManager>();
 
+            hitboxDict = new Dictionary<string, List<Hitbox>>();
+
             defaultHitbox.AddOnHitListener(() => Hit());
         }
 
-        public void InitializeActionHitboxList(ActionData[] actionDatas)
+        public void AddHitboxList(ActionData actionData)
         {
-            hitboxDict = new Dictionary<string, List<Hitbox>>();
+            if (hitboxDict.ContainsKey(actionData.actionName)) return;
+            if (actionData.hitboxDatas.Length == 0) return;
 
-            foreach(ActionData actionData in actionDatas)
+            Transform actionStoringTransform = new GameObject().transform;
+            actionStoringTransform.name = actionData.actionName;
+            actionStoringTransform.parent = hitboxStoringTransform;
+
+            List<Hitbox> hitboxList = new List<Hitbox>();
+            foreach (GameObject hitboxPrefab in actionData.hitboxPrefabs)
             {
-                if (hitboxDict.ContainsKey(actionData.actionName)) continue;
-                if (actionData.hitboxDatas.Length == 0) continue;
+                GameObject hitboxObject = Instantiate(hitboxPrefab, transform.position, Quaternion.identity, actionStoringTransform);
+                hitboxObject.transform.localPosition += hitboxPrefab.transform.localPosition;
 
-                Transform actionStoringTransform = new GameObject().transform;
-                actionStoringTransform.name = actionData.actionName;
-                actionStoringTransform.parent = hitboxStoringTransform;
+                Hitbox hitbox = hitboxObject.GetComponent<Hitbox>();
+                hitbox.AddOnHitListener(() => Hit());
+                hitboxObject.SetActive(false);
 
-                List<Hitbox> hitboxList = new List<Hitbox>();
-                foreach (GameObject hitboxPrefab in actionData.hitboxPrefabs)
-                {
-                    GameObject hitboxObject = Instantiate(hitboxPrefab, transform.root.position, Quaternion.identity, actionStoringTransform);
-                    hitboxObject.transform.localPosition += hitboxPrefab.transform.localPosition;
-
-                    Hitbox hitbox = hitboxObject.GetComponent<Hitbox>();
-                    hitbox.AddOnHitListener(() => Hit());
-                    hitboxObject.SetActive(false);
-
-                    hitboxList.Add(hitbox);
-                }
-
-                hitboxDict.Add(actionData.actionName, hitboxList);
+                hitboxList.Add(hitbox);
             }
+
+            hitboxDict.Add(actionData.actionName, hitboxList);
         }
 
         public void Hit()

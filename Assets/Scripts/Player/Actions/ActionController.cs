@@ -20,17 +20,22 @@ namespace ProjectSecurity.Gameplay
         private void Start()
         {
             hitboxController = GetComponent<HitboxController>();
-            hitboxController.InitializeActionHitboxList(actionDatas);
-
             projectileSpawner = GetComponent<ProjectileSpawner>();
-            projectileSpawner.InitializeProjectiles(actionDatas);
-
-            view.Initialize(actionDatas);
 
             for (int i = 0; i < actionDatas.Length; i++)
             {
-                specialActions.Add(new SpecialAction(actionDatas[i]));
+                ActionData actionData = actionDatas[i];
+
+                specialActions.Add(new SpecialAction(actionData));
+                SetupNewAction(actionData);
             }
+        }
+
+        private void SetupNewAction(ActionData actionData)
+        {
+            view.AddAction(actionData.actionName);
+            hitboxController.AddHitboxList(actionData);
+            projectileSpawner.AddProjectileList(actionData);
         }
 
         public ActionData ActivateAction()
@@ -44,7 +49,7 @@ namespace ProjectSecurity.Gameplay
             hitboxController.SetCurrentAction(specialAction.data);
             projectileSpawner.SetCurrentAction(specialAction.data);
 
-            index = IntUtility.Wrap(index + 1, actionDatas.Length - 1);
+            index = IntUtility.Wrap(index + 1, specialActions.Count - 1);
 
             view.Scroll(index, -1);
 
@@ -57,7 +62,7 @@ namespace ProjectSecurity.Gameplay
             {
                 int direction = Mathf.RoundToInt(context.ReadValue<float>());
 
-                index = IntUtility.Wrap(index + direction, actionDatas.Length - 1);
+                index = IntUtility.Wrap(index + direction, specialActions.Count - 1);
 
                 // Debug.Log("Direction: " + direction);
 
@@ -75,6 +80,14 @@ namespace ProjectSecurity.Gameplay
 
                 view.UpdateImageProgress(i, progress);
             }
+        }
+
+        public void AddSpecialAction(SpecialAction specialAction)
+        {
+            Debug.Log("New Special Action: " + specialAction.data.actionName);
+            specialActions.Add(specialAction);
+
+            SetupNewAction(specialAction.data);
         }
     }
 }
