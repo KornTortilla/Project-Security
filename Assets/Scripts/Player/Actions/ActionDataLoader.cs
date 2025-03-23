@@ -1,6 +1,5 @@
-using System.Collections.Generic;
+using System;
 using UnityEditor;
-using UnityEngine;
 
 namespace ProjectSecurity.Gameplay
 {
@@ -12,20 +11,31 @@ namespace ProjectSecurity.Gameplay
             get
             {
                 if (actionList == null)
-                    GetCachedActionList();
+                    GetCachedList(typeof(ActionData));
                 return actionList;
             }
         }
 
-        private static void GetCachedActionList()
+        private static ActionAttributeData[] actionAttributeList;
+        public static ActionAttributeData[] ActionAttributeList
         {
-            string[] guids = AssetDatabase.FindAssets("t:"+typeof(ActionData).Name);
+            get
+            {
+                if (actionAttributeList == null)
+                    GetCachedList(typeof(ActionAttributeData));
+                return actionAttributeList;
+            }
+        }
+
+        private static void GetCachedList(Type type)
+        {
+            string[] guids = AssetDatabase.FindAssets("t:"+type.Name);
 
             actionList = new ActionData[guids.Length];
             for (int i = 0; i < guids.Length; i++)
             {
                 string path = AssetDatabase.GUIDToAssetPath(guids[i]);
-                actionList[i] = (ActionData)AssetDatabase.LoadAssetAtPath(path, typeof(ActionData));
+                actionList[i] = (ActionData)AssetDatabase.LoadAssetAtPath(path, type);
             }
         }
     }

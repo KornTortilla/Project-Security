@@ -17,5 +17,10 @@ namespace ProjectSecurity.Gameplay
 
             playerStateMachine.Hurt();
         }
+
+        public void TakeNonKnockbackDamage(float damage)
+        {
+            base.TakeDamage(damage);
+        }
     }
 }

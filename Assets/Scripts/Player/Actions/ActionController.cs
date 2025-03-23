@@ -12,6 +12,7 @@ namespace ProjectSecurity.Gameplay
 
         private HitboxController hitboxController;
         private ProjectileSpawner projectileSpawner;
+        private PlayerHealth playerHealth;
 
         private List<SpecialAction> specialActions = new List<SpecialAction>();
 
@@ -21,6 +22,7 @@ namespace ProjectSecurity.Gameplay
         {
             hitboxController = GetComponent<HitboxController>();
             projectileSpawner = GetComponent<ProjectileSpawner>();
+            playerHealth = GetComponent<PlayerHealth>();
 
             for (int i = 0; i < actionDatas.Length; i++)
             {
@@ -42,9 +44,11 @@ namespace ProjectSecurity.Gameplay
         {
             SpecialAction specialAction = specialActions[index];
 
-            if (specialAction.onCooldown) return null;
+            if (specialAction.charges  < 1) return null;
+            if (specialAction.canSelfHarmCancel)
+                playerHealth.TakeNonKnockbackDamage(5f);
 
-            specialAction.StartCooldown();
+            specialAction.Use();
 
             hitboxController.SetCurrentAction(specialAction.data);
             projectileSpawner.SetCurrentAction(specialAction.data);
@@ -74,7 +78,7 @@ namespace ProjectSecurity.Gameplay
         {
             for (int i = 0; i < specialActions.Count; i++)
             {
-                if (!specialActions[i].onCooldown) continue;
+                if (!specialActions[i].recharing) continue;
 
                 float progress = specialActions[i].Tick(Time.deltaTime);
 
