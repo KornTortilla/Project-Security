@@ -330,7 +330,7 @@ namespace ProjectSecurity.Gameplay
         {
             if (applyToCharacterForward)
             {
-                newVelocity = VectorUtility.OrientVectorHorizontal(newVelocity, CharacterForward, CharacterRight);
+                newVelocity = VectorUtility.OrientVectorHorizontal(newVelocity, lastMoveVector, CharacterRight);
             }
 
             if (newVelocity.y > 0f)
@@ -345,7 +345,7 @@ namespace ProjectSecurity.Gameplay
 
         public void OverrideVelocity(float magnitude)
         {
-            overridingVelocity = Motor.CharacterForward * magnitude;
+            overridingVelocity = lastMoveVector * magnitude;
 
             overroteVelocity = true;
         }
@@ -354,7 +354,7 @@ namespace ProjectSecurity.Gameplay
         {
             if (applyToCharacterForward)
             {
-                newVelocity = VectorUtility.OrientVectorHorizontal(newVelocity, CharacterForward, CharacterRight);
+                newVelocity = VectorUtility.OrientVectorHorizontal(newVelocity, lastMoveVector, CharacterRight);
 
                 newVelocity.y = Velocity.y;
             }
@@ -364,7 +364,7 @@ namespace ProjectSecurity.Gameplay
 
         public void OverrideHorizontalVelocity(float magnitude)
         {
-            overridingVelocity = Motor.CharacterForward * magnitude;
+            overridingVelocity = lastMoveVector * magnitude;
             overridingVelocity.y = Velocity.y;
         }
 

@@ -17,7 +17,7 @@ namespace ProjectSecurity.Gameplay
 
         private void Start()
         {
-            ActionData[] actionDatas = ActionDataLoader.ActionList;
+            ActionData[] actionDatas = ContentLoader.ActionList;
 
             System.Random random = new System.Random();
             actionDatas = actionDatas.OrderBy(x => random.Next()).ToArray();
@@ -43,6 +43,7 @@ namespace ProjectSecurity.Gameplay
             if (inventoryManager.Heap < cost) return;
 
             inventoryManager.GetNewSpecialAction(actionShopItem.specialAction);
+            inventoryManager.ChangeHeap(-cost);
             actionShopItem.Sold();
         }
     }

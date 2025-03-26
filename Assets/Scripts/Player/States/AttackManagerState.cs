@@ -6,6 +6,8 @@ namespace ProjectSecurity.Gameplay
     {
         private BasePlayerAttackData[] attackDatas;
 
+        private float[] verticalDistanceRange = new float[] { -0.5f, 2 };
+
         private int index = 0;
 
         public AttackManagerState(BasePlayerAttackData[] attackDatas)
@@ -46,7 +48,11 @@ namespace ProjectSecurity.Gameplay
 
         public override void Move()
         {
-            characterController.OverrideVelocity(attackDatas[index].movementVector, true);
+            float moveAddition = 0f;
+            if (!characterController.IsGrounded)
+                moveAddition = Mathf.Clamp(lockOnController.GetVerticalMagnitudeToTarget(), verticalDistanceRange[0], verticalDistanceRange[1]);
+
+            characterController.OverrideVelocity(attackDatas[index].movementVector + new Vector3(0f, moveAddition, 0f), true);
         }
     }
 }

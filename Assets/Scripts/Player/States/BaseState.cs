@@ -6,7 +6,8 @@ namespace ProjectSecurity.Gameplay
     {
         public PlayerStateMachine stateMachine;
 
-        public bool changeStateOnLand = false;
+        protected bool changeStateOnLand = false;
+        protected float speed = 1f;
 
         public PlayerCharacterController characterController
         {
@@ -57,6 +58,11 @@ namespace ProjectSecurity.Gameplay
         public virtual void Exit()
         {
             stateMachine.SetStateToDefault();
+        }
+
+        public void SetSpeed(float speed)
+        {
+            this.speed = speed;
         }
 
         public void ReorientToMove()

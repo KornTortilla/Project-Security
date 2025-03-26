@@ -9,6 +9,7 @@ namespace ProjectSecurity.Gameplay
         [Header("Required Components")]
         [SerializeField] private TextMeshProUGUI textMeshName;
         [SerializeField] private TextMeshProUGUI textMeshCost;
+        [SerializeField] private TextMeshProUGUI textMeshAttDescription;
         [SerializeField] private GameObject soldContainter;
 
         public SpecialAction specialAction;
@@ -30,6 +31,7 @@ namespace ProjectSecurity.Gameplay
             textMeshCost.text = cost.ToString();
 
             specialAction = new SpecialAction(actionData);
+            textMeshAttDescription.text = specialAction.AddRandomAttribute();
         }
 
         public void NotifyTryPurchase()

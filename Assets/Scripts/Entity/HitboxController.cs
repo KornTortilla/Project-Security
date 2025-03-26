@@ -8,6 +8,7 @@ namespace ProjectSecurity.Gameplay
     {
         [SerializeField] private Transform hitboxStoringTransform;
         [SerializeField] private Hitbox defaultHitbox;
+        [SerializeField] private TrailRenderer defaultTrailRenderer;
 
         // Own event to signal
         public static event Action OnHit;
@@ -102,12 +103,16 @@ namespace ProjectSecurity.Gameplay
         {
             currentHitbox = defaultHitbox;
             currentHitbox.gameObject.SetActive(true);
+
+            defaultTrailRenderer.gameObject.SetActive(true);
         }
 
 
         public void StopCurrentHitbox()
         {
             if (currentHitbox == null) return;
+            else if(currentHitbox == defaultHitbox)
+                defaultTrailRenderer.gameObject.SetActive(false);
 
             currentHitbox.gameObject.SetActive(false);
         }

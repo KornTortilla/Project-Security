@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2beb5d10c9ea02d4d8bef9b193e325f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 9289f1c1e9e018341b18cd16e62f9508, type: 3}
   m_Name: MaxCharge
   m_EditorClassIdentifier: 
-  specialActionStat: 3
-  arg: 1
+  attributeType: 0
+  description: Able to store an additional charge
+  actionStatChanges:
+  - specialActionStat: 4
+    arg: 1

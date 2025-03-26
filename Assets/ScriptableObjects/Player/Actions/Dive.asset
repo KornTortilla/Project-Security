@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dive
   m_EditorClassIdentifier: 
   actionName: Dive
-  rechargeDuration: 1
+  rechargeDuration: 5
   animationName: Dive
   hitboxPrefabs:
   - {fileID: 3830848376307689901, guid: 3ae553613d7188e4d9d4ac3ba7b66874, type: 3}

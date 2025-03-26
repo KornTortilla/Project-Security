@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationName: SoraAir3
   damageInfo:
-    damage: 0
+    damage: 3
     knockbackVector: {x: 10, y: 1, z: 0}
   movementVector: {x: 12, y: 2, z: 0}

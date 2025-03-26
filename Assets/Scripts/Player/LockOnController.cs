@@ -64,8 +64,6 @@ namespace ProjectSecurity.Gameplay
             target = null;
             foreach (GameObject lockOnObject in EnemyHealth.readOnlyLockOnObjectList)
             {
-                Debug.Log("Hehe.");
-
                 if (GetDistanceBetweenObject(gameObject, lockOnObject) > maxDistanceToTarget)
                     continue;
 
@@ -77,8 +75,6 @@ namespace ProjectSecurity.Gameplay
 
             if(target)
             {
-                Debug.Log("Target: " + target.name);
-
                 lockOnSpriteObject.GetComponent<UIFollowObject>().SetTarget(target);
                 targetGroup.m_Targets[1].target = target.transform;
                 return true;
@@ -164,6 +160,13 @@ namespace ProjectSecurity.Gameplay
             direction.y = 0f;
 
             return direction.normalized;
+        }
+
+        public float GetVerticalMagnitudeToTarget()
+        {
+            if (target == null) return 0f;
+
+            return target.transform.position.y - transform.position.y;
         }
 
         private float GetAngleBetweenDirectionAndFromTarget(Vector3 direction, GameObject newTarget)

@@ -7,6 +7,7 @@ namespace ProjectSecurity.Gameplay
         private float timer;
         private float velocity;
 
+        private float forwardSpeed = 12f;
         private float velocityTime = 1.2f;
 
         private bool canMove = false;
@@ -19,13 +20,16 @@ namespace ProjectSecurity.Gameplay
 
             characterController.DisableEnemyCollision();
             characterController.DisableInputs();
+
+            forwardSpeed *= speed;
+            velocityTime /= speed;
         }
 
         public override void Update()
         {
             if (timer <= velocityTime && canMove)
             {
-                velocity = Mathf.Lerp(12f, 0, timer / velocityTime);
+                velocity = Mathf.Lerp(forwardSpeed, 0, timer / velocityTime);
 
                 characterController.OverrideHorizontalVelocity(velocity);
 
@@ -35,8 +39,6 @@ namespace ProjectSecurity.Gameplay
 
         public override void Move()
         {
-            Debug.Log("Movin.");
-
             canMove = true;
         }
 

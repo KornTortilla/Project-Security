@@ -68,6 +68,8 @@ namespace ProjectSecurity.Gameplay
             else
                 canCancel = false;
 
+            animator.speed = 1f;
+
             currentState = newState;
             currentState.stateMachine = this;
             currentState.Enter();
@@ -137,14 +139,16 @@ namespace ProjectSecurity.Gameplay
         {
             if (!canCancel) return;
 
-            ActionData actionData = actionController.ActivateAction();
+            SpecialAction specialAction = actionController.ActivateAction();
 
-            if (actionData == null) return;
+            if (specialAction == null) return;
 
             inputBank.ConsumeLastButtonInput();
 
-            SetState(actionData.InstantiateNewState());
-            animator.Play(actionData.animationName, -1, 0f);
+            SetState(specialAction.data.InstantiateNewState());
+            animator.Play(specialAction.data.animationName, -1, 0f);
+            animator.speed = specialAction.speed;
+            currentState.SetSpeed(specialAction.speed);
         }
 
         private void TryOverrideCancel()

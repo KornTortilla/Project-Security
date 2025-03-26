@@ -28,6 +28,11 @@ namespace ProjectSecurity.Gameplay
             currencyUI.UpdateHeap(heap);
         }
 
+        public void ChangeHeap(int amount)
+        {
+            Heap += amount;
+        }
+
         public void GetNewSpecialAction(SpecialAction specialAction)
         {
             actionController.AddSpecialAction(specialAction);

@@ -25,7 +25,6 @@ public class EnemyHealth : EntityHealth
 
     private void OnDisable()
     {
-        Debug.Log("Removing self from list.");
         lockOnObjectList.Remove(gameObject);
     }
 

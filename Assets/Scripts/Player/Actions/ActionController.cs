@@ -40,13 +40,13 @@ namespace ProjectSecurity.Gameplay
             projectileSpawner.AddProjectileList(actionData);
         }
 
-        public ActionData ActivateAction()
+        public SpecialAction ActivateAction()
         {
             SpecialAction specialAction = specialActions[index];
 
-            if (specialAction.charges  < 1) return null;
             if (specialAction.canSelfHarmCancel)
                 playerHealth.TakeNonKnockbackDamage(5f);
+            else if (specialAction.charges < 1) return null;
 
             specialAction.Use();
 
@@ -57,7 +57,7 @@ namespace ProjectSecurity.Gameplay
 
             view.Scroll(index, -1);
 
-            return specialAction.data;
+            return specialAction;
         }
 
         public void Scroll(InputAction.CallbackContext context)

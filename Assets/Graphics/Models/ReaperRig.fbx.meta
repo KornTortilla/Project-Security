@@ -17,8 +17,7 @@ ModelImporter:
     removeConstantScaleCurves: 0
     motionNodeName: Armature/Root
     animationImportErrors: 
-    animationImportWarnings: Event NextHitbox has a time (0.590331) outside the clip's
-      valid range (0.000000..0.583333). It will never be fired
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -731,7 +730,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.11704312
+      - time: 0.10513836
         functionName: EnableDefaultHitbox
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
@@ -795,7 +794,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.13141684
+      - time: 0.12546445
         functionName: EnableDefaultHitbox
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
@@ -809,7 +808,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.19583096
+      - time: 0.20971985
         functionName: StopCurrentHitbox
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
