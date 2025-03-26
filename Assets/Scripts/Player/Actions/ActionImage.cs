@@ -21,10 +21,13 @@ namespace ProjectSecurity.Gameplay
             slider = GetComponent<Slider>();
         }
 
-        public void Initialize(string name, Vector2 position)
+        public void Initialize(string name)
         {
             textMesh.text = name;
+        }
 
+        public void SetPosition(Vector2 position)
+        {
             rectTransform.anchoredPosition = targetPosition = position;
         }
 
@@ -33,12 +36,12 @@ namespace ProjectSecurity.Gameplay
             slider.value = progress;
         }
 
-        public void StartMove(Vector2 newPosition, float time, float currentHeight = 0)
+        public void StartMove(Vector2 newPosition, float time, float setNewHeight = 0)
         {
-            if (currentHeight != 0)
+            if (setNewHeight != 0)
             {
                 // Debug.Log("New height: " + currentHeight);
-                targetPosition = new Vector2(0f, currentHeight);
+                targetPosition = new Vector2(0f, setNewHeight);
             }
 
             rectTransform.anchoredPosition = targetPosition;
@@ -69,13 +72,6 @@ namespace ProjectSecurity.Gameplay
             }
 
             rectTransform.anchoredPosition = targetPosition;
-        }
-
-        private IEnumerator DelayMoveUpdate()
-        {
-            yield return false;
-
-            // hasMovedThisFrame = false;
         }
     }
 }

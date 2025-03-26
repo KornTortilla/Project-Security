@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3a5dba208e6a244bec5f0135f349d2, type: 3}
+  m_Name: RoundRobin
+  m_EditorClassIdentifier: 
+  actionName: Round Robin
+  rechargeDuration: 5
+  animationName: Throw
+  hitboxPrefabs: []
+  hitboxDatas: []
+  projectileObjects:
+  - {fileID: 923460658851389583, guid: 6ffa7fe00069cd34fb0432d0a92c26e7, type: 3}
+  stateToEnter:
+    typeName: DefaultActionState

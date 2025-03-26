@@ -30,14 +30,14 @@ namespace ProjectSecurity.Gameplay
             OnHit?.Invoke();
 
             // Will check for multiple variations of health for now
-            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+            EnemyHealth enemyHealth = other.GetComponentInParent<EnemyHealth>();
             if (enemyHealth)
             {
                 enemyHealth.TakeDamage(damage, knockbackVector);
                 return;
             }
 
-            EntityDamage entityDamage = other.GetComponent<EntityDamage>();
+            EntityDamage entityDamage = other.GetComponentInParent<EntityDamage>();
             if (entityDamage)
             {
                 entityDamage.TakeDamage(damage, knockbackVector);

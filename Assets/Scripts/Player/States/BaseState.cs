@@ -6,6 +6,9 @@ namespace ProjectSecurity.Gameplay
     {
         public PlayerStateMachine stateMachine;
 
+        protected bool changeStateOnLand = false;
+        protected float speed = 1f;
+
         public PlayerCharacterController characterController
         {
             get { return stateMachine.characterController; }
@@ -38,7 +41,8 @@ namespace ProjectSecurity.Gameplay
 
         public virtual void Update()
         {
-
+            if (changeStateOnLand && characterController.hasHitGroundThisFrame)
+                stateMachine.Land();
         }
 
         public virtual void Move()
@@ -56,6 +60,11 @@ namespace ProjectSecurity.Gameplay
             stateMachine.SetStateToDefault();
         }
 
+        public void SetSpeed(float speed)
+        {
+            this.speed = speed;
+        }
+
         public void ReorientToMove()
         {
             if (inputBank.CameraMoveInput.magnitude > 0)
@@ -65,7 +74,7 @@ namespace ProjectSecurity.Gameplay
         public void ReorientToLockOnOrMove()
         {
             if (lockOnController.isLockedOn)
-                characterController.OverrideRotation(lockOnController.GetVectorToTarget());
+                characterController.OverrideRotation(lockOnController.GetDirectionToTarget());
             else if (inputBank.CameraMoveInput.magnitude > 0)
                 characterController.OverrideRotation(inputBank.CameraMoveInput);
         }

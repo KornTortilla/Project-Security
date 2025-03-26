@@ -11,7 +11,7 @@ namespace ProjectSecurity.Gameplay
             // animator.Play(actionData.animationName);
 
             characterController.DisableInputs();
-            // characterController.OverrideVelocity(0f);
+            ReorientToLockOnOrMove();
         }
     }
 }
