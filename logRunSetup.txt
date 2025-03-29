@@ -1,0 +1,1034 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to the License Client on channel: "LicenseClient-lMine" at "2025-03-29T23:48:24.0310502Z"
+[Licensing::Client] Error: Code 10 while verifying Licensing Client signature (process Id: 28080, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] Error: LicensingClient has failed validation; ignoring
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.16.0'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-lMine"
+[Licensing::IpcConnector] License Client channel disconnected successfully.
+[Licensing::IpcConnector] Connection attempt to the License Client on channel: "LicenseClient-lMine-6000.0.25" failed because channel doesn't exist; code: "0x80000002"
+[Licensing::Module] Successfully launched the LicensingClient (PId: 22656)
+Starting IPC server.
+Waiting for clients to connect on \\.\pipe\Unity-LicenseClient-lMine-6000.0.25, press Ctrl-C to exit.
+[Licensing::IpcConnector] Successfully connected to the License Client on channel: "LicenseClient-lMine-6000.0.25" at "2025-03-29T23:48:24.92331Z"
+[Licensing::Client] Error: Code 10 while verifying Licensing Client signature (process Id: 22656, path: "C:/Program Files/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] Error: LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.16.0+1c867a9
+  Session Id:              98a1ec552579492688144235ad3295ff
+  Correlation Id:          3e49375bd865fa1cd0043a1fce0c8f04
+  External correlation Id: 8179528453497838310
+  Machine Id:              CxPBC8Vd8+U4P3kXOhgcEdybzTA=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-lMine-6000.0.25" (connect: 0.85s, validation: 0.05s, handshake: 0.00s)
+[Licensing::IpcConnector] Successfully connected to the License Notification on channel: "LicenseClient-lMine-6000.0.25-notifications" at "2025-03-29T23:48:24.9719281Z"
+[Licensing::Module] Connected to LicensingClient (PId: 22656, launch time: 0.00, total connection time: 0.90s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully updated license
+Built from '6000.0/release' branch; Version is '6000.0.25f1 (4859ab7b5a49) revision 4741547'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 16299 MB
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "F4-MX6H-4BEF-99VD-4GMC-XXXX"
+[Licensing::Module] Serial number assigned to: "20066286432781-UnityPersXXXX"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "F4-MX6H-4BEF-99VD-4GMC-XXXX"
+[Licensing::Module] Serial number assigned to: "20066286432781-UnityPersXXXX"
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.0.25f1\Editor\Unity.exe
+-batchmode
+-nographics
+-logFile
+logRunSetup.txt
+-projectPath
+C:\Users\lMine\Documents\Github\Project-Security
+-executeMethod
+WwiseSetupWizard.RunModify
+-quit
+Successfully changed project path to: C:\Users\lMine\Documents\Github\Project-Security
+C:/Users/lMine/Documents/Github/Project-Security
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [36320]  Target information:
+
+Player connection [36320]  * "[IP] 192.168.10.1 [Port] 55504 [Flags] 2 [Guid] 2932628933 [EditorId] 2932628933 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EVSGRJD) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [36320]  * "[IP] 192.168.67.1 [Port] 55504 [Flags] 2 [Guid] 2932628933 [EditorId] 2932628933 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EVSGRJD) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [36320]  * "[IP] 192.168.1.82 [Port] 55504 [Flags] 2 [Guid] 2932628933 [EditorId] 2932628933 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EVSGRJD) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [36320] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [36320] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-31292" after 0.3 seconds.
+Library Redirect Path: Library/
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 69 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.5 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.ai.navigation)
+    com.unity.behavior@1.0.8 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.behavior)
+    com.unity.collab-proxy@2.6.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.collab-proxy)
+    com.unity.ide.rider@3.0.31 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.ide.rider)
+    com.unity.ide.visualstudio@2.0.22 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.ide.visualstudio)
+    com.unity.inputsystem@1.11.2 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.inputsystem)
+    com.unity.test-framework@1.4.5 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.test-framework)
+    com.unity.timeline@1.8.7 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.timeline)
+    com.unity.visualscripting@1.9.4 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.visualscripting)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.ext.nunit)
+    com.unity.probuilder@6.0.4 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.probuilder)
+    com.unity.polybrush@1.1.8 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.polybrush)
+    com.unity.formats.fbx@5.1.1 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.formats.fbx)
+    com.unity.terrain-tools@5.1.2 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.terrain-tools)
+    com.unity.animation.rigging@1.3.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.animation.rigging)
+    com.unity.cinemachine@2.10.1 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.cinemachine)
+    com.unity.burst@1.8.18 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.burst)
+    com.unity.dt.app-ui@2.0.0-pre.16 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.dt.app-ui)
+    com.unity.collections@2.5.1 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.collections)
+    com.unity.nuget.newtonsoft-json@3.2.1 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.nuget.newtonsoft-json)
+    com.unity.searcher@4.9.2 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.searcher)
+    com.unity.mathematics@1.3.2 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.mathematics)
+    com.autodesk.fbx@5.1.1 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.autodesk.fbx)
+    com.unity.settings-manager@2.0.1 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.settings-manager)
+    com.unity.nuget.mono-cecil@1.11.4 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.nuget.mono-cecil)
+    com.unity.test-framework.performance@3.0.3 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.test-framework.performance)
+  Built-in packages:
+    com.unity.feature.characters-animation@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.feature.characters-animation)
+    com.unity.feature.worldbuilding@1.0.1 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.feature.worldbuilding)
+    com.unity.multiplayer.center@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.multiplayer.center)
+    com.unity.render-pipelines.universal@17.0.3 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.render-pipelines.universal)
+    com.unity.ugui@2.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.ugui)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.render-pipelines.core@17.0.3 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.render-pipelines.core)
+    com.unity.shadergraph@17.0.3 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.shadergraph)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.render-pipelines.universal-config)
+    com.unity.rendering.light-transport@1.0.1 (location: C:\Users\lMine\Documents\Github\Project-Security\Library\PackageCache\com.unity.rendering.light-transport)
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.04 seconds
+Refreshing native plugins compatible for Editor in 97.69 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 2.43 ms.
+Initialize engine version: 6000.0.25f1 (4859ab7b5a49)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/lMine/Documents/Github/Project-Security/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "F4-MX6H-4BEF-99VD-4GMC-XXXX"
+[Licensing::Module] Serial number assigned to: "20066286432781-UnityPersXXXX"
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.25f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.25f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56292
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.25f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003027 seconds.
+- Loaded All Assemblies, in  0.308 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.259 seconds
+Domain Reload Profiling: 565ms
+	BeginReloadAssembly (110ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (42ms)
+	LoadAllAssembliesAndSetupDomain (115ms)
+		LoadAssemblies (107ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (112ms)
+			TypeCache.Refresh (111ms)
+				TypeCache.ScanAssembly (101ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (260ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (232ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (5ms)
+			ProcessInitializeOnLoadAttributes (140ms)
+			ProcessInitializeOnLoadMethodAttributes (56ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "F4-MX6H-4BEF-99VD-4GMC-XXXX"
+[Licensing::Module] Serial number assigned to: "20066286432781-UnityPersXXXX"
+Application.AssetDatabase Initial Refresh Start
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:80
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\lMine\Documents\Github\Project-Security\
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 30.9474ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.0.25f1\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/lMine/Documents/Github/Project-Security
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+DisplayProgressbar: Compiling Scripts
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.0.25f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.0.25f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.0.25f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.ComponentModel.Composition.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.0.25f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll"
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Mono.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.dll
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 47.0428ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.0.25f1\Editor\Data\Tools\netcorerun\netcorerun.exe "C:\Program Files\Unity\Hub\Editor\6000.0.25f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/lMine/Documents/Github/Project-Security
+ExitCode: 4 Duration: 1s177ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+[ 988/1317  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[ 989/1317  1s] Csc Library/Bee/artifacts/1900b0aE.dag/AK.Wwise.Unity.ProjectDatabase.dll (+2 others)
+*** Tundra requires additional run (1.15 seconds), 2 items updated, 987 evaluated
+ExitCode: 0 Duration: 0s817ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.0.25f1\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/lMine/Documents/Github/Project-Security
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Current configuration matches the requested one, skipping
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 1.6846ms
+ExitCode: 0 Duration: 2s466ms
+Finished compiling graph: 1321 nodes, 25228 flattened edges (19984 ToBuild, 222 ToUse), maximum node priority 1426
+[ 989/1317  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[1269/1317  0s] Csc Library/Bee/artifacts/1900b0aE.dag/AK.Wwise.Unity.API.dll (+2 others)
+[1273/1317  0s] Csc Library/Bee/artifacts/1900b0aE.dag/AK.Wwise.Unity.API.WwiseTypes.dll (+2 others)
+[1277/1317  0s] Csc Library/Bee/artifacts/1900b0aE.dag/AK.Wwise.Unity.Timeline.dll (+2 others)
+[1281/1317  0s] Csc Library/Bee/artifacts/1900b0aE.dag/AK.Wwise.Unity.MonoBehaviour.dll (+2 others)
+Assets\Wwise\MonoBehaviour\Runtime\AkAmbient.cs(122,19): warning CS0109: The member 'AkAmbient.OnDisable()' does not hide an accessible member. The new keyword is not required.
+[1282/1317  0s] Csc Library/Bee/artifacts/1900b0aE.dag/Ak.Wwise.Api.WAAPI.dll (+2 others)
+[1289/1317  0s] Csc Library/Bee/artifacts/1900b0aE.dag/AK.Wwise.Unity.API.Editor.dll (+2 others)
+[1290/1317  0s] Csc Library/Bee/artifacts/1900b0aE.dag/AK.Wwise.Unity.Timeline.Editor.dll (+2 others)
+[1297/1317  0s] Csc Library/Bee/artifacts/1900b0aE.dag/AK.Wwise.Unity.MonoBehaviour.Editor.dll (+2 others)
+*** Tundra build success (2.45 seconds), 9 items updated, 1317 evaluated
+Assets\Wwise\MonoBehaviour\Runtime\AkAmbient.cs(122,19): warning CS0109: The member 'AkAmbient.OnDisable()' does not hide an accessible member. The new keyword is not required.
+AssetDatabase: script compilation time: 4.824022s
+Begin MonoManager ReloadAssembly
+Total cache size 268274844
+Total cache size after purge 268274844, took 00:00:00.3909350
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.012 seconds
+Refreshing native plugins compatible for Editor in 20.51 ms, found 16 plugins.
+Native extension for WindowsStandalone target not found
+WwiseUnity: Cannot find ProjectInfo.json at C:\Users\lMine\Documents\WwiseProjects\Project-Security\..\..\Github\Project-Security\Assets\StreamingAssets\Audio\GeneratedSoundBanks\. Ensure that the SoundBanks Path in the Integration Settings matches the Root Output Path in the Wwise Project Settings on the SoundBanks tab, then regenerate the SoundBanks.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+Wwise.API.Editor.SoundBankDirectoryWatcher.Common.AkSoundBankDirectoryWatcher/<InitProjectDB>d__17:MoveNext () (at Assets/Wwise/API/Editor/AkSoundBankDirectoryWatcher.cs:111)
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder:Start<Wwise.API.Editor.SoundBankDirectoryWatcher.Common.AkSoundBankDirectoryWatcher/<InitProjectDB>d__17> (Wwise.API.Editor.SoundBankDirectoryWatcher.Common.AkSoundBankDirectoryWatcher/<InitProjectDB>d__17&)
+Wwise.API.Editor.SoundBankDirectoryWatcher.Common.AkSoundBankDirectoryWatcher:InitProjectDB (string,string,System.DateTime)
+Wwise.API.Editor.SoundBankDirectoryWatcher.Common.AkSoundBankDirectoryWatcher/<>c__DisplayClass15_0:<Execute>b__0 () (at Assets/Wwise/API/Editor/AkSoundBankDirectoryWatcher.cs:85)
+System.Threading.Tasks.Task`1<System.Threading.Tasks.Task>:InnerInvoke ()
+System.Threading.Tasks.Task:Execute ()
+System.Threading.Tasks.Task:ExecutionContextCallback (object)
+System.Threading.ExecutionContext:RunInternal (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.ExecutionContext:Run (System.Threading.ExecutionContext,System.Threading.ContextCallback,object,bool)
+System.Threading.Tasks.Task:ExecuteWithThreadLocal (System.Threading.Tasks.Task&)
+System.Threading.Tasks.Task:ExecuteEntry (bool)
+System.Threading.Tasks.Task:System.Threading.IThreadPoolWorkItem.ExecuteWorkItem ()
+System.Threading.ThreadPoolWorkQueue:Dispatch ()
+System.Threading._ThreadPoolWaitCallback:PerformWaitCallback ()
+
+(Filename: Assets/Wwise/API/Editor/AkSoundBankDirectoryWatcher.cs Line: 111)
+
+Refreshing native plugins compatible for Editor in 22.85 ms, found 16 plugins.
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Project-Security
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.478 seconds
+Domain Reload Profiling: 4484ms
+	BeginReloadAssembly (339ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (14ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (37ms)
+	LoadAllAssembliesAndSetupDomain (589ms)
+		LoadAssemblies (376ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (298ms)
+			TypeCache.Refresh (193ms)
+				TypeCache.ScanAssembly (178ms)
+			BuildScriptInfoCaches (90ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (3479ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (3072ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (141ms)
+			ProcessInitializeOnLoadAttributes (2580ms)
+			ProcessInitializeOnLoadMethodAttributes (319ms)
+			AfterProcessingInitializeOnLoad (11ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Start importing Assets/Wwise/NewVersion.txt using Guid(debdbe29d942c3f438441c922eb5bc05) (TextScriptImporter) -> (artifact id: 'd3dbf61a0615a83d36e7c7b82c7cf594') in 0.0351708 seconds
+WwiseUnity: Plugins successfully activated for Profile in Editor.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AkPluginActivator:ActivatePluginsForEditor () (at Assets/Wwise/API/Editor/PluginActivator/Common/AkPluginActivator.cs:274)
+AkPluginActivator:OnPostprocessAllAssets (string[],string[],string[],string[],bool) (at Assets/Wwise/API/Editor/PluginActivator/Common/AkPluginActivator.cs:45)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+(Filename: Assets/Wwise/API/Editor/PluginActivator/Common/AkPluginActivator.cs Line: 274)
+
+Refreshing native plugins compatible for Editor in 25.93 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=ce3e0ea992d537d47bd5d1bbcbeb9600): Total: 12.261 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=2 ms, native=5638 ms
+		Asset DB Callback time: managed=568 ms, native=36 ms
+		Scripting: domain reloads=1, domain reload time=1103 ms, compile time=4834 ms, other=76 ms
+		Project Asset Count: scripts=1927, non-scripts=5138
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 2.445ms
+	ApplyChangesToAssetFolders: 0.537ms
+	Scan: 1648.796ms
+	OnSourceAssetsModified: 0.588ms
+	CategorizeAssetsWithTransientArtifact: 66.957ms
+	ProcessAssetsWithTransientArtifactChanges: 113.198ms
+	CategorizeAssets: 75.736ms
+	ImportOutOfDateAssets: 3578.254ms (-1297.104ms without children)
+		ImportManagerImport: 36.550ms (1.058ms without children)
+			ImportInProcess: 35.492ms
+		CompileScripts: 4834.020ms
+		ReloadNativeAssets: 0.080ms
+		UnloadImportedAssets: 1.770ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 2.130ms
+		InitializingProgressBar: 0.010ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.797ms
+	PostProcessAllAssets: 730.423ms
+	Hotreload: 29.699ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.379ms
+	UnloadStreamsBegin: 2.565ms
+	PersistCurrentRevisions: 0.367ms
+	UnloadStreamsEnd: 0.249ms
+	GenerateScriptTypeHashes: 7.802ms
+	Untracked: 6010.335ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 17.847ms
+Initializing Unity extensions:
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "F4-MX6H-4BEF-99VD-4GMC-XXXX"
+[Licensing::Module] Serial number assigned to: "20066286432781-UnityPersXXXX"
+Unloading 33 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 8664 unused Assets / (4.5 MB). Loaded Objects now: 9393.
+Memory consumption went from 253.2 MB to 248.7 MB.
+Total: 13.418100 ms (FindLiveObjects: 0.728400 ms CreateObjectMapping: 0.801900 ms MarkObjects: 9.066900 ms  DeleteObjects: 2.817400 ms)
+
+WwiseUnity: Running modify setup...
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WwiseSetupWizard:RunModify () (at Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkWwiseSetupWizard.cs:42)
+
+(Filename: Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkWwiseSetupWizard.cs Line: 42)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1 unused Assets / (36.8 KB). Loaded Objects now: 9404.
+Memory consumption went from 239.8 MB to 239.8 MB.
+Total: 9.143400 ms (FindLiveObjects: 0.269900 ms CreateObjectMapping: 0.173400 ms MarkObjects: 8.680400 ms  DeleteObjects: 0.019000 ms)
+
+Refreshing native plugins compatible for Editor in 19.29 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.89 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=6ece555b768df144f995eb08564f51cf): Total: 0.115 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.22 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.35 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=9a7a643e1960898448d094f3827804a0): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.15 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.85 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=40ee8c82e864c764fa260db90e44f9f9): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.57 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.34 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=00bee76f77b92354499d639fa640ef3a): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.44 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.24 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=413b59bc1576a7f46b6f77074f3adc98): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.37 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.39 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=394d80e0e42b43e40a99e10b75112d66): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.33 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.19 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=b10716582f164304ebbe79873ccfc232): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.31 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.20 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=df4eb3c0fdf6a954d9bfd1078c025c5c): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.26 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.65 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=a85df1025a579eb4cb0f5169248bbdc0): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.51 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.58 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=07f814e55667095488a92d503a5a447b): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.14 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.64 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=4e487cdb23e888549ac947a3fb55c288): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.58 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.41 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=d171e18b10e1d85498e7f27216c772d8): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.72 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.38 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=219dcf044c29cd746baf149374dcda42): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.24 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.77 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
+Asset Pipeline Refresh (id=c71bc5c4af2f25b42a711bd8ad072f27): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 20.00 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.30 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=5ef48f0abb4210949b795490bf1420b2): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.42 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.11 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
+Asset Pipeline Refresh (id=535e0617a1095fd42b5a6d6ba84505a7): Total: 0.296 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.16 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.29 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=7d1c17b5642fd4344b41584e7cf18777): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.14 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.23 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=91711a26040a59f428dc9561ce442cf6): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.28 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.50 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=d9cc90147c3ae534d89d16c1db44c6fc): Total: 0.264 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.24 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.45 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=77b86e4abb2dc6145b230f93b80368cc): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.13 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.33 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=d14e5acd32d4e164195a6f7b1a972381): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.05 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.34 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=cc925731a08ab004ea8a088dcab8821b): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.30 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.47 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=3a75e16bea7d9f445b0a99d83c23aa09): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.92 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.54 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=e66af7aa5e457d3479be876f2cb40762): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 20.52 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.07 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=826673e9aec603d46973fa6754abcf9b): Total: 0.062 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 20.21 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.28 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=26bff66226fdde84db932b2bfe73c398): Total: 0.091 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.75 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.59 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=4d1dca65b04a8f140a2e89d5623a4574): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.14 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.31 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=65de430aef9a8364a831839382c926ae): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.25 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.90 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=5bc8e124c938d1b41ac57f0774e42eda): Total: 0.157 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.85 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.81 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=fe9a5213096f6ed419f75dbcb9b55461): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.16 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.30 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=b773d286f59adf44689bdbc128d3631d): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.24 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.42 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=4b324b25632dc4143b365881354337f7): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.16 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.18 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=ef99c0c92c72ed3449c854964bf91bb3): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.72 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.15 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=00aa89d1c17790346b1bb87057928658): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.68 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.20 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=2140e27280af1cf459395d2f59dba3a7): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.75 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.42 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=b81a61f438e4a604ebc3d6c7d725666f): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.64 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.25 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=7db8dc4e2287982428507d0a995d8919): Total: 0.087 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.98 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.57 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=108c8954061b1274bb7b30c9f7ef5c30): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.94 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.13 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=f851ace0e6615b348b221a30afab5ab7): Total: 0.062 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.32 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.13 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
+Asset Pipeline Refresh (id=996b320b70fb66a41bd0bfc118d960db): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.29 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.90 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=953bbeb04fec85c4e9f7e4fc94368b48): Total: 0.156 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.32 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.33 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=1c47d3b0f317e6446bb8ab4040471c5a): Total: 0.157 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.23 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.64 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
+Asset Pipeline Refresh (id=25b7e65d6e702c3489ba4cd03e1164f6): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.44 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.30 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
+Asset Pipeline Refresh (id=ec58ce79e6637fa48868ed521d5ce186): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.58 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.21 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=f7fd55f36690f5e4991413011405374d): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 20.23 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.81 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=d76cde1e47f976b4bb67ef6a818dab40): Total: 0.100 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.72 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.42 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=0ffd6248b4c97914e96f5297c8472eed): Total: 0.177 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.27 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.75 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=753ee3c0f30f88742937190ab7a27851): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.20 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.24 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=536f483303fbe464db5a1b3e0f574689): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.43 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.38 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=a3a1df8ed8ba9f846862a793a451e514): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.30 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.01 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=caca09e06a500304e839a2c819702826): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.30 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.73 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=d947cc433e76d164183e56af9468ef47): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.58 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.33 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=ddd9b6de96dbdf149924cbb25ea2109f): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.46 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.60 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=46ee00745426bbc41bfc15e1806ffd3c): Total: 0.157 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.57 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.69 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
+Asset Pipeline Refresh (id=8d1ca8678c25bf743856f24955afb134): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.38 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.36 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=a63df55af85a3914eb2fb76fca4531fe): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.38 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.69 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=b854ef7bb0453764897dda3a1e7e3d08): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.26 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.17 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=66eaeb549df0ac546a5dd29a5d9328b1): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.94 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.63 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=c9d5212e395baf74d9d11200062c8e07): Total: 0.091 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 20.03 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.92 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=0b679405ce5228a40b8677ee7ab424cc): Total: 0.062 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 20.09 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.66 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=53063a0ac398cca4ab18423ff1236173): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.31 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.82 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=c0e879785c5719a42b0b96883daf526d): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.17 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.21 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=cd311b06cf6086c4bb0bbcd6d6999ea5): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.28 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.79 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=8abfaf48ab5de1541aaa5becd34fb193): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.37 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.42 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=34941635eb19abd4aaea3c852e10b680): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.84 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.66 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=4f68186203a7c894e92bed9cd87e5846): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.36 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.63 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=1d228123f67bdc54298315037b035834): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.08 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.31 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=89460227c6c1ba54a9734665f999f3a0): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.61 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.22 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=c0fb95c9b8d94d34a9ee3f3574c7c219): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.73 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.17 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=120be0667725d8f4fb8759fcfe5f4b2d): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.18 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.71 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=6121e8d379048354eae4c879f376726d): Total: 0.155 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.62 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.65 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=ceba752ed0fb5464995c7837eebe8625): Total: 0.156 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.11 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.13 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=e05747e4db94dcb48a8cb0c41e7e31c9): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.57 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.53 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=85c68e1ac6288ef4cbeea55d7720b32f): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.11 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.43 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=d41c634e466721645a061b6c30dca537): Total: 0.157 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.54 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.01 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=0dc5ee7b84d4ee347a2e9213719d4d1f): Total: 0.170 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.41 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.26 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=ba146271a0be15c479a9e0253b6051f0): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.32 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.38 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=cf192f81e3c3b4b4d85057169c86bbef): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.76 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.89 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=857e97f3879eeaf4f8f4f35db929b3f6): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 20.24 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 22.81 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=f2867ce7876d54847b4c736221664681): Total: 0.065 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 20.33 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.06 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=6691435eeb1b25241b29f649173f39ca): Total: 0.062 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.43 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.36 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=8d49406b18aa12c48b6136f4cca07569): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.32 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.71 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=ab72e95e7a15b0448a54bbcc2ecffe75): Total: 0.157 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.28 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.06 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=6791d160eeb48c6488e71f312da72b2d): Total: 0.156 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.47 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.78 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=d15633a5c3405ba4682995849fe71f4a): Total: 0.062 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.87 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.82 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=f43b5a4b158add941b9978c86d4e1869): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.92 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.59 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=eddf87819c361794eb26b6d568022bce): Total: 0.091 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.24 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.81 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=3d7aace6f4544b24bae6f4d5da3b8ead): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.62 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.23 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=b3170202aa172204e9f413425ef67bd2): Total: 0.154 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.16 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.62 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=cd9b3cc227b74204980da30f27aab1ad): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.21 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.24 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=f9cc44d59e5eaf54592fd1d0456ad64e): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.19 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.11 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=560f5f61443f7af4a8e7efaf05d05f09): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.32 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.89 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=cc5859fe2700b3b41aa255b8d87e72be): Total: 0.172 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.61 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.27 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=032c6e08919527a488c9f7b8567cb5e3): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.34 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.64 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=0219d7d48c47a4d43a95cfb538ea93e2): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.07 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 18.99 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=49508dd6fccfb954f933c5288213bf54): Total: 0.058 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.27 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.39 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=0738db44957fa774f8341a8e63de7fb6): Total: 0.158 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 18.95 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.25 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=026e83c2ce0f1b144b9d9eaf3417b4e1): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.05 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.67 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=ea6520112ffc38e43a4affc973080465): Total: 0.156 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.31 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.66 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=5c668e6277bed334eaec6c7b5a75b56d): Total: 0.155 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.23 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.35 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=9a62e388f9c34ad4e9ee1d622743c881): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.65 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.24 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=2f09a13634735d94c94fee5c379a01dd): Total: 0.088 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.32 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.47 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Asset Pipeline Refresh (id=3b83f78fb5823274fa144b86ec014c4c): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.13 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 21.71 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.09 ms.
+Asset Pipeline Refresh (id=703f56d1b6999ed4d96f0033612c3375): Total: 0.062 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 20.37 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.09 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=e8e7e2e6f1eeff347a5cd0127b9879cf): Total: 0.062 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.65 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.52 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=ddfd0246eae358449992196c0ff41b11): Total: 0.172 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.90 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.74 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
+Asset Pipeline Refresh (id=a5fd644ba0180dd46bdd94bcc574cc47): Total: 0.061 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.23 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.61 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=a6f0bcc3880e027458d4fe7c35291228): Total: 0.156 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.08 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.31 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=ef8893f934c63ee47b78b871d82abed6): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.85 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.11 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=79b9e8a328348134496e4dec18ef27ae): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.10 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.38 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=056d9d4b7af0b824789ceb7da89c12c0): Total: 0.156 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.27 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.50 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=26d746f20f2240e469894804e332b471): Total: 0.155 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.42 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.63 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=ddf217cd415f6b24695b266cc151b670): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.21 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.21 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=973fcf63606dc024b9e37c75876b9d04): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.32 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.16 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=9b53ca75ceb8dd240bc166571aa3cbb7): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.20 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.65 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=d3eff73669b53644098423213cf2704f): Total: 0.154 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.58 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.29 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=8c37a0e0c568bbb47959357ccc683be9): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.51 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.31 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=1a422b3dc59f17a4f86b009638a00e39): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.38 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.58 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=b4b1773c1680b73428033901ac136dbf): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.32 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.18 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=f323a63dd230dcd479dc7206eb866b4f): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.75 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.88 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=df274543fc5c5b243895ac34bb5387c8): Total: 0.060 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.13 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 20.45 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=785c4b1d381568a419d57461c21e731e): Total: 0.175 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.13 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.06 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
+Asset Pipeline Refresh (id=f630d5123c7702f4b93f2436301542a8): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 19.03 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.24 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=41f905fb36449a343bc4e156c221aab9): Total: 0.059 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=777b457b1516b01468e4d074e49c0143): Total: 0.001 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+WwiseUnity: Plugins successfully activated for Profile in Editor.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AkPluginActivator:ActivatePluginsForEditor () (at Assets/Wwise/API/Editor/PluginActivator/Common/AkPluginActivator.cs:274)
+WwiseSetupWizard:ModifySetup () (at Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkWwiseSetupWizard.cs:537)
+WwiseSetupWizard:RunModify () (at Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkWwiseSetupWizard.cs:46)
+
+(Filename: Assets/Wwise/API/Editor/PluginActivator/Common/AkPluginActivator.cs Line: 274)
+
+Refreshing native plugins compatible for Editor in 19.92 ms, found 16 plugins.
+Refreshing native plugins compatible for Editor in 19.69 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=a59666f18cbdd63488c3dd4c85da3846): Total: 0.156 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+WwiseUnity: Refreshing asset database.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WwiseSetupWizard:RunModify () (at Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkWwiseSetupWizard.cs:48)
+
+(Filename: Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkWwiseSetupWizard.cs Line: 48)
+
+Asset Pipeline Refresh (id=2c74340447453a24eabafe5710015f7e): Total: 0.084 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+WwiseUnity: End of setup, exiting Unity.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+WwiseSetupWizard:RunModify () (at Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkWwiseSetupWizard.cs:52)
+
+(Filename: Assets/Wwise/MonoBehaviour/Editor/WwiseSetupWizard/AkWwiseSetupWizard.cs Line: 52)
+
+Batchmode quit successfully invoked - shutting down!
+Start importing ProjectSettings/ProjectSettings.asset using Guid(00000000000000004000000000000000) (LibraryAssetImporter) -> (artifact id: '04b3ca57372eadc40133dae22f9f678c') in 0.0018813 seconds
+Start importing ProjectSettings/EditorBuildSettings.asset using Guid(0000000000000000b000000000000000) (LibraryAssetImporter) -> (artifact id: '74e1ff888c7d4a1e5e1a85c25408a10f') in 0.0014132 seconds
+Start importing Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset using Guid(d9dbc948613182e45a760c792653bd09) (NativeFormatImporter) -> (artifact id: '18cf7ead59eef084e7371c975bfaba9a') in 0.0013666 seconds
+Refreshing native plugins compatible for Editor in 20.70 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=8a9d1f826cfe431419249b54b16db1d4): Total: 0.050 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Physics::Module] Cleanup current backned.
+[Physics::Module] Id: 0xf2b8ea05
+[Licensing::IpcConnector] License Notification channel disconnected successfully.
+[Licensing::IpcConnector] License Client channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Shut down.
+abort_threads: Failed aborting id: 0000000000004834, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 00000000000060A8, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000004834, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 00000000000060A8, mono_thread_manage will ignore it
+
+debugger-agent: Unable to listen on 2952
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0
