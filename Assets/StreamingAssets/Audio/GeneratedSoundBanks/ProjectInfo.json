@@ -1,0 +1,29 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "Project-Security",
+   "GUID": "{0A919F44-917D-48C9-A57F-C67C51557AB8}",
+   "Generator": "2024.1.3.8749"
+  },
+  "CacheRoot": "../../../../../../WwiseProjects/Project-Security/.cache",
+  "Platforms": [
+   {
+    "Name": "Windows",
+    "GUID": "{1D403C95-838A-4126-89C2-515FB452E8D4}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "../../../../../../WwiseProjects/Project-Security/GeneratedSoundBanks/Windows"
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{40A807F8-9767-459D-B2D0-6F61BAA06C32}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{C25D3C43-2FA1-6411-10B5-C0F52A8BC9C9}"
+ }
+}
