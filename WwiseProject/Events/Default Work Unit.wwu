@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Beach" ID="{8CC1A866-2854-48B7-8275-351186BB8195}">
+					<ChildrenList>
+						<Action Name="" ID="{4855C688-29B0-4B17-8A30-61198225DC67}" ShortID="826755473">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Beach Switch" ID="{050AFDCE-5078-4161-AB5C-7F6CBBAF081A}" WorkUnitID="{625FDCD4-EA78-464A-B9DA-8B1BA0D22136}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

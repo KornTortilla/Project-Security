@@ -1,0 +1,134 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3991942870",
+    "Type": "User",
+    "GUID": "{7C033438-65AD-44A0-AD86-789D431F4EFC}",
+    "Language": "SFX",
+    "Hash": "{29E7E766-C9F2-4901-1939-5D4ECF249FBB}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Music",
+    "ShortName": "Music",
+    "Path": "Music.bnk",
+    "Media": [
+     {
+      "Id": "857270766",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Beach Test.wav",
+      "CachePath": "6E/{6EB516B7-408A-6CB6-8CA3-051F7332BC31}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2006186431",
+      "Name": "Play_Beach",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Beach",
+      "GUID": "{8CC1A866-2854-48B7-8275-351186BB8195}",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "3280474060",
+         "Id": "3162566204",
+         "GUID": "{E0EFE378-B871-4640-9BBF-5426A7863AE6}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "857270766"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "3280474060",
+         "Id": "2116791127",
+         "GUID": "{3CC8EAAF-6B21-449E-8775-C924A654427C}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "857270766"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "3280474060",
+         "Id": "2543601261",
+         "GUID": "{62B71875-2F5D-4862-AA99-08AAD992F118}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "857270766"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "3280474060",
+         "Id": "2161557176",
+         "GUID": "{DFF14B15-1A9C-4E10-93C4-75DFC25E7516}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "857270766"
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "3280474060",
+      "Name": "Combat_Phases",
+      "ObjectPath": "\\States\\Default Work Unit\\Combat_Phases",
+      "GUID": "{A1DBBAA7-351B-401B-86FA-B97A7E366223}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Combat_Phases\\None",
+        "GUID": "{E171E823-AFB4-47B6-A9C5-0ECF29AFC60B}"
+       },
+       {
+        "Id": "2116791127",
+        "Name": "In_Combat",
+        "ObjectPath": "\\States\\Default Work Unit\\Combat_Phases\\In_Combat",
+        "GUID": "{3CC8EAAF-6B21-449E-8775-C924A654427C}"
+       },
+       {
+        "Id": "2161557176",
+        "Name": "Perfect",
+        "ObjectPath": "\\States\\Default Work Unit\\Combat_Phases\\Perfect",
+        "GUID": "{DFF14B15-1A9C-4E10-93C4-75DFC25E7516}"
+       },
+       {
+        "Id": "2543601261",
+        "Name": "Lead_Up",
+        "ObjectPath": "\\States\\Default Work Unit\\Combat_Phases\\Lead_Up",
+        "GUID": "{62B71875-2F5D-4862-AA99-08AAD992F118}"
+       },
+       {
+        "Id": "3162566204",
+        "Name": "Out_Of_Combat",
+        "ObjectPath": "\\States\\Default Work Unit\\Combat_Phases\\Out_Of_Combat",
+        "GUID": "{E0EFE378-B871-4640-9BBF-5426A7863AE6}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{9379BBD3-C2C4-3E89-55F2-0A06D7A2836F}"
+ }
+}

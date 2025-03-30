@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae05a04c39a415340a65cb6d8bcd8e67, type: 3}
+  m_Name: 3CC8EAAF-6B21-449E-8775-C924A654427C
+  m_EditorClassIdentifier: 
+  objectName: In_Combat
+  id: 2116791127
+  guid: 3CC8EAAF-6B21-449E-8775-C924A654427C
+  WwiseStateGroupReference: {fileID: 11400000, guid: 6badadeb6ba3c864a9f81c7ab65e84da, type: 2}

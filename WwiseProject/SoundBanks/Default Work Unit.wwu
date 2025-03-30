@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{595C5D0F-8E4A-49BA-87BB-3D8471714DE9}" SchemaVersion="123">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{595C5D0F-8E4A-49BA-87BB-3D8471714DE9}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Music" ID="{7C033438-65AD-44A0-AD86-789D431F4EFC}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Beach Switch" ID="{050AFDCE-5078-4161-AB5C-7F6CBBAF081A}" WorkUnitID="{625FDCD4-EA78-464A-B9DA-8B1BA0D22136}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Default Work Unit" ID="{625FDCD4-EA78-464A-B9DA-8B1BA0D22136}" WorkUnitID="{625FDCD4-EA78-464A-B9DA-8B1BA0D22136}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Beach" ID="{8CC1A866-2854-48B7-8275-351186BB8195}" WorkUnitID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
