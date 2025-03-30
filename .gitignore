@@ -168,3 +168,11 @@ Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
 # 
 # Assets/Wwise/Editor/ProjectData.meta
 
+.backup*
+.cache*
+*.akd
+*.prof
+*.validationcache
+*.wsettings
+AkWwiseProjectData.asset
+IncrementalSoundBankData.xml
