@@ -152,11 +152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4995192922441161475, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: radius
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4995192922441161475, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: halfFOV
-      value: 140
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5351776747823038619, guid: 5ddef3d92bc20fe49adfbf330fcaa060, type: 3}
       propertyPath: m_Name
