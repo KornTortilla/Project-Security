@@ -14,7 +14,7 @@ namespace ProjectSecurity.Gameplay
         {
             timer = 0f;
 
-            base.ReorientToLockOnOrMove();
+            ReorientToLockOnOrMove();
 
             characterController.DisableInputs();
         }
@@ -33,6 +33,8 @@ namespace ProjectSecurity.Gameplay
         public override void Move()
         {
             canMove = true;
+
+            ReorientToLockOnOrMove();
         }
 
         public override void HandleHitboxHit()

@@ -12,6 +12,8 @@ namespace ProjectSecurity.Gameplay
         public GameObject[] hitboxPrefabs;
         public HitboxData[] hitboxDatas;
 
+        public GameObject[] projectileObjects;
+
         [SerializeField] private SerializableStateType stateToEnter;
 
         public BaseState InstantiateNewState()

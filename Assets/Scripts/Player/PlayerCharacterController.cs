@@ -8,6 +8,7 @@ namespace ProjectSecurity.Gameplay
         public KinematicCharacterMotor Motor;
 
         private InputBank inputBank;
+        private PlayerStateMachine playerStateMachine;
 
         [Header("Movement")]
         public float maxMoveSpeed = 10f;
@@ -24,6 +25,7 @@ namespace ProjectSecurity.Gameplay
         public float jumpMinimumTime = 0.1f;
         public float jumpPreGroundingGraceTime = 0f;
         public float jumpPostGroundingGraceTime = 0f;
+        public float gravityLockoutTime = 0.2f;
         public bool allowJumpingWhenSliding = false;
 
         private bool inputsGathering = true;
@@ -31,6 +33,8 @@ namespace ProjectSecurity.Gameplay
         private Vector3 lastMoveVector;
         private bool tryJump;
         private float timeSinceLastAbleToJump = 0f;
+        private bool gravityLockout;
+        private float timeSinceGravityLockout = 0f;
         private Vector3 overridingVelocity = Vector3.zero;
         private bool overroteVelocity = false;
         private Vector3 internalVelocityAdd = Vector3.zero;
@@ -38,6 +42,8 @@ namespace ProjectSecurity.Gameplay
 
         public bool hasJumpedThisFrame = false;
         public bool hasHitGroundThisFrame = false;
+
+        private bool ignoreEnemies = false;
 
         private Vector3 gravity;
 
@@ -66,6 +72,7 @@ namespace ProjectSecurity.Gameplay
             Motor.CharacterController = this;
 
             inputBank = GetComponent<InputBank>();
+            playerStateMachine = GetComponent<PlayerStateMachine>();
 
             gravity = new Vector3(0f, -gravityScale, 0f);
         }
@@ -114,6 +121,17 @@ namespace ProjectSecurity.Gameplay
                 // Keep track of time since we were last able to jump (for grace period)
                 timeSinceLastAbleToJump += deltaTime;
             }
+
+            if(gravityLockout)
+            {
+                timeSinceGravityLockout += deltaTime;
+
+                if(timeSinceGravityLockout >= gravityLockoutTime)
+                {
+                    gravityLockout = false;
+                    timeSinceGravityLockout = 0f;
+                }
+            }
         }
 
         void ICharacterController.BeforeCharacterUpdate(float deltaTime)
@@ -126,6 +144,8 @@ namespace ProjectSecurity.Gameplay
 
         bool ICharacterController.IsColliderValidForCollisions(Collider coll)
         {
+            if (ignoreEnemies && coll.gameObject.layer == 6)
+                return false;
             return true;
         }
 
@@ -137,7 +157,9 @@ namespace ProjectSecurity.Gameplay
         void ICharacterController.OnGroundHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
             if (!wasGroundedLast)
+            {
                 hasHitGroundThisFrame = true;
+            }
         }
 
         void ICharacterController.OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
@@ -169,26 +191,19 @@ namespace ProjectSecurity.Gameplay
 
         void ICharacterController.UpdateVelocity(ref Vector3 currentVelocity, float deltaTime)
         {
-            if (overroteVelocity)
+            if (overridingVelocity.magnitude > 1 || overroteVelocity)
             {
                 currentVelocity = overridingVelocity;
-                overroteVelocity = false;
+                overridingVelocity = Vector3.zero;
 
-                return;
+                if(overroteVelocity)
+                {
+                    overroteVelocity = false;
+                    return;
+                }
             }
 
             Vector3 currentVelocityOnInputsPlane = Vector3.ProjectOnPlane(currentVelocity, Motor.CharacterUp);
-
-            // Clamp velocity to max air speed
-            if (currentVelocityOnInputsPlane.magnitude > maxAirMoveSpeed)
-            {
-                Vector3 clampedCurrentVelocity = Vector3.ClampMagnitude(currentVelocityOnInputsPlane, maxAirMoveSpeed);
-                clampedCurrentVelocity.y = currentVelocity.y;
-
-                currentVelocity = clampedCurrentVelocity;
-
-                currentVelocityOnInputsPlane = Vector3.ProjectOnPlane(currentVelocity, Motor.CharacterUp);
-            }
 
             // Ground movement
             if (Motor.GroundingStatus.IsStableOnGround)
@@ -247,7 +262,15 @@ namespace ProjectSecurity.Gameplay
                 }
 
                 // Gravity
-                currentVelocity += gravity * deltaTime;
+                if(!gravityLockout)
+                {
+                    if(currentVelocity.y >= 0)
+                        currentVelocity += gravity * deltaTime;
+                    else
+                    {
+                        currentVelocity += (gravity + new Vector3(0f, currentVelocity.y, 0f)) * deltaTime;
+                    }
+                }
 
                 // Drag
                 currentVelocity *= (1f / (1f + (drag * deltaTime)));
@@ -279,6 +302,17 @@ namespace ProjectSecurity.Gameplay
                     // currentVelocity += (moveInputVector * JumpScalableForwardSpeed);
 
                     inputBank.ConsumeLastButtonInput();
+
+                    // Clamp velocity to max air speed
+                    if (currentVelocityOnInputsPlane.magnitude > maxAirMoveSpeed)
+                    {
+                        Vector3 clampedCurrentVelocity = Vector3.ClampMagnitude(currentVelocityOnInputsPlane, maxAirMoveSpeed);
+                        clampedCurrentVelocity.y = currentVelocity.y;
+
+                        currentVelocity = clampedCurrentVelocity;
+
+                        currentVelocityOnInputsPlane = Vector3.ProjectOnPlane(currentVelocity, Motor.CharacterUp);
+                    }
                 }
             }
             else if (!inputBank.JumpHeld)
@@ -296,9 +330,10 @@ namespace ProjectSecurity.Gameplay
         {
             if (applyToCharacterForward)
             {
-                newVelocity = VectorUtility.OrientVectorHorizontal(newVelocity, CharacterForward, CharacterRight);
+                newVelocity = VectorUtility.OrientVectorHorizontal(newVelocity, lastMoveVector, CharacterRight);
             }
-            else if(newVelocity.y > 0)
+
+            if (newVelocity.y > 0f)
             {
                 Motor.ForceUnground();
             }
@@ -310,14 +345,51 @@ namespace ProjectSecurity.Gameplay
 
         public void OverrideVelocity(float magnitude)
         {
-            overridingVelocity = Motor.CharacterForward * magnitude;
+            overridingVelocity = lastMoveVector * magnitude;
 
             overroteVelocity = true;
+        }
+
+        public void OverrideHorizontalVelocity(Vector3 newVelocity, bool applyToCharacterForward)
+        {
+            if (applyToCharacterForward)
+            {
+                newVelocity = VectorUtility.OrientVectorHorizontal(newVelocity, lastMoveVector, CharacterRight);
+
+                newVelocity.y = Velocity.y;
+            }
+
+            overridingVelocity = newVelocity;
+        }
+
+        public void OverrideHorizontalVelocity(float magnitude)
+        {
+            overridingVelocity = lastMoveVector * magnitude;
+            overridingVelocity.y = Velocity.y;
         }
 
         public void OverrideRotation(Vector3 newForward)
         {
             lastMoveVector = newForward;
+        }
+
+        public void GravityLockout()
+        {
+            gravityLockout = true;
+        }
+
+        public void DisableEnemyCollision()
+        {
+            Physics.IgnoreLayerCollision(6, 7);
+
+            ignoreEnemies = true;
+        }
+
+        public void EnableEnemyCollision()
+        {
+            Physics.IgnoreLayerCollision(6, 7, false);
+
+            ignoreEnemies = false;
         }
     }
 }

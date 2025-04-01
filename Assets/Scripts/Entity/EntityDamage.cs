@@ -15,7 +15,8 @@ namespace ProjectSecurity.Gameplay
         {
             Debug.Log(knockbackVector);
 
-            rigidbody.linearVelocity = knockbackVector;
+            if(rigidbody.linearVelocity.magnitude / 2f <= knockbackVector.magnitude)
+                rigidbody.linearVelocity = knockbackVector;
         }
     }
 }

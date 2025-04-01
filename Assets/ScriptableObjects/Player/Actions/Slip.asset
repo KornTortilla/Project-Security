@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3a5dba208e6a244bec5f0135f349d2, type: 3}
+  m_Name: Slip
+  m_EditorClassIdentifier: 
+  actionName: Slip
+  rechargeDuration: 5
+  animationName: Slip
+  hitboxPrefabs:
+  - {fileID: 7345818995251373035, guid: cc470e1349c0831408d2b50898ac11b4, type: 3}
+  hitboxDatas:
+  - hitboxIndex: 0
+    damageInfo:
+      damage: 3
+      knockbackVector: {x: 0, y: 20, z: 0}
+  projectileObjects: []
+  stateToEnter:
+    typeName: SlipState

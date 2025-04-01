@@ -6,6 +6,8 @@ namespace ProjectSecurity.Gameplay
     {
         public override void Enter()
         {
+            changeStateOnLand = true;
+
             characterController.EnableInputs();
         }
 
@@ -14,8 +16,10 @@ namespace ProjectSecurity.Gameplay
             if(characterController.hasJumpedThisFrame)
                 animator.Play("JumpSquat");
 
+            /*
             if (characterController.hasHitGroundThisFrame)
                 animator.Play("Land");
+            */
                 
 
             if (characterController.IsGrounded)
@@ -30,6 +34,8 @@ namespace ProjectSecurity.Gameplay
                 animator.Play("Airborne");
                 animator.SetFloat("Vertical Speed", characterController.Velocity.y);
             }
+
+            base.Update();
         }
 
         public override void Exit()

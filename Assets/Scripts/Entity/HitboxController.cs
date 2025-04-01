@@ -8,11 +8,13 @@ namespace ProjectSecurity.Gameplay
     {
         [SerializeField] private Transform hitboxStoringTransform;
         [SerializeField] private Hitbox defaultHitbox;
+        [SerializeField] private TrailRenderer defaultTrailRenderer;
 
         // Own event to signal
         public static event Action OnHit;
 
         private PlayerCharacterController playerCharacterController;
+        private MeterManager meterManager;
 
         private Dictionary<string, List<Hitbox>> hitboxDict;
         private string currentActionName;
@@ -23,38 +25,45 @@ namespace ProjectSecurity.Gameplay
         private void Awake()
         {
             playerCharacterController = GetComponent<PlayerCharacterController>();
+            meterManager = GetComponent<MeterManager>();
 
-            defaultHitbox.AddOnHitListener(() => OnHit?.Invoke());
-        }
-
-        public void InitializeActionHitboxList(ActionData[] actionDatas)
-        {
             hitboxDict = new Dictionary<string, List<Hitbox>>();
 
-            foreach(ActionData actionData in actionDatas)
+            defaultHitbox.AddOnHitListener(() => Hit());
+        }
+
+        public void AddHitboxList(ActionData actionData)
+        {
+            if (hitboxDict.ContainsKey(actionData.actionName)) return;
+            if (actionData.hitboxDatas.Length == 0) return;
+
+            Transform actionStoringTransform = new GameObject().transform;
+            actionStoringTransform.name = actionData.actionName;
+            actionStoringTransform.parent = hitboxStoringTransform;
+
+            List<Hitbox> hitboxList = new List<Hitbox>();
+            foreach (GameObject hitboxPrefab in actionData.hitboxPrefabs)
             {
-                if (hitboxDict.ContainsKey(actionData.actionName)) continue;
-                if (actionData.hitboxDatas.Length == 0) continue;
+                GameObject hitboxObject = Instantiate(hitboxPrefab, transform.position, Quaternion.identity, actionStoringTransform);
+                hitboxObject.transform.localPosition += hitboxPrefab.transform.localPosition;
 
-                Transform actionStoringTransform = new GameObject().transform;
-                actionStoringTransform.name = actionData.actionName;
-                actionStoringTransform.parent = hitboxStoringTransform;
+                Hitbox hitbox = hitboxObject.GetComponent<Hitbox>();
+                hitbox.AddOnHitListener(() => Hit());
+                hitboxObject.SetActive(false);
 
-                List<Hitbox> hitboxList = new List<Hitbox>();
-                foreach (GameObject hitboxPrefab in actionData.hitboxPrefabs)
-                {
-                    GameObject hitboxObject = Instantiate(hitboxPrefab, transform.root.position, Quaternion.identity, actionStoringTransform);
-                    hitboxObject.transform.localPosition += hitboxPrefab.transform.localPosition;
-
-                    Hitbox hitbox = hitboxObject.GetComponent<Hitbox>();
-                    hitbox.AddOnHitListener(() => OnHit?.Invoke());
-                    hitboxObject.SetActive(false);
-
-                    hitboxList.Add(hitbox);
-                }
-
-                hitboxDict.Add(actionData.actionName, hitboxList);
+                hitboxList.Add(hitbox);
             }
+
+            hitboxDict.Add(actionData.actionName, hitboxList);
+        }
+
+        public void Hit()
+        {
+            TimeManager.main.Freeze(0.05f);
+
+            meterManager.ChangeMeter(5);
+
+            OnHit?.Invoke();
         }
 
         public void SetCurrentAction(ActionData actionData)
@@ -94,12 +103,16 @@ namespace ProjectSecurity.Gameplay
         {
             currentHitbox = defaultHitbox;
             currentHitbox.gameObject.SetActive(true);
+
+            defaultTrailRenderer.gameObject.SetActive(true);
         }
 
 
         public void StopCurrentHitbox()
         {
             if (currentHitbox == null) return;
+            else if(currentHitbox == defaultHitbox)
+                defaultTrailRenderer.gameObject.SetActive(false);
 
             currentHitbox.gameObject.SetActive(false);
         }

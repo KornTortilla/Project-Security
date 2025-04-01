@@ -11,7 +11,8 @@ namespace ProjectSecurity.Gameplay
         Jump,
         Attack,
         Dash,
-        Activate
+        Activate,
+        Cancel
     }
 
     public class InputBank : MonoBehaviour
@@ -23,22 +24,21 @@ namespace ProjectSecurity.Gameplay
 
         public Vector2 RawMoveInput { get; private set; }
 
+        public Vector2 RawLookInput { get; private set; }
+
         public Vector3 CameraMoveInput 
         { 
             get
             {
-                Vector3 cameraForward = Camera.main.transform.forward;
-                cameraForward.y = 0f;
-                cameraForward.Normalize();
+                return GetToCameraVector(RawMoveInput);
+            }
+        }
 
-                Vector3 cameraRight = Camera.main.transform.right;
-                cameraRight.y = 0f;
-                cameraRight.Normalize();
-
-                Vector3 forwardMovementInput = cameraForward * RawMoveInput.y;
-                Vector3 rightMovementInput = cameraRight * RawMoveInput.x;
-
-                return (forwardMovementInput + rightMovementInput).normalized;
+        public Vector3 CameraLookInput
+        {
+            get
+            {
+                return GetToCameraVector(RawLookInput);
             }
         }
 
@@ -46,7 +46,7 @@ namespace ProjectSecurity.Gameplay
 
         public bool JumpHeld { get; private set; }
 
-        private Coroutine bufferLastInputCoroutine;
+        public bool LockOnSwitchHeld { get; private set; }
 
         private float scrollInput;
         public float ScrollInput
@@ -59,6 +59,8 @@ namespace ProjectSecurity.Gameplay
             }
         }
 
+        private Coroutine bufferLastInputCoroutine;
+
         public void OnMove(InputAction.CallbackContext context)
         {
             if (context.performed)
@@ -68,6 +70,18 @@ namespace ProjectSecurity.Gameplay
             else
             {
                 RawMoveInput = Vector2.zero;
+            }
+        }
+
+        public void OnLook(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                RawLookInput = context.ReadValue<Vector2>();
+            }
+            else
+            {
+                RawLookInput = Vector2.zero;
             }
         }
 
@@ -90,8 +104,19 @@ namespace ProjectSecurity.Gameplay
             }
             else if(context.canceled)
             {
-                Debug.Log("Hehe");
                 JumpHeld = false;
+            }
+        }
+
+        public void OnLockOnSwitch(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                LockOnSwitchHeld = true;
+            }
+            else if (context.canceled)
+            {
+                LockOnSwitchHeld = false;
             }
         }
 
@@ -122,6 +147,15 @@ namespace ProjectSecurity.Gameplay
             }
         }
 
+        public void OnCancel(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                LastButtonInput = ButtonInput.Cancel;
+                StartBufferLastInput();
+            }
+        }
+
         public void OnPause(InputAction.CallbackContext context)
         {
             if (context.performed)
@@ -148,6 +182,22 @@ namespace ProjectSecurity.Gameplay
             StopCoroutine(bufferLastInputCoroutine);
 
             LastButtonInput = ButtonInput.None;
+        }
+
+        private Vector3 GetToCameraVector(Vector2 input)
+        {
+            Vector3 cameraForward = Camera.main.transform.forward;
+            cameraForward.y = 0f;
+            cameraForward.Normalize();
+
+            Vector3 cameraRight = Camera.main.transform.right;
+            cameraRight.y = 0f;
+            cameraRight.Normalize();
+
+            Vector3 forwardInput = cameraForward * input.y;
+            Vector3 rightInput = cameraRight * input.x;
+
+            return (forwardInput + rightInput).normalized;
         }
     }
 }

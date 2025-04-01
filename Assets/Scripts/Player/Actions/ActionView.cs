@@ -12,23 +12,34 @@ namespace ProjectSecurity.Gameplay
         private List<ActionImage> actionImages;
         private int lastIndex = 0;
 
-        public void Initialize(ActionData[] actionDatas)
+        private void Awake()
         {
             actionImages = new List<ActionImage>();
+        }
 
-            int maxHeight = actionDatas.Length - 1;
-            for (int i = 0; i < actionDatas.Length; i++)
+        public void AddAction(string name)
+        {
+            ActionImage newActionImage = Instantiate(actionImagePrefab, transform).GetComponent<ActionImage>();
+            actionImages.Add(newActionImage);
+
+            newActionImage.Initialize(name);
+
+            SetNewPositions();
+        }
+
+        private void SetNewPositions()
+        {
+            int currentIndex = IntUtility.Wrap(lastIndex - 1, actionImages.Count - 1);
+            for (int i = -1; i < actionImages.Count - 1; i++)
             {
-                ActionImage newActionImage = Instantiate(actionImagePrefab, transform).GetComponent<ActionImage>();
-                actionImages.Add(newActionImage);
+                ActionImage actionImage = actionImages[currentIndex];
 
-                int currentHeight;
-                if (i < actionDatas.Length - 1)
-                    currentHeight = i;
-                else
-                    currentHeight = -1;
+                int newHeight = IntUtility.Wrap(i, actionImages.Count - 2, -1);
+                Vector2 newPosition = new Vector2(0f, separationAmount * newHeight);
 
-                newActionImage.Initialize(actionDatas[i].actionName, new Vector2(0f, separationAmount * currentHeight));
+                actionImage.SetPosition(newPosition);
+
+                currentIndex = IntUtility.Wrap(currentIndex + 1, actionImages.Count - 1);
             }
         }
 

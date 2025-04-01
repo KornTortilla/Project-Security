@@ -16,7 +16,7 @@ namespace ProjectSecurity.Gameplay
 
             animator.Play("Dash", -1, 0f);
 
-            base.ReorientToMove();
+            ReorientToMove();
 
             characterController.DisableInputs();
         }
@@ -28,7 +28,6 @@ namespace ProjectSecurity.Gameplay
                 velocity = Mathf.Lerp(15f, 5f, timer / velocityTime);
 
                 characterController.OverrideVelocity(velocity);
-
             }
 
             timer += Time.deltaTime;

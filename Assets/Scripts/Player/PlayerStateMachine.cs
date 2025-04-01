@@ -10,8 +10,10 @@ namespace ProjectSecurity.Gameplay
         [HideInInspector] public HitboxController hitboxController;
         [HideInInspector] public ActionController actionController;
         [HideInInspector] public LockOnController lockOnController;
+        [HideInInspector] public MeterManager meterManager;
 
-        [SerializeField] private BasePlayerAttackData[] attackDatas;
+        [SerializeField] private BasePlayerAttackData[] groundAttackDatas;
+        [SerializeField] private BasePlayerAttackData[] airAttackDatas;
 
         private BaseState currentState;
 
@@ -36,6 +38,7 @@ namespace ProjectSecurity.Gameplay
             hitboxController = GetComponent<HitboxController>();
             actionController = GetComponent<ActionController>();
             lockOnController = GetComponent<LockOnController>();
+            meterManager = GetComponent<MeterManager>();
 
             SetStateToDefault();
         }
@@ -58,11 +61,14 @@ namespace ProjectSecurity.Gameplay
             // if (currentState != null) currentState.Exit();
 
             hitboxController.StopCurrentHitbox();
+            characterController.EnableEnemyCollision();
 
             if(newState.GetType() ==  typeof(IdleState))
                 canCancel = true;
             else
                 canCancel = false;
+
+            animator.speed = 1f;
 
             currentState = newState;
             currentState.stateMachine = this;
@@ -91,23 +97,41 @@ namespace ProjectSecurity.Gameplay
                 case ButtonInput.Activate:
                     TryActionState();
                     break;
+
+                case ButtonInput.Cancel:
+                    TryOverrideCancel();
+                    break;
             }
+        }
+
+        private bool CanCancelCheck()
+        {
+            return canCancel;
         }
 
         private void TryAttackState()
         {
-            BasePlayerAttackData attackData = attackDatas[attackIndex];
+            if (!CanCancelCheck()) return;
 
-            bool setState = TryNewState(new AttackState(attackData));
+            inputBank.ConsumeLastButtonInput();
 
-            if (setState)
+            if (currentState.GetType() == typeof(AttackManagerState))
             {
-                inputBank.ConsumeLastButtonInput();
+                AttackManagerState attackManagerState = (AttackManagerState)currentState;
+                attackManagerState.Continue();
 
-                if (attackIndex + 1 != attackDatas.Length)
-                    attackIndex++;
-                else
-                    attackIndex = 0;
+                canCancel = false;
+
+                return;
+            }
+
+            if (characterController.IsGrounded)
+            {
+                SetState(new AttackManagerState(groundAttackDatas));
+            } 
+            else
+            {
+                SetState(new AttackManagerState(airAttackDatas));
             }
         }
 
@@ -115,14 +139,38 @@ namespace ProjectSecurity.Gameplay
         {
             if (!canCancel) return;
 
-            ActionData actionData = actionController.ActivateAction();
+            SpecialAction specialAction = actionController.ActivateAction();
 
-            if (actionData == null) return;
+            if (specialAction == null) return;
 
             inputBank.ConsumeLastButtonInput();
 
-            SetState(actionData.InstantiateNewState());
-            animator.Play(actionData.animationName, -1, 0f);
+            SetState(specialAction.data.InstantiateNewState());
+            animator.Play(specialAction.data.animationName, -1, 0f);
+            animator.speed = specialAction.speed;
+            currentState.SetSpeed(specialAction.speed);
+        }
+
+        private void TryOverrideCancel()
+        {
+            if(meterManager.TryCancel())
+            {
+                SetStateToDefault();
+                characterController.OverrideVelocity(0f);
+                animator.Play("Idle");
+
+                inputBank.ConsumeLastButtonInput();
+            }
+        }
+
+        public void Land()
+        {
+            SetState(new LandState());
+        }
+
+        public void Hurt()
+        {
+            SetState(new HurtState());
         }
 
         public void NotifyHitboxHit()

@@ -13,8 +13,10 @@ namespace ProjectSecurity.Gameplay
         {
             timer = 0f;
 
+            exitTime /= speed;
+
             velocity = -characterController.CharacterForward * 5f;
-            velocity.y = 10f;
+            velocity.y = 8f;
 
             characterController.OverrideVelocity(velocity, false);
         }
