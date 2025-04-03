@@ -4865,6 +4865,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.4438915
       objectReference: {fileID: 0}
+    - target: {fileID: 2081966031068111533, guid: db564b99faffdbe458a6d576e474fc23, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 320
+      objectReference: {fileID: 0}
     - target: {fileID: 2274354911808179112, guid: db564b99faffdbe458a6d576e474fc23, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -14096,8 +14100,8 @@ GameObject:
   - component: {fileID: 962877478}
   - component: {fileID: 962877477}
   - component: {fileID: 962877483}
-  - component: {fileID: 962877484}
   - component: {fileID: 962877485}
+  - component: {fileID: 962877484}
   m_Layer: 8
   m_Name: Door
   m_TagString: Untagged
@@ -14124,7 +14128,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1443640137}
 --- !u!33 &962877478
