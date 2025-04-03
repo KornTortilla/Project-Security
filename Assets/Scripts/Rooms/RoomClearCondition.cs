@@ -1,16 +1,26 @@
+using System;
 using UnityEngine;
 
 public class RoomClearCondition : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+    public DoorBehavior door;
+
+    public int EnemyCount { get; private set;} = 0;
+
+    private void Start() {
+        EnemyCount = GetComponentsInChildren<EnemyHealth>().Length;
+    }
+    
+    public void DecreaseEnemyCount() {
+        EnemyCount--;
+        if (EnemyCount <= 0) {
+            ProcessRoomClear();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ProcessRoomClear()
     {
-        
+        if (door) door.EnableOpenDoorCollider();
+        Debug.Log("Room is clear");
     }
 }

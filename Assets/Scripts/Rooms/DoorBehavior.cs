@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class DoorBehavior : MonoBehaviour
 {
-    MeshRenderer meshRenderer;
     [SerializeField] private float delay = 5f;
+    [SerializeField] private bool doorOpenableOnStart = true;
+    public bool StayOpen {get; private set;} = false;
+    MeshRenderer meshRenderer;
+    BoxCollider openDoorCollider;
     bool processingClose = true;
 
     private void Awake() {
         meshRenderer = GetComponent<MeshRenderer>();
+        openDoorCollider = GetComponent<BoxCollider>();
+    }
+
+    private void Start() {
+        openDoorCollider.enabled = doorOpenableOnStart;
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -43,12 +51,23 @@ public class DoorBehavior : MonoBehaviour
     }
 
     private IEnumerator CloseDoor() {
-        yield return new WaitForSeconds(delay);
-        if (!processingClose) yield return null;
+        if (!StayOpen) {
+            yield return new WaitForSeconds(delay);
+            if (!processingClose) yield return null;
 
-        Vector3 newPos = transform.position;
-        newPos.y += 4;
-        transform.position = newPos;
-        meshRenderer.enabled = true;
+            Vector3 newPos = transform.position;
+            newPos.y += 4;
+            transform.position = newPos;
+            meshRenderer.enabled = true;
+        }
+    }
+
+    public void PermaOpenDoor() {
+        OpenDoor();
+        StayOpen = true;
+    }
+
+    public void EnableOpenDoorCollider() {
+        openDoorCollider.enabled = true;
     }
 }

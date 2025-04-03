@@ -60,6 +60,7 @@ public class EnemyHealth : EntityHealth
 
     protected override void Die()
     {
+        // Drop Loot
         Debug.Log("Enemy has been defeated!");
         if (heapObj) {
             heapObj.transform.position = transform.position;
@@ -70,8 +71,12 @@ public class EnemyHealth : EntityHealth
             stackObj.SetActive(true);
         }
 
+        // Object pool management
         if(objectPool != null) objectPool.Release(this);
         else gameObject.SetActive(false);
+
+        // Message Room Clear Condition
+        SendMessageUpwards("DecreaseEnemyCount");
     }
     public override void TakeDamage(float damage)
     {
