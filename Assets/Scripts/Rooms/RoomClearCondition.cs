@@ -9,6 +9,9 @@ public class RoomClearCondition : MonoBehaviour
 
     private void Start() {
         EnemyCount = GetComponentsInChildren<EnemyHealth>().Length;
+        if (EnemyCount <= 0) {
+            ProcessRoomClear();
+        }
     }
     
     public void DecreaseEnemyCount() {
