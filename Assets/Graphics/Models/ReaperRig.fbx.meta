@@ -973,10 +973,24 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.086513996
+        functionName: NotifyMove
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.10687023
         functionName: NextHitbox
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.302799
+        functionName: CanCancel
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -989,20 +1003,6 @@ ModelImporter:
         messageOptions: 0
       - time: 0.58015263
         functionName: ExitState
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.086513996
-        functionName: NotifyMove
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.302799
-        functionName: CanCancel
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
         floatParameter: 0

@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UnityEngine;
 using UnityEngine.AI;
+using ProjectSecurity.Gameplay;
+using KinematicCharacterController;
 
 public class EnemyHealth : EntityHealth
 {
     NavMeshAgent navMeshAgent;
-    Rigidbody rb;
+    KinematicCharacterMotor kinematicCharacterMotor;
+    EntityCharacterController entityCharacterController;
     [Header("Testing Purposes")]
     public bool KnockBack;
     public float DamageRecieved;
@@ -30,7 +33,8 @@ public class EnemyHealth : EntityHealth
 
     private void Awake() {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        rb = GetComponent<Rigidbody>();    
+        kinematicCharacterMotor = GetComponent<KinematicCharacterMotor>();
+        entityCharacterController = GetComponent<EntityCharacterController>();
     }
 
     protected override void Update() {
@@ -68,12 +72,20 @@ public class EnemyHealth : EntityHealth
             return;
         }
 
+        
+
         navMeshAgent.enabled = false;
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
+
+        kinematicCharacterMotor.enabled = true;
+        entityCharacterController.enabled = true;
+        kinematicCharacterMotor.SetPositionAndRotation(transform.position, transform.rotation);
+        entityCharacterController.OverrideVelocity(knockBackForce, false);
+        /*
         if(rb.linearVelocity.magnitude <= knockBackForce.magnitude / 2f)
             rb.linearVelocity = knockBackForce;
+        */
         Debug.Log("Knockback Vector: " + knockBackForce);
-        Debug.Log($"Linear Velocity: {rb.linearVelocity}");
+        Debug.Log($"Linear Velocity: {entityCharacterController.Velocity}");
 
         if (enableNavMeshCoroutine != null)
             StopCoroutine(enableNavMeshCoroutine);
@@ -82,14 +94,19 @@ public class EnemyHealth : EntityHealth
 
     private IEnumerator EnableNavMesh() {
         float timer = 0f;
-        yield return Time.fixedDeltaTime;
-        while (rb.linearVelocity.y != 0f || timer < 0.2f) {
-            Debug.Log($"Linear Velocity: {rb.linearVelocity}");
-            timer += Time.fixedDeltaTime;
-            yield return Time.fixedDeltaTime;
+        yield return Time.deltaTime;
+        while (!entityCharacterController.IsGrounded || timer < 0.5f) {
+            // Debug.Log($"Linear Velocity: {rb.linearVelocity}");
+            timer += Time.deltaTime;
+            yield return Time.deltaTime;
         }
 
+        Debug.Log("Done!");
+
+        kinematicCharacterMotor.enabled = false;
+        entityCharacterController.enabled = false;
         navMeshAgent.enabled = true;
-        rb.constraints = RigidbodyConstraints.FreezeAll;
+        navMeshAgent.Warp(transform.position);
+        // rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 }

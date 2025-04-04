@@ -27,6 +27,8 @@ namespace ProjectSecurity.Gameplay
         {
             if (other.tag != "Enemy") return;
 
+            Debug.Log("Hit");
+
             OnHit?.Invoke();
 
             // Will check for multiple variations of health for now

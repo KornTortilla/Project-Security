@@ -120,7 +120,7 @@ namespace ProjectSecurity.Gameplay
         private Vector3 OrientKnockback(Vector3 knockbackVector)
         {
             return VectorUtility.OrientVectorHorizontal(knockbackVector, 
-                playerCharacterController.CharacterForward, playerCharacterController.CharacterRight);
+                playerCharacterController.lastLookDirection, playerCharacterController.CharacterRight);
         }
     }
 }
