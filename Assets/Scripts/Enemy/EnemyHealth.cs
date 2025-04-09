@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using ProjectSecurity.Gameplay;
+using Unity.Behavior;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Pool;
@@ -9,6 +10,7 @@ using UnityEngine.Pool;
 public class EnemyHealth : EntityHealth
 {
     NavMeshAgent navMeshAgent;
+   
     Rigidbody rb;
     [Header("Testing Purposes")]
     public bool KnockBack;
@@ -29,6 +31,10 @@ public class EnemyHealth : EntityHealth
     private static readonly List<GameObject> lockOnObjectList = new List<GameObject>();
     public static readonly ReadOnlyCollection<GameObject> readOnlyLockOnObjectList = lockOnObjectList.AsReadOnly();
 
+    [Header("BehaviorTree")]
+    BehaviorGraphAgent behaviorAgent;
+    private BlackboardVariable tookDamage;
+
     private void OnEnable()
     {
         lockOnObjectList.Add(gameObject);
@@ -46,6 +52,8 @@ public class EnemyHealth : EntityHealth
 
     protected override void Start() {
         base.Start();
+        behaviorAgent = GetComponent<BehaviorGraphAgent>();
+        
         if (heapObj) heapObj.SetActive(false);
         if (stackObj) stackObj.SetActive(false);
     }
@@ -82,6 +90,7 @@ public class EnemyHealth : EntityHealth
     public override void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
+        behaviorAgent.BlackboardReference.SetVariableValue("RecentlyTookDamage",true);
         Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
         if (CurrentHealth <= 0)
         {
@@ -92,6 +101,7 @@ public class EnemyHealth : EntityHealth
     public void TakeDamage(float damage, Vector3 knockBackForce)
     {
         CurrentHealth -= damage;
+        behaviorAgent.BlackboardReference.SetVariableValue("RecentlyTookDamage",true);
         Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
 
         if (CurrentHealth <= 0)
