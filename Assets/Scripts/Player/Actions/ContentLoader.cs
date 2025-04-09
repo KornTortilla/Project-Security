@@ -1,32 +1,37 @@
 using System;
-using UnityEditor;
+using UnityEngine;
 
 namespace ProjectSecurity.Gameplay
 {
     public static class ContentLoader
     {
-        private static ActionData[] actionList;
+        private static ActionDataTable actionDataTable;
         public static ActionData[] ActionList
         {
             get
             {
-                if (actionList == null)
-                    GetActionCachedList();
-                return actionList;
+                if (actionDataTable == null)
+                    GetActionDataTable();
+                return actionDataTable.actionDatas;
             }
         }
 
-        private static ActionAttributeData[] actionAttributeList;
         public static ActionAttributeData[] ActionAttributeList
         {
             get
             {
-                if (actionAttributeList == null)
-                    GetAttributeCachedList();
-                return actionAttributeList;
+                if (actionDataTable == null)
+                    GetActionDataTable();
+                return actionDataTable.actionAttributeDatas;
             }
         }
 
+        private static void GetActionDataTable()
+        {
+            actionDataTable = Resources.Load<ActionDataTable>("ActionDataTable");
+        }
+
+        /*
         private static void GetActionCachedList()
         {
             string[] guids = AssetDatabase.FindAssets("t:"+typeof(ActionData).ToString());
@@ -50,5 +55,6 @@ namespace ProjectSecurity.Gameplay
                 actionAttributeList[i] = (ActionAttributeData)AssetDatabase.LoadAssetAtPath(path, typeof(ActionAttributeData));
             }
         }
+        */
     }
 }

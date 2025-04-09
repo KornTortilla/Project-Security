@@ -15,5 +15,5 @@ MonoBehaviour:
   animationName: Slash3
   damageInfo:
     damage: 3
-    knockbackVector: {x: 3, y: 0, z: 0}
+    knockbackVector: {x: 10, y: 0, z: 0}
   movementVector: {x: 15, y: 0, z: 0}

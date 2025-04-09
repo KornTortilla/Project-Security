@@ -107,11 +107,15 @@ namespace ProjectSecurity.Gameplay
             defaultTrailRenderer.gameObject.SetActive(true);
         }
 
+        public void EnableTrail()
+        {
+            defaultTrailRenderer.gameObject.SetActive(true);
+        }
 
         public void StopCurrentHitbox()
         {
             if (currentHitbox == null) return;
-            else if(currentHitbox == defaultHitbox)
+            else if(defaultTrailRenderer.gameObject.activeSelf)
                 defaultTrailRenderer.gameObject.SetActive(false);
 
             currentHitbox.gameObject.SetActive(false);
@@ -120,7 +124,7 @@ namespace ProjectSecurity.Gameplay
         private Vector3 OrientKnockback(Vector3 knockbackVector)
         {
             return VectorUtility.OrientVectorHorizontal(knockbackVector, 
-                playerCharacterController.CharacterForward, playerCharacterController.CharacterRight);
+                playerCharacterController.lastLookDirection, playerCharacterController.CharacterRight);
         }
     }
 }

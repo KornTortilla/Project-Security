@@ -41,7 +41,7 @@ namespace ProjectSecurity.Gameplay
 
         public virtual void Update()
         {
-            if (changeStateOnLand && characterController.hasHitGroundThisFrame)
+            if (changeStateOnLand && characterController.HasHitGroundThisFrame)
                 stateMachine.Land();
         }
 

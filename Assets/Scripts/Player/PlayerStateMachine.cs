@@ -5,6 +5,7 @@ namespace ProjectSecurity.Gameplay
     public class PlayerStateMachine : MonoBehaviour
     {
         [HideInInspector] public PlayerCharacterController characterController;
+        [HideInInspector] public PlayerBody playerBody;
         [HideInInspector] public InputBank inputBank;
         [HideInInspector] public Animator animator;
         [HideInInspector] public HitboxController hitboxController;
@@ -34,6 +35,7 @@ namespace ProjectSecurity.Gameplay
         {
             animator = GetComponentInChildren<Animator>();
             characterController = GetComponent<PlayerCharacterController>();
+            playerBody = GetComponent<PlayerBody>();
             inputBank = GetComponent<InputBank>();
             hitboxController = GetComponent<HitboxController>();
             actionController = GetComponent<ActionController>();
@@ -91,7 +93,7 @@ namespace ProjectSecurity.Gameplay
                     break;
 
                 case ButtonInput.Dash:
-                    TryNewState(new DashState());
+                    TryDashState();
                     break;
 
                 case ButtonInput.Activate:
@@ -100,6 +102,10 @@ namespace ProjectSecurity.Gameplay
 
                 case ButtonInput.Cancel:
                     TryOverrideCancel();
+                    break;
+
+                case ButtonInput.Jump:
+                    TryWallJump();
                     break;
             }
         }
@@ -135,6 +141,21 @@ namespace ProjectSecurity.Gameplay
             }
         }
 
+        private void TryDashState()
+        {
+            if (!canCancel) return;
+
+            if (!characterController.IsGrounded)
+            {
+                if (playerBody.airRollCount <= 0)
+                    return;
+
+                playerBody.UseAirRoll();
+            }
+
+            SetState(new DashState());
+        }
+
         private void TryActionState()
         {
             if (!canCancel) return;
@@ -161,6 +182,11 @@ namespace ProjectSecurity.Gameplay
 
                 inputBank.ConsumeLastButtonInput();
             }
+        }
+
+        private void TryWallJump()
+        {
+
         }
 
         public void Land()
