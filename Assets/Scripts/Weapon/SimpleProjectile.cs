@@ -4,5 +4,7 @@ using UnityEngine.Pool;
 
 public class SimpleProjectile : Projectile
 {
-    
+    private void Start() {
+        
+    }
 }

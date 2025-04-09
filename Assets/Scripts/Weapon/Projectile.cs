@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
     protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) {
-            // other.GetComponent<EntityHealth>().TakeDamage(DamageVal);
+            other.GetComponent<EntityHealth>().TakeDamage(DamageVal);
         }
         StopCoroutine(nameof(DeactivateRoutine));
         ReleaseProjectile();
