@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using ProjectSecurity.Gameplay;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Pool;
@@ -87,7 +88,7 @@ public class EnemyHealth : EntityHealth
             Die();
         }
     }
-
+    
     public void TakeDamage(float damage, Vector3 knockBackForce)
     {
         CurrentHealth -= damage;
