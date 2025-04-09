@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1956826034315261542}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1147661, y: -0.7476786, z: 0.13403599, w: 0.64018744}
-  m_LocalPosition: {x: 9.265431, y: 5.473753, z: 1.4438878}
+  m_LocalPosition: {x: 9.265431, y: 5.4737525, z: 1.443888}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1101,7 +1101,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_HorizontalAxis:
-    Value: -98.857506
+    Value: -98.85751
     m_SpeedMode: 0
     m_MaxSpeed: 200
     m_AccelTime: 0.1
@@ -2265,7 +2265,7 @@ Transform:
   m_GameObject: {fileID: 8868353100867110527}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1147661, y: -0.7476786, z: 0.13403599, w: 0.64018744}
-  m_LocalPosition: {x: 9.265431, y: 5.4737525, z: 1.443888}
+  m_LocalPosition: {x: 9.26543, y: 5.4737525, z: 1.4438877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2353,7 +2353,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2433,7 +2433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8952266113076143858}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2554,6 +2554,10 @@ PrefabInstance:
       propertyPath: Motor
       value: 
       objectReference: {fileID: 3664851407477769529}
+    - target: {fileID: 4234465786202048534, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
+      propertyPath: groundDrag
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
       propertyPath: m_Camera
       value: 
