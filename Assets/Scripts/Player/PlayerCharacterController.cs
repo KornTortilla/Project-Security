@@ -108,8 +108,6 @@ namespace ProjectSecurity.Gameplay
 
         bool ICharacterController.IsColliderValidForCollisions(Collider coll)
         {
-            Debug.Log(Physics.GetIgnoreLayerCollision(gameObject.layer, coll.gameObject.layer));
-
             if (Physics.GetIgnoreLayerCollision(gameObject.layer, coll.gameObject.layer))
                 return false;
             return true;

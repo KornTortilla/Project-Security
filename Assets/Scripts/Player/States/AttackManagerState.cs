@@ -7,6 +7,7 @@ namespace ProjectSecurity.Gameplay
         private BasePlayerAttackData[] attackDatas;
 
         private float[] verticalDistanceRange = new float[] { -0.5f, 2 };
+        private float horizontalThreshold = 2f;
 
         private int index = 0;
 
@@ -48,11 +49,27 @@ namespace ProjectSecurity.Gameplay
 
         public override void Move()
         {
-            float moveAddition = 0f;
-            if (!characterController.IsGrounded)
-                moveAddition = Mathf.Clamp(lockOnController.GetVerticalMagnitudeToTarget(), verticalDistanceRange[0], verticalDistanceRange[1]);
+            Vector3 moveVector = attackDatas[index].movementVector;
 
-            characterController.OverrideVelocity(attackDatas[index].movementVector + new Vector3(0f, moveAddition, 0f), true);
+            if(lockOnController.isLockedOn) 
+            {
+                Vector3 horiVector = Vector3.ProjectOnPlane(moveVector, Vector3.up);
+                Debug.Log(horiVector);
+                Debug.Log(horiVector.magnitude);
+                float magnitudeToTarget = lockOnController.GetHorizontalMagnitudeToTarget();
+                if (magnitudeToTarget < horizontalThreshold)
+                    horiVector *= Mathf.Lerp(1f, 0.2f, magnitudeToTarget / horizontalThreshold);
+
+                Debug.Log(horiVector.magnitude);
+
+                float addition = 0f;
+                if (!characterController.IsGrounded)
+                    addition = Mathf.Clamp(lockOnController.GetVerticalMagnitudeToTarget(), verticalDistanceRange[0], verticalDistanceRange[1]);
+
+                moveVector = new Vector3(horiVector.x, moveVector.y + addition, horiVector.z);
+            }
+
+            characterController.OverrideVelocity(moveVector, true);
         }
     }
 }

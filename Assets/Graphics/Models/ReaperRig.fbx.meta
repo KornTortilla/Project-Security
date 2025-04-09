@@ -980,8 +980,15 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.10687023
+      - time: 0.10130437
         functionName: NextHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.11352366
+        functionName: EnableTrail
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
         floatParameter: 0

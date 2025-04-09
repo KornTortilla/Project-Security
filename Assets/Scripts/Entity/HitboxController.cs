@@ -107,11 +107,15 @@ namespace ProjectSecurity.Gameplay
             defaultTrailRenderer.gameObject.SetActive(true);
         }
 
+        public void EnableTrail()
+        {
+            defaultTrailRenderer.gameObject.SetActive(true);
+        }
 
         public void StopCurrentHitbox()
         {
             if (currentHitbox == null) return;
-            else if(currentHitbox == defaultHitbox)
+            else if(defaultTrailRenderer.gameObject.activeSelf)
                 defaultTrailRenderer.gameObject.SetActive(false);
 
             currentHitbox.gameObject.SetActive(false);

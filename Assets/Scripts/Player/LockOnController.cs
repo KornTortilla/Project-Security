@@ -169,6 +169,14 @@ namespace ProjectSecurity.Gameplay
             return target.transform.position.y - transform.position.y;
         }
 
+        public float GetHorizontalMagnitudeToTarget()
+        {
+            if (target == null) return 0f;
+
+            return Vector3.ProjectOnPlane(target.transform.position, Vector3.up).magnitude -
+                Vector3.ProjectOnPlane(transform.position, Vector3.up).magnitude;
+        }
+
         private float GetAngleBetweenDirectionAndFromTarget(Vector3 direction, GameObject newTarget)
         {
             return Vector3.Angle(direction, newTarget.transform.position - target.transform.position);
