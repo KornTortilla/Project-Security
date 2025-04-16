@@ -1681,7 +1681,7 @@ MonoBehaviour:
   Motor: {fileID: 2714515921270834150}
   gravityScale: 15
   gravityLockoutTime: 0.3
-  groundDrag: 0.5
+  groundDrag: 8
   airDrag: 0.1
   lastLookDirection: {x: 0, y: 0, z: 0}
   maxMoveSpeed: 10
