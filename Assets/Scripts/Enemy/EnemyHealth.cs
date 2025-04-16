@@ -122,6 +122,30 @@ public class EnemyHealth : EntityHealth
         enableNavMeshCoroutine = StartCoroutine(EnableNavMesh());
     }
 
+    public void TakeDamage(DamageInfo damageInfo)
+    {
+        CurrentHealth -= damageInfo.damage;
+        behaviorAgent.BlackboardReference.SetVariableValue("RecentlyTookDamage",true);
+        Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
+
+        if (CurrentHealth <= 0)
+        {
+            Die();
+            return;
+        }
+
+        navMeshAgent.enabled = false;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        if(rb.linearVelocity.magnitude <= damageInfo.knockbackVector.magnitude / 2f)
+            rb.linearVelocity = damageInfo.knockbackVector;
+        Debug.Log("Knockback Vector: " + damageInfo.knockbackVector);
+        Debug.Log($"Linear Velocity: {rb.linearVelocity}");
+
+        if (enableNavMeshCoroutine != null)
+            StopCoroutine(enableNavMeshCoroutine);
+        enableNavMeshCoroutine = StartCoroutine(EnableNavMesh());
+    }
+
     private IEnumerator EnableNavMesh() {
         float timer = 0f;
         yield return Time.fixedDeltaTime;
