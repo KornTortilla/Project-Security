@@ -41,6 +41,8 @@ namespace ProjectSecurity.Gameplay
         public override void Move()
         {
             canMove = true;
+
+            audioController.PlayDash();
         }
     }
 }

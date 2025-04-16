@@ -14,6 +14,17 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_BEACH = 2006186431U;
+        static const AkUniqueID PLAY_PLAYER_HIT = 1864892471U;
+        static const AkUniqueID PLAY_PLAYER_HURT = 887999531U;
+        static const AkUniqueID PLAY_PLAYER_SWIPE_BIG = 1074894637U;
+        static const AkUniqueID PLAY_PLAYER_SWIPE_SMALL = 3189325242U;
+        static const AkUniqueID PLAY_PLAYER_WALK = 2825395259U;
+        static const AkUniqueID PLAY_PW = 2095080197U;
+        static const AkUniqueID PLAY_SLIP = 3925680016U;
+        static const AkUniqueID PLAY_SPIN = 301125906U;
+        static const AkUniqueID PLAY_SWEEP = 873708310U;
+        static const AkUniqueID PLAY_TRANSISTOR_WALK = 2708748033U;
+        static const AkUniqueID PLAYER_PLAYER_DASH = 4240219209U;
     } // namespace EVENTS
 
     namespace STATES
@@ -38,6 +49,7 @@ namespace AK
     {
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID SFX = 393239870U;
     } // namespace BANKS
 
     namespace BUSSES

@@ -39,6 +39,8 @@ namespace ProjectSecurity.Gameplay
 
         public override void Move()
         {
+            audioController.PlaySlip();
+
             canMove = true;
         }
 

@@ -1,0 +1,298 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "393239870",
+    "Type": "User",
+    "GUID": "{6F19E27E-B52D-4EFD-9582-3367B33145F2}",
+    "Language": "SFX",
+    "Hash": "{C51F9AD6-14EE-18A9-CF71-23AA39DF1685}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SFX",
+    "ShortName": "SFX",
+    "Path": "SFX.bnk",
+    "Media": [
+     {
+      "Id": "112295897",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Hurt 3.wav",
+      "CachePath": "61/{61B73A33-2BBA-FAF3-0D30-55B0602DC89F}.wem"
+     },
+     {
+      "Id": "180148855",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Hurt 2.wav",
+      "CachePath": "EF/{EFB2E1C7-3DA5-11EC-0101-73654B7CAE79}.wem"
+     },
+     {
+      "Id": "292454630",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Hit Crushed.wav",
+      "CachePath": "B9/{B9DE28BD-695E-CE11-E4D7-4A9CEF57B209}.wem"
+     },
+     {
+      "Id": "323228105",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Slip Crushed.wav",
+      "CachePath": "47/{475A1A37-17B0-8DBF-5213-CA3F11761B60}.wem"
+     },
+     {
+      "Id": "376638924",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Transistor Walk 3 Crushed.wav",
+      "CachePath": "65/{6546A757-3CF9-A072-D0CB-1F09D6064DBE}.wem"
+     },
+     {
+      "Id": "571637079",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Hurt 1.wav",
+      "CachePath": "B1/{B112310E-BBCC-53A6-3E51-CB78FAEC02B9}.wem"
+     },
+     {
+      "Id": "618418219",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Walk Crushed.wav",
+      "CachePath": "08/{086A8A89-42E5-2252-17AD-C505BC5715DE}.wem"
+     },
+     {
+      "Id": "665249340",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Sweep.wav",
+      "CachePath": "7E/{7ED1D48D-6E8C-AB9C-C041-023CB4DAAD9C}.wem"
+     },
+     {
+      "Id": "724176927",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SwipeCrushed.wav",
+      "CachePath": "8F/{8FF00D7C-8D77-1253-D9E2-44B7FEB6E0FF}.wem"
+     },
+     {
+      "Id": "754837167",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Transistor Walk 2 Crushed.wav",
+      "CachePath": "74/{741D4671-73F9-C8DF-86F8-EEB7E4E22670}.wem"
+     },
+     {
+      "Id": "805305102",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Dash Crushed.wav",
+      "CachePath": "89/{892C2CFB-BEBD-12CB-D804-37EA2DD39B96}.wem"
+     },
+     {
+      "Id": "829091581",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Transistor Walk 1 Crushed.wav",
+      "CachePath": "5C/{5C4A9D82-1C78-050A-6AB6-9A7AC2EA7644}.wem"
+     },
+     {
+      "Id": "849024902",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Spin.wav",
+      "CachePath": "B9/{B94ECDDC-3D2C-F535-015A-88B5DBB3EA77}.wem"
+     },
+     {
+      "Id": "997704889",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Spin.wav",
+      "CachePath": "E0/{E0912B41-592C-B5B9-93F2-44EBD3FC7753}.wem"
+     },
+     {
+      "Id": "1073160922",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Transistor Walk 4 Crushed.wav",
+      "CachePath": "2B/{2B8A0ADF-E090-9DAA-FFCB-EB47ED769FF6}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1864892471",
+      "Name": "Play_Player_Hit",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Player_Hit",
+      "GUID": "{48155B9D-50BB-407C-A1B4-C5D20B2A9967}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.2678921",
+      "DurationMax": "0.30069873",
+      "MediaRefs": [
+       {
+        "Id": "292454630"
+       }
+      ]
+     },
+     {
+      "Id": "887999531",
+      "Name": "Play_Player_Hurt",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Player_Hurt",
+      "GUID": "{6189DE7F-018C-457B-B924-54C53C6DF307}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.50002265",
+      "DurationMax": "0.50002265",
+      "MediaRefs": [
+       {
+        "Id": "112295897"
+       },
+       {
+        "Id": "180148855"
+       },
+       {
+        "Id": "571637079"
+       }
+      ]
+     },
+     {
+      "Id": "1074894637",
+      "Name": "Play_Player_Swipe_Big",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Player_Swipe_Big",
+      "GUID": "{B48EE3D6-D669-42C7-BD04-CC9CB9661495}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.21618202",
+      "DurationMax": "0.21618202",
+      "MediaRefs": [
+       {
+        "Id": "724176927"
+       }
+      ]
+     },
+     {
+      "Id": "3189325242",
+      "Name": "Play_Player_Swipe_Small",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Player_Swipe_Small",
+      "GUID": "{A4D31EFA-515A-4F15-8556-ACB01C26491C}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.21618202",
+      "DurationMax": "0.21618202",
+      "MediaRefs": [
+       {
+        "Id": "724176927"
+       }
+      ]
+     },
+     {
+      "Id": "2825395259",
+      "Name": "Play_Player_Walk",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Player_Walk",
+      "GUID": "{3A314060-8B4B-42A4-BA91-E257CC58123C}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "618418219"
+       }
+      ]
+     },
+     {
+      "Id": "3925680016",
+      "Name": "Play_Slip",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Slip",
+      "GUID": "{5D8CD552-BB53-4242-A71D-28120E1EFB1E}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.1431702",
+      "DurationMax": "1.1431702",
+      "MediaRefs": [
+       {
+        "Id": "323228105"
+       }
+      ]
+     },
+     {
+      "Id": "301125906",
+      "Name": "Play_Spin",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Spin",
+      "GUID": "{94B570B4-1E9A-490C-A1C6-0831579AEF28}",
+      "MaxAttenuation": "300",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "849024902"
+       },
+       {
+        "Id": "997704889"
+       }
+      ]
+     },
+     {
+      "Id": "873708310",
+      "Name": "Play_Sweep",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Sweep",
+      "GUID": "{ECABEA94-D315-40A1-A457-046BBF65C1E2}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.81249434",
+      "DurationMax": "0.81249434",
+      "MediaRefs": [
+       {
+        "Id": "665249340"
+       }
+      ]
+     },
+     {
+      "Id": "2708748033",
+      "Name": "Play_Transistor_Walk",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Transistor_Walk",
+      "GUID": "{C2C35C36-9F3C-482B-9239-DE7F6EA28EE5}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "376638924"
+       },
+       {
+        "Id": "754837167"
+       },
+       {
+        "Id": "829091581"
+       },
+       {
+        "Id": "1073160922"
+       }
+      ]
+     },
+     {
+      "Id": "4240219209",
+      "Name": "Player_Player_Dash",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player_Player_Dash",
+      "GUID": "{10873EFC-0676-4AE7-AAC2-C4080621AAB1}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.23607607",
+      "DurationMax": "0.23607607",
+      "MediaRefs": [
+       {
+        "Id": "805305102"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{F6053354-F114-76CD-73EC-7E08E0D45AF3}"
+ }
+}

@@ -11,6 +11,7 @@ namespace ProjectSecurity.Gameplay
         [HideInInspector] public ActionController actionController;
         [HideInInspector] public LockOnController lockOnController;
         [HideInInspector] public MeterManager meterManager;
+        [HideInInspector] public EntityAudioController audioController;
 
         [SerializeField] private BasePlayerAttackData[] groundAttackDatas;
         [SerializeField] private BasePlayerAttackData[] airAttackDatas;
@@ -39,6 +40,7 @@ namespace ProjectSecurity.Gameplay
             actionController = GetComponent<ActionController>();
             lockOnController = GetComponent<LockOnController>();
             meterManager = GetComponent<MeterManager>();
+            audioController = GetComponent<EntityAudioController>();
 
             SetStateToDefault();
         }
@@ -58,7 +60,7 @@ namespace ProjectSecurity.Gameplay
 
         public void SetState(BaseState newState)
         {
-            // if (currentState != null) currentState.Exit();
+            if (currentState != null) currentState.Exit();
 
             hitboxController.StopCurrentHitbox();
             characterController.EnableEnemyCollision();
@@ -170,6 +172,8 @@ namespace ProjectSecurity.Gameplay
 
         public void Hurt()
         {
+            audioController.PlayHurt();
+
             SetState(new HurtState());
         }
 
@@ -190,7 +194,7 @@ namespace ProjectSecurity.Gameplay
 
         public void ExitState()
         {
-            currentState.Exit();
+            SetStateToDefault();
         }
     }
 }

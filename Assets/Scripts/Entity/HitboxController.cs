@@ -15,6 +15,7 @@ namespace ProjectSecurity.Gameplay
 
         private PlayerCharacterController playerCharacterController;
         private MeterManager meterManager;
+        private EntityAudioController audioController;
 
         private Dictionary<string, List<Hitbox>> hitboxDict;
         private string currentActionName;
@@ -26,6 +27,7 @@ namespace ProjectSecurity.Gameplay
         {
             playerCharacterController = GetComponent<PlayerCharacterController>();
             meterManager = GetComponent<MeterManager>();
+            audioController = GetComponent<EntityAudioController>();
 
             hitboxDict = new Dictionary<string, List<Hitbox>>();
 
@@ -61,6 +63,7 @@ namespace ProjectSecurity.Gameplay
         {
             TimeManager.main.Freeze(0.05f);
 
+            audioController.PlayHit();
             meterManager.ChangeMeter(5);
 
             OnHit?.Invoke();

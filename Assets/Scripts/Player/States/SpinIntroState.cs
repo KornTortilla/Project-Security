@@ -27,12 +27,17 @@ namespace ProjectSecurity.Gameplay
             timer += Time.deltaTime;
 
             if (timer >= exitTime)
-                Exit();
+            {
+                animator.Play("Idle");
+                stateMachine.SetStateToDefault();
+            } 
         }
 
         public override void Move()
         {
             canMove = true;
+
+            audioController.PlaySpin();
 
             ReorientToLockOnOrMove();
         }
@@ -44,7 +49,7 @@ namespace ProjectSecurity.Gameplay
 
         public override void Exit()
         {
-            animator.Play("Idle");
+            audioController.StopSpin();
 
             base.Exit();
         }
