@@ -1318,6 +1318,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2696661165629453095}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7981801250810620282}
   m_SourcePrefab: {fileID: 100100000, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}
 --- !u!4 &1428011909263727261 stripped
 Transform:
@@ -1727,6 +1730,7 @@ MonoBehaviour:
   actionController: {fileID: 0}
   lockOnController: {fileID: 0}
   meterManager: {fileID: 0}
+  audioController: {fileID: 0}
   groundAttackDatas:
   - {fileID: 11400000, guid: 5e82951bc776aca48bd265266803388e, type: 2}
   - {fileID: 11400000, guid: 3ec1abd919c9ad24e8e8c4342da034b4, type: 2}
@@ -1843,6 +1847,53 @@ MonoBehaviour:
   maxHealth: 100
   ClickToHeal: 0
   ClickToDamage: 0
+--- !u!114 &7981801250810620282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772872268431573031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b546fe30900ada64d84e8aa9e16332d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swingEvents:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0375d43273ec1e547a9bb9604c0b67eb, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f62fa1d2fdbfb254981cd8bd09503572, type: 2}
+  hitEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a3099c36c7335474eb0a89aa275779bf, type: 2}
+  hurtEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fd6649eb3a9a7234e95584ee3f440e36, type: 2}
+  dashEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a0d59d7b99ad080469e3f571a006d958, type: 2}
+  walkEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 215dc4cd1e3b35c408f9b1abf9417bb0, type: 2}
+  spinEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d4af9640295e3f04d8e5df8559744d50, type: 2}
+  sweepEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 59052b6d825b4fa4bb1103e3545e6267, type: 2}
+  slipEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0f93a7ab82e741c4eb594d1b878139e7, type: 2}
 --- !u!4 &9166957222248970418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1482674693049317948, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}

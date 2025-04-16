@@ -38,6 +38,7 @@
 						<ObjectRef Name="Player Dash" ID="{81C3D666-3BEB-4E0C-B73D-A639E2D65320}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Player_Swipe_Small" ID="{A4D31EFA-515A-4F15-8556-ACB01C26491C}" WorkUnitID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player Spin Intro" ID="{8ADD53DD-9DE8-4FA1-A471-329BE58CD262}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Entity Death" ID="{37B8ABB8-CAB8-4FB1-937F-40FC21607DCB}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

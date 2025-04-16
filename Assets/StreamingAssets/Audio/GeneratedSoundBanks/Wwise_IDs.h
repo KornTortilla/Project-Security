@@ -14,6 +14,8 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_BEACH = 2006186431U;
+        static const AkUniqueID PLAY_CAPACITOR_WALK = 4203421770U;
+        static const AkUniqueID PLAY_ENTITY_DEATH = 3288250068U;
         static const AkUniqueID PLAY_PLAYER_HIT = 1864892471U;
         static const AkUniqueID PLAY_PLAYER_HURT = 887999531U;
         static const AkUniqueID PLAY_PLAYER_SWIPE_BIG = 1074894637U;
@@ -23,6 +25,7 @@ namespace AK
         static const AkUniqueID PLAY_SLIP = 3925680016U;
         static const AkUniqueID PLAY_SPIN = 301125906U;
         static const AkUniqueID PLAY_SWEEP = 873708310U;
+        static const AkUniqueID PLAY_TRANSISTOR_SWIPE = 2306570000U;
         static const AkUniqueID PLAY_TRANSISTOR_WALK = 2708748033U;
         static const AkUniqueID PLAYER_PLAYER_DASH = 4240219209U;
     } // namespace EVENTS

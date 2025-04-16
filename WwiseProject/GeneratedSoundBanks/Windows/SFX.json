@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{6F19E27E-B52D-4EFD-9582-3367B33145F2}",
     "Language": "SFX",
-    "Hash": "{C51F9AD6-14EE-18A9-CF71-23AA39DF1685}",
+    "Hash": "{FB9FD1BE-F731-BCC2-944F-60953C1F89D3}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SFX",
     "ShortName": "SFX",
     "Path": "SFX.bnk",
@@ -53,7 +53,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Transistor Walk 3 Crushed.wav",
-      "CachePath": "65/{6546A757-3CF9-A072-D0CB-1F09D6064DBE}.wem"
+      "CachePath": "42/{42783364-52AB-AD28-D996-692B502A1668}.wem"
      },
      {
       "Id": "571637079",
@@ -88,12 +88,20 @@
       "CachePath": "8F/{8FF00D7C-8D77-1253-D9E2-44B7FEB6E0FF}.wem"
      },
      {
+      "Id": "738268994",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Transistor Swipe Crushed.wav",
+      "CachePath": "FF/{FF17C34B-B174-46A3-E753-C7128EEEFBCF}.wem"
+     },
+     {
       "Id": "754837167",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Transistor Walk 2 Crushed.wav",
-      "CachePath": "74/{741D4671-73F9-C8DF-86F8-EEB7E4E22670}.wem"
+      "CachePath": "E8/{E80D4870-ADF0-98A2-B69C-1742C7783E06}.wem"
      },
      {
       "Id": "805305102",
@@ -109,7 +117,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Transistor Walk 1 Crushed.wav",
-      "CachePath": "5C/{5C4A9D82-1C78-050A-6AB6-9A7AC2EA7644}.wem"
+      "CachePath": "64/{644223CE-41DE-1C09-6550-89B42FFA409C}.wem"
      },
      {
       "Id": "849024902",
@@ -133,10 +141,45 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Transistor Walk 4 Crushed.wav",
-      "CachePath": "2B/{2B8A0ADF-E090-9DAA-FFCB-EB47ED769FF6}.wem"
+      "CachePath": "91/{91F0236F-7023-978B-1ABB-295A38EFF948}.wem"
      }
     ],
     "Events": [
+     {
+      "Id": "4203421770",
+      "Name": "Play_Capacitor_Walk",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Capacitor_Walk",
+      "GUID": "{BD25B8F7-E16B-4D32-BAF4-07B21C7C5D47}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "376638924"
+       },
+       {
+        "Id": "754837167"
+       },
+       {
+        "Id": "829091581"
+       },
+       {
+        "Id": "1073160922"
+       }
+      ]
+     },
+     {
+      "Id": "3288250068",
+      "Name": "Play_Entity_Death",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Entity_Death",
+      "GUID": "{61BB8853-2F82-4CD0-8280-6C634957F634}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.81249434",
+      "DurationMax": "0.81249434",
+      "MediaRefs": [
+       {
+        "Id": "292454630"
+       }
+      ]
+     },
      {
       "Id": "1864892471",
       "Name": "Play_Player_Hit",
@@ -256,6 +299,20 @@
       ]
      },
      {
+      "Id": "2306570000",
+      "Name": "Play_Transistor_Swipe",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Transistor_Swipe",
+      "GUID": "{8FA625D2-BA14-4702-87B0-9572D10BD768}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.24038626",
+      "DurationMax": "0.24038626",
+      "MediaRefs": [
+       {
+        "Id": "738268994"
+       }
+      ]
+     },
+     {
       "Id": "2708748033",
       "Name": "Play_Transistor_Walk",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Transistor_Walk",
@@ -293,6 +350,6 @@
     ]
    }
   ],
-  "FileHash": "{F6053354-F114-76CD-73EC-7E08E0D45AF3}"
+  "FileHash": "{E3C5D578-CB62-D5E3-77BA-B45D8501D58E}"
  }
 }
