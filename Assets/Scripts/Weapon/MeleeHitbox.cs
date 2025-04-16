@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Sword : Weapon
+public class MeleeHitbox : Weapon
 {
-    Collider bladeCollider;
+    Collider hitboxCollider;
 
     private void Awake() {
-        bladeCollider = GetComponentsInChildren<Collider>()[0];
+        hitboxCollider = GetComponentsInChildren<Collider>()[0];
     }
 
     private void OnTriggerEnter(Collider other) {
