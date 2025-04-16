@@ -15,6 +15,7 @@ namespace ProjectSecurity.Gameplay
             timer = 0f;
 
             animator.Play("Dash", -1, 0f);
+            audioController.PlayDash();
 
             ReorientToMove();
 
@@ -33,7 +34,7 @@ namespace ProjectSecurity.Gameplay
             timer += Time.deltaTime;
 
             if (timer >= exitTime)
-                Exit();
+                stateMachine.SetStateToDefault();
         }
     }
 }

@@ -34,6 +34,11 @@ namespace ProjectSecurity.Gameplay
             get { return stateMachine.lockOnController; }
         }
 
+        public EntityAudioController audioController
+        {
+            get { return stateMachine.audioController; }
+        }
+
         public virtual void Enter()
         {
 
@@ -57,7 +62,7 @@ namespace ProjectSecurity.Gameplay
 
         public virtual void Exit()
         {
-            stateMachine.SetStateToDefault();
+            
         }
 
         public void SetSpeed(float speed)

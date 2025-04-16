@@ -25,12 +25,22 @@ namespace ProjectSecurity.Gameplay
             if (characterController.IsGrounded)
             {
                 if (inputBank.CameraMoveInput.magnitude > 0f)
+                {
                     animator.Play("Idle");
+
+                    audioController.PlayWalk();
+                }
+                else
+                {
+                    audioController.StopWalk();
+                }
 
                 animator.SetFloat("Ground Speed", characterController.Velocity.magnitude);
             }
             else if(!characterController.IsGrounded)
             {
+                audioController.StopWalk();
+
                 animator.Play("Airborne");
                 animator.SetFloat("Vertical Speed", characterController.Velocity.y);
             }
@@ -40,7 +50,7 @@ namespace ProjectSecurity.Gameplay
 
         public override void Exit()
         {
-            characterController.DisableInputs();
+            audioController.StopWalk();
 
             base.Exit();
         }

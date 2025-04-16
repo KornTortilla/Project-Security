@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Player Swipe" ID="{76802219-26CE-4768-BF3E-27E2C2372747}" ShortID="654468683">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SwipeCrushed" ID="{5BBACECE-BAA1-420F-8231-39F707C395E6}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.124666314443638"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.0810478403593389"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.216182025257515"/>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>SwipeCrushed.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="724176927"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SwipeCrushed" ID="{5BBACECE-BAA1-420F-8231-39F707C395E6}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Player Hit" ID="{5F0E248A-523A-4778-9B6A-AF76D020F879}" ShortID="1060698518">
+					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{2491E379-5991-4840-B31A-230E8EB13688}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="100"/>
+											<Property Name="Min" Type="Real64" Value="-100"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Player Hit Crushed" ID="{55C680D1-D8D3-4CF6-A06B-B6579C0322B0}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.123343102205759"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.283821790983254"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Player Hit Crushed.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="292454630"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Player Hit Crushed" ID="{55C680D1-D8D3-4CF6-A06B-B6579C0322B0}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Player Walk Random" ID="{51F03456-76CB-4BEA-8B43-77323148DEDB}" ShortID="155561698">
+					<PropertyList>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Player Walk" ID="{7D34C84B-AEBF-4F4C-AD7A-FC1727F3881A}" ShortID="1062699612">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{E8DA7C50-FFB5-480F-AC8C-5FCFF1682EA0}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{9111742B-B7F1-4B4F-9DDF-780345EAEE3A}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Player Walk Crushed" ID="{D7071C0F-335F-4E9E-BF4B-7C08A7552B61}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.195624841556555"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Player Walk Crushed.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="618418219"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Player Walk Crushed" ID="{D7071C0F-335F-4E9E-BF4B-7C08A7552B61}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Player Hurt Random" ID="{D180F6A3-D303-496B-A208-5AC9F6B05930}" ShortID="553155689">
+					<PropertyList>
+						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Player Hurt 1" ID="{DB3E227A-B3B6-4E3D-B5F6-7677F6103EE4}" ShortID="467550426">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Player Hurt 1" ID="{BD11E999-6220-4C8E-8083-A372226DBFDB}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.45977337607022"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.70498579988413"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Player Hurt 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="379920565"/>
+									</MediaIDList>
+								</AudioFileSource>
+								<AudioFileSource Name="Player Hurt 2" ID="{F156032B-CDC5-4991-BA0C-87217871CC38}">
+									<Language>SFX</Language>
+									<AudioFile>Player Hurt 2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="80411379"/>
+									</MediaIDList>
+								</AudioFileSource>
+								<AudioFileSource Name="Player Hurt 3" ID="{F40AF27E-CD19-4C2A-A352-363E0BA09FA5}">
+									<Language>SFX</Language>
+									<AudioFile>Player Hurt 3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="571530489"/>
+									</MediaIDList>
+								</AudioFileSource>
+								<AudioFileSource Name="Player Hurt 1_01" ID="{99618586-2622-42C3-A384-16234164A965}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.796940475098176"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Player Hurt 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="571637079"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Player Hurt 1_01" ID="{99618586-2622-42C3-A384-16234164A965}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Player Hurt 2" ID="{2540E03A-2F25-4041-9496-E90BB02D9081}" ShortID="94262070">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Player Hurt 2" ID="{7024EE4F-D748-4909-83A7-33EA974CF922}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.692725176522263"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Player Hurt 2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="180148855"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Player Hurt 2" ID="{7024EE4F-D748-4909-83A7-33EA974CF922}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Player Hurt 3" ID="{590FBFA4-53C2-484A-A00E-90339B385627}" ShortID="595544127">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Player Hurt 3" ID="{E102E13C-CEAD-4D32-974F-8288C581FAD6}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.760158605012558"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Player Hurt 3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="112295897"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Player Hurt 3" ID="{E102E13C-CEAD-4D32-974F-8288C581FAD6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="Player Dash" ID="{81C3D666-3BEB-4E0C-B73D-A639E2D65320}" ShortID="124951389">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Player Dash Crushed" ID="{45FCE007-C06B-47FD-830F-2CFBB521D704}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.23607607400038"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.235412910123894"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.23607607400038"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Player Dash Crushed.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="805305102"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Player Dash Crushed" ID="{45FCE007-C06B-47FD-830F-2CFBB521D704}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Player Spin Sequence" ID="{9E32779C-E2F3-48FB-98A9-EE5E68ED1629}" ShortID="96761111">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<Custom>
+								<Attenuation Name="Attenuation (Custom)" ID="{515675B2-45AA-415A-AFB0-A20AEF63B2F5}" ShortID="576443373">
+									<PropertyList>
+										<Property Name="RadiusMax" Type="Real64" Value="300"/>
+									</PropertyList>
+									<CurveUsageInfoList>
+										<VolumeDryUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+												<Curve Name="VolumeDry" ID="{E8A02163-6B35-4595-8651-995B1BB7D274}">
+													<PropertyList>
+														<Property Name="Flags" Type="int32" Value="3"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>0</YPos>
+															<Flags>5</Flags>
+															<SegmentShape>Exp2</SegmentShape>
+														</Point>
+														<Point>
+															<XPos>300</XPos>
+															<YPos>-200</YPos>
+															<Flags>37</Flags>
+														</Point>
+													</PointList>
+												</Curve>
+											</CurveUsageInfo>
+										</VolumeDryUsage>
+										<VolumeWetGameUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetGameUsage>
+										<VolumeWetUserUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetUserUsage>
+										<LowPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</LowPassFilterUsage>
+										<HighPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</HighPassFilterUsage>
+										<SpreadUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</SpreadUsage>
+										<FocusUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</FocusUsage>
+										<ObstructionVolumeUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</ObstructionVolumeUsage>
+										<ObstructionLPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</ObstructionLPFUsage>
+										<ObstructionHPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</ObstructionHPFUsage>
+										<OcclusionVolumeUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</OcclusionVolumeUsage>
+										<OcclusionLPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</OcclusionLPFUsage>
+										<OcclusionHPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</OcclusionHPFUsage>
+										<DiffractionVolumeUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</DiffractionVolumeUsage>
+										<DiffractionLPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</DiffractionLPFUsage>
+										<DiffractionHPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</DiffractionHPFUsage>
+										<TransmissionVolumeUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</TransmissionVolumeUsage>
+										<TransmissionLPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</TransmissionLPFUsage>
+										<TransmissionHPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</TransmissionHPFUsage>
+									</CurveUsageInfoList>
+								</Attenuation>
+							</Custom>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Player Spin Intro" ID="{8ADD53DD-9DE8-4FA1-A471-329BE58CD262}" ShortID="132856632">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Player Spin" ID="{16CB430F-167A-4757-A91A-E34BBA10B006}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.00464209697255685"/>
+										<Property Name="LoopEnd" Type="Real64" Value="0.173061224489796"/>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0880340533009891"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Player Spin.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="997704889"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Player Spin" ID="{16CB430F-167A-4757-A91A-E34BBA10B006}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Player Spin Loop" ID="{A5B9B9D9-9E18-4188-B69C-A670C6537C0C}" ShortID="578732125">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Player Spin" ID="{A92F7192-8EF6-447A-82A4-C8E667BC6481}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.00437683428841076"/>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Player Spin.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="849024902"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Player Spin" ID="{A92F7192-8EF6-447A-82A4-C8E667BC6481}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<PositioningInfo>
+						<Panner Name="" ID="{7CD2629E-7B75-4ABC-A957-812C1E1729C7}"/>
+					</PositioningInfo>
+					<ObjectLists>
+						<ObjectList Name="Playlist">
+							<Reference>
+								<ObjectRef Name="Player Spin Intro" ID="{8ADD53DD-9DE8-4FA1-A471-329BE58CD262}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+							</Reference>
+							<Reference>
+								<ObjectRef Name="Player Spin Loop" ID="{A5B9B9D9-9E18-4188-B69C-A670C6537C0C}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</RandomSequenceContainer>
+				<Sound Name="Player Sweep" ID="{113E8A47-0DD6-4662-B7E2-3EF7AFC84EF0}" ShortID="632517057">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Player Sweep" ID="{D9A9C48F-A157-485F-8ED5-173870643389}">
+							<PropertyList>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Player Sweep.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="665249340"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Player Sweep" ID="{D9A9C48F-A157-485F-8ED5-173870643389}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Player Slip" ID="{C177E9F0-81C3-45F9-ABAF-A766F24DEBAE}" ShortID="1013415686">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Player Slip Crushed" ID="{A176C92C-FA53-4187-843D-300E34490192}">
+							<PropertyList>
+								<Property Name="LoopEnd" Type="Real64" Value="1.39421768707483"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.251070106623273"/>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Player Slip Crushed.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="323228105"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Player Slip Crushed" ID="{A176C92C-FA53-4187-843D-300E34490192}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Transistor Walk Random" ID="{CD518D94-7404-4A12-9062-94A092F32E27}" ShortID="736834861">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{2F458464-47C0-46CF-85C8-BDA86C939DE1}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="50"/>
+											<Property Name="Min" Type="Real64" Value="-50"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{1952E6DC-898E-4C48-91A1-12B8EAC3CCF3}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Min" Type="Real64" Value="-6"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Transistor Walk 1 Crushed" ID="{783C4DD5-29E9-4572-A044-7B32C4A57055}" ShortID="558733622">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Transistor Walk 1 Crushed" ID="{973941ED-AF83-4A42-86EF-BB1CA152345B}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.144231746857623"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Transistor Walk 1 Crushed.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="829091581"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Transistor Walk 1 Crushed" ID="{973941ED-AF83-4A42-86EF-BB1CA152345B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Transistor Walk 2 Crushed" ID="{D8FE1FC5-47D8-49C9-9794-673CE9CB6BD9}" ShortID="105061874">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Transistor Walk 2 Crushed" ID="{D05D9536-5359-4E76-BD7D-156BA9D0E88D}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.152244622600919"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Transistor Walk 2 Crushed.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="754837167"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Transistor Walk 2 Crushed" ID="{D05D9536-5359-4E76-BD7D-156BA9D0E88D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Transistor Walk 3 Crushed" ID="{1E76189A-DF2B-4FB0-915F-BA0A6106C3E5}" ShortID="460382446">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Transistor Walk 3 Crushed" ID="{512CE14D-DC8A-4543-87CD-6733E53609D3}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.150909143310369"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Transistor Walk 3 Crushed.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="376638924"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Transistor Walk 3 Crushed" ID="{512CE14D-DC8A-4543-87CD-6733E53609D3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Transistor Walk 4 Crushed" ID="{E710B59E-2569-43C0-862B-4CE1F264E29C}" ShortID="973305767">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Transistor Walk 4 Crushed" ID="{6E2645A9-B7D8-4374-8F47-B0C678AFB02A}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.157586539763116"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Transistor Walk 4 Crushed.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1073160922"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Transistor Walk 4 Crushed" ID="{6E2645A9-B7D8-4374-8F47-B0C678AFB02A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="Transistor Swipe" ID="{92C45813-1E03-44DA-8C27-91E8F115A8B3}" ShortID="623910627">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SwipeCrushed" ID="{6D94E30A-C141-4824-9A8F-1A2AEF314B12}">
+							<Language>SFX</Language>
+							<AudioFile>SwipeCrushed.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="941712064"/>
+							</MediaIDList>
+						</AudioFileSource>
+						<AudioFileSource Name="Transistor Swipe Crushed" ID="{9CC404AC-7495-4C9C-BF36-49CCCD8E0624}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.148238201250975"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.240386255777174"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Transistor Swipe Crushed.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="738268994"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Transistor Swipe Crushed" ID="{9CC404AC-7495-4C9C-BF36-49CCCD8E0624}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Capacitor Walk Random" ID="{3B9AE735-05D0-488C-AF82-61BC097347B2}" ShortID="612968678">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-800</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{240B02D4-E879-4F08-AD5E-799225BD3855}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="50"/>
+											<Property Name="Min" Type="Real64" Value="-50"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{D2F511FB-DAEF-4195-866F-B9F73C8B0CE9}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Min" Type="Real64" Value="-6"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Transistor Walk 1 Crushed" ID="{B50AB1A1-BD7E-42AF-A9B8-8171D2825052}" ShortID="290270568">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Transistor Walk 1 Crushed" ID="{779CF289-3AC2-4C6A-AC46-9C0C6F97A43D}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.144231746857623"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Transistor Walk 1 Crushed.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="829091581"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Transistor Walk 1 Crushed" ID="{779CF289-3AC2-4C6A-AC46-9C0C6F97A43D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Transistor Walk 2 Crushed" ID="{E36635CB-B551-4EB9-B180-C3AA103C756A}" ShortID="116981091">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Transistor Walk 2 Crushed" ID="{7528C6C7-9A27-4B2C-9682-F90293DCFA40}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.152244622600919"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Transistor Walk 2 Crushed.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="754837167"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Transistor Walk 2 Crushed" ID="{7528C6C7-9A27-4B2C-9682-F90293DCFA40}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Transistor Walk 3 Crushed" ID="{A0F4C4AF-19D6-4F5F-BC16-9A00655606BA}" ShortID="587294136">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Transistor Walk 3 Crushed" ID="{FC648534-6F60-4D6D-9788-6ADD6CD9E7EE}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.150909143310369"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Transistor Walk 3 Crushed.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="376638924"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Transistor Walk 3 Crushed" ID="{FC648534-6F60-4D6D-9788-6ADD6CD9E7EE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Transistor Walk 4 Crushed" ID="{503F6721-25E2-4410-A6E8-47D01037CA39}" ShortID="4306923">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Transistor Walk 4 Crushed" ID="{7399412F-50AC-4B39-9C2F-2379AF045141}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.157586539763116"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Transistor Walk 4 Crushed.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1073160922"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Transistor Walk 4 Crushed" ID="{7399412F-50AC-4B39-9C2F-2379AF045141}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="Entity Death" ID="{37B8ABB8-CAB8-4FB1-937F-40FC21607DCB}" ShortID="1056151159">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Die" ID="{947071FB-FCCC-4A71-90A5-F5C81565825E}">
+							<Language>SFX</Language>
+							<AudioFile>Die.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="622845277"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Die" ID="{947071FB-FCCC-4A71-90A5-F5C81565825E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
