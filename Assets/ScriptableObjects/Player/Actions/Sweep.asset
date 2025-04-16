@@ -21,7 +21,7 @@ MonoBehaviour:
   - hitboxIndex: 0
     damageInfo:
       damage: 1
-      knockbackVector: {x: 0, y: 25, z: 0}
+      knockbackVector: {x: 0, y: 10, z: 0}
   projectileObjects: []
   stateToEnter:
     typeName: SweepState

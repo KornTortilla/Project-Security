@@ -31,7 +31,7 @@ namespace ProjectSecurity.Gameplay
             if(canMove)
                 characterController.OverrideVelocity(new Vector3(dualSpeed, -dualSpeed, 0), true);
 
-            if (characterController.hasHitGroundThisFrame)
+            if (characterController.HasHitGroundThisFrame)
             {
                 characterController.DisableEnemyCollision();
                 stateMachine.Land();

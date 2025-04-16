@@ -1,14 +1,12 @@
+using System;
 using UnityEngine;
 using KinematicCharacterController;
 
 namespace ProjectSecurity.Gameplay
 {
-    public class PlayerCharacterController : MonoBehaviour, ICharacterController
+    public class PlayerCharacterController : EntityCharacterController, ICharacterController
     {
-        public KinematicCharacterMotor Motor;
-
         private InputBank inputBank;
-        private PlayerStateMachine playerStateMachine;
 
         [Header("Movement")]
         public float maxMoveSpeed = 10f;
@@ -17,62 +15,28 @@ namespace ProjectSecurity.Gameplay
         public float airMovementSharpness = 10f;
         public float airAccelerationSpeed = 15f;
         public float orientationSharpness = 10f;
-        public float gravityScale = 25f;
-        public float drag = 0.1f;
 
         [Header("Jumping")]
         public float jumpUpSpeed = 10f;
         public float jumpMinimumTime = 0.1f;
         public float jumpPreGroundingGraceTime = 0f;
         public float jumpPostGroundingGraceTime = 0f;
-        public float gravityLockoutTime = 0.2f;
         public bool allowJumpingWhenSliding = false;
 
         private bool inputsGathering = true;
         private Vector3 moveVector;
-        private Vector3 lastMoveVector;
         private bool tryJump;
         private float timeSinceLastAbleToJump = 0f;
-        private bool gravityLockout;
-        private float timeSinceGravityLockout = 0f;
-        private Vector3 overridingVelocity = Vector3.zero;
-        private bool overroteVelocity = false;
-        private Vector3 internalVelocityAdd = Vector3.zero;
-        private bool wasGroundedLast = false;
 
         public bool hasJumpedThisFrame = false;
-        public bool hasHitGroundThisFrame = false;
 
-        private bool ignoreEnemies = false;
-
-        private Vector3 gravity;
-
-        public Vector3 CharacterForward
-        {
-            get { return Motor.CharacterForward; }
-        }
-
-        public Vector3 CharacterRight
-        {
-            get { return Motor.CharacterRight; }
-        }
-
-        public Vector3 Velocity
-        {
-            get { return Motor.Velocity; }
-        }
-
-        public bool IsGrounded
-        {
-            get { return Motor.GroundingStatus.IsStableOnGround; }
-        }
+        public static Action OnLand;
 
         private void Start()
         {
             Motor.CharacterController = this;
 
             inputBank = GetComponent<InputBank>();
-            playerStateMachine = GetComponent<PlayerStateMachine>();
 
             gravity = new Vector3(0f, -gravityScale, 0f);
         }
@@ -144,7 +108,7 @@ namespace ProjectSecurity.Gameplay
 
         bool ICharacterController.IsColliderValidForCollisions(Collider coll)
         {
-            if (ignoreEnemies && coll.gameObject.layer == 6)
+            if (Physics.GetIgnoreLayerCollision(gameObject.layer, coll.gameObject.layer))
                 return false;
             return true;
         }
@@ -158,6 +122,7 @@ namespace ProjectSecurity.Gameplay
         {
             if (!wasGroundedLast)
             {
+                OnLand?.Invoke();
                 hasHitGroundThisFrame = true;
             }
         }
@@ -180,13 +145,13 @@ namespace ProjectSecurity.Gameplay
         void ICharacterController.UpdateRotation(ref Quaternion currentRotation, float deltaTime)
         {
             if (moveVector.magnitude != 0f)
-                lastMoveVector = moveVector;
+                lastLookDirection = moveVector;
 
             // Smoothly interpolate from current to the current forward direction
             // Vector3 smoothedForwardDirection = Vector3.Slerp(Motor.CharacterForward, lastMoveVector, 1 - Mathf.Exp(-orientationSharpness * deltaTime)).normalized;
 
             // Set the current rotation (which will be used by the KinematicCharacterMotor)
-            currentRotation = Quaternion.LookRotation(lastMoveVector, Motor.CharacterUp);
+            currentRotation = Quaternion.LookRotation(lastLookDirection, Motor.CharacterUp);
         }
 
         void ICharacterController.UpdateVelocity(ref Vector3 currentVelocity, float deltaTime)
@@ -208,10 +173,17 @@ namespace ProjectSecurity.Gameplay
             // Ground movement
             if (Motor.GroundingStatus.IsStableOnGround)
             {
-                Vector3 targetMovementVelocity = moveVector * maxMoveSpeed;
+                if(inputsGathering)
+                {
+                    Vector3 targetMovementVelocity = moveVector * maxMoveSpeed;
 
-                // Smooth movement Velocity
-                currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1f - Mathf.Exp(-movementSharpness * deltaTime));
+                    // Smooth movement Velocity
+                    currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1f - Mathf.Exp(-movementSharpness * deltaTime));
+                }
+                else
+                {
+                    currentVelocity *= (1f / (1f + (groundDrag * deltaTime)));
+                }
             }
             else
             {
@@ -273,7 +245,7 @@ namespace ProjectSecurity.Gameplay
                 }
 
                 // Drag
-                currentVelocity *= (1f / (1f + (drag * deltaTime)));
+                currentVelocity *= (1f / (1f + (airDrag * deltaTime)));
             }
 
             if (!tryJump) return;
@@ -326,70 +298,14 @@ namespace ProjectSecurity.Gameplay
             }
         }
 
-        public void OverrideVelocity(Vector3 newVelocity, bool applyToCharacterForward)
-        {
-            if (applyToCharacterForward)
-            {
-                newVelocity = VectorUtility.OrientVectorHorizontal(newVelocity, lastMoveVector, CharacterRight);
-            }
-
-            if (newVelocity.y > 0f)
-            {
-                Motor.ForceUnground();
-            }
-
-            overridingVelocity = newVelocity;
-
-            overroteVelocity = true;
-        }
-
-        public void OverrideVelocity(float magnitude)
-        {
-            overridingVelocity = lastMoveVector * magnitude;
-
-            overroteVelocity = true;
-        }
-
-        public void OverrideHorizontalVelocity(Vector3 newVelocity, bool applyToCharacterForward)
-        {
-            if (applyToCharacterForward)
-            {
-                newVelocity = VectorUtility.OrientVectorHorizontal(newVelocity, lastMoveVector, CharacterRight);
-
-                newVelocity.y = Velocity.y;
-            }
-
-            overridingVelocity = newVelocity;
-        }
-
-        public void OverrideHorizontalVelocity(float magnitude)
-        {
-            overridingVelocity = lastMoveVector * magnitude;
-            overridingVelocity.y = Velocity.y;
-        }
-
-        public void OverrideRotation(Vector3 newForward)
-        {
-            lastMoveVector = newForward;
-        }
-
-        public void GravityLockout()
-        {
-            gravityLockout = true;
-        }
-
         public void DisableEnemyCollision()
         {
             Physics.IgnoreLayerCollision(6, 7);
-
-            ignoreEnemies = true;
         }
 
         public void EnableEnemyCollision()
         {
             Physics.IgnoreLayerCollision(6, 7, false);
-
-            ignoreEnemies = false;
         }
     }
 }

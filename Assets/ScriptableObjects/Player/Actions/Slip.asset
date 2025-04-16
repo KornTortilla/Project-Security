@@ -21,7 +21,7 @@ MonoBehaviour:
   - hitboxIndex: 0
     damageInfo:
       damage: 3
-      knockbackVector: {x: 0, y: 20, z: 0}
+      knockbackVector: {x: 0, y: 9, z: 0}
   projectileObjects: []
   stateToEnter:
     typeName: SlipState
