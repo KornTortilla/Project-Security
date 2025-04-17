@@ -33,7 +33,6 @@ public class EnemyHealth : EntityHealth
 
     [Header("BehaviorTree")]
     BehaviorGraphAgent behaviorAgent;
-    private BlackboardVariable tookDamage;
 
     private void OnEnable()
     {
@@ -48,11 +47,12 @@ public class EnemyHealth : EntityHealth
     private void Awake() {
         navMeshAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();    
+        behaviorAgent = GetComponent<BehaviorGraphAgent>();
     }
 
     protected override void Start() {
         base.Start();
-        behaviorAgent = GetComponent<BehaviorGraphAgent>();
+        // behaviorAgent = GetComponent<BehaviorGraphAgent>();
         
         if (heapObj) heapObj.SetActive(false);
         if (stackObj) stackObj.SetActive(false);
@@ -90,7 +90,7 @@ public class EnemyHealth : EntityHealth
     public override void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
-        behaviorAgent.BlackboardReference.SetVariableValue("RecentlyTookDamage",true);
+        behaviorAgent.BlackboardReference.SetVariableValue("EnemyHealthValue",CurrentHealth);
         Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
         if (CurrentHealth <= 0)
         {
@@ -101,7 +101,7 @@ public class EnemyHealth : EntityHealth
     public void TakeDamage(float damage, Vector3 knockBackForce)
     {
         CurrentHealth -= damage;
-        behaviorAgent.BlackboardReference.SetVariableValue("RecentlyTookDamage",true);
+        behaviorAgent.BlackboardReference.SetVariableValue("EnemyHealthValue",CurrentHealth);
         Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
 
         if (CurrentHealth <= 0)
@@ -122,10 +122,10 @@ public class EnemyHealth : EntityHealth
         enableNavMeshCoroutine = StartCoroutine(EnableNavMesh());
     }
 
-    public void TakeDamage(DamageInfo damageInfo)
+    public override void TakeDamage(DamageInfo damageInfo)
     {
         CurrentHealth -= damageInfo.damage;
-        behaviorAgent.BlackboardReference.SetVariableValue("RecentlyTookDamage",true);
+        behaviorAgent.BlackboardReference.SetVariableValue("EnemyHealthValue",CurrentHealth);
         Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
 
         if (CurrentHealth <= 0)
