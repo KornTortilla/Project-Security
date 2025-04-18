@@ -13,12 +13,9 @@ namespace ProjectSecurity.Gameplay
 
         public override void Move()
         {
-            characterController.OverrideVelocity(new Vector3(0f, 10f, 0f), false);
-        }
+            audioController.PlaySweep();
 
-        public override void Exit()
-        {
-            base.Exit();
+            characterController.OverrideVelocity(new Vector3(0f, 10f, 0f), false);
         }
     }
 }

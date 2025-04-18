@@ -1,3 +1,4 @@
+using ProjectSecurity.Gameplay;
 using UnityEngine;
 
 public abstract class EntityHealth : MonoBehaviour
@@ -37,6 +38,17 @@ public abstract class EntityHealth : MonoBehaviour
             Die();
         }
     }
+
+    public virtual void TakeDamage(DamageInfo damageInfo)
+    {
+        CurrentHealth -= damageInfo.damage;
+        Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
+        if (CurrentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
     public virtual void Heal(float healAmount)
     {
         CurrentHealth = Mathf.Clamp(CurrentHealth + healAmount , 0, maxHealth);

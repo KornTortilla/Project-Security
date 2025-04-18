@@ -7,5 +7,8 @@ namespace ProjectSecurity.Gameplay
     {
         public float damage;
         public Vector3 knockbackVector;
+        public DamageType damageType;
     }
+
+    public enum DamageType {light, heavy, DOT, AOE}
 }

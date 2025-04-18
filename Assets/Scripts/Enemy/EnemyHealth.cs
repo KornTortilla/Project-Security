@@ -1,25 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using ProjectSecurity.Gameplay;
+using Unity.Behavior;
 using UnityEngine;
 using UnityEngine.AI;
-using ProjectSecurity.Gameplay;
-using KinematicCharacterController;
+using UnityEngine.Pool;
 
 public class EnemyHealth : EntityHealth
 {
     NavMeshAgent navMeshAgent;
-    KinematicCharacterMotor kinematicCharacterMotor;
-    EntityCharacterController entityCharacterController;
+   
+    Rigidbody rb;
     [Header("Testing Purposes")]
     public bool KnockBack;
     public float DamageRecieved;
     public float KnockBackForce;
 
+    [Header("ObjectPooling")]
+    [SerializeField] protected float timeoutDelay = 3f;
+    protected IObjectPool<EnemyHealth> objectPool;
+    public IObjectPool<EnemyHealth> ObjectPool { set => objectPool = value; }
+
+    [Header("Drop Objects")]
+    [SerializeField] GameObject heapObj;
+    [SerializeField] GameObject stackObj;
+
     private Coroutine enableNavMeshCoroutine;
 
     private static readonly List<GameObject> lockOnObjectList = new List<GameObject>();
     public static readonly ReadOnlyCollection<GameObject> readOnlyLockOnObjectList = lockOnObjectList.AsReadOnly();
+
+    [Header("BehaviorTree")]
+    BehaviorGraphAgent behaviorAgent;
 
     private void OnEnable()
     {
@@ -33,8 +46,16 @@ public class EnemyHealth : EntityHealth
 
     private void Awake() {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        kinematicCharacterMotor = GetComponent<KinematicCharacterMotor>();
-        entityCharacterController = GetComponent<EntityCharacterController>();
+        rb = GetComponent<Rigidbody>();    
+        behaviorAgent = GetComponent<BehaviorGraphAgent>();
+    }
+
+    protected override void Start() {
+        base.Start();
+        // behaviorAgent = GetComponent<BehaviorGraphAgent>();
+        
+        if (heapObj) heapObj.SetActive(false);
+        if (stackObj) stackObj.SetActive(false);
     }
 
     protected override void Update() {
@@ -48,22 +69,39 @@ public class EnemyHealth : EntityHealth
 
     protected override void Die()
     {
-        gameObject.SetActive(false);
+        // Drop Loot
         Debug.Log("Enemy has been defeated!");
+        if (heapObj) {
+            heapObj.transform.position = transform.position;
+            heapObj.SetActive(true);
+        }
+        if (stackObj) {
+            stackObj.transform.position = transform.position;
+            stackObj.SetActive(true);
+        }
+
+        // Object pool management
+        if(objectPool != null) objectPool.Release(this);
+        else gameObject.SetActive(false);
+
+        // Message Room Clear Condition
+        SendMessageUpwards("DecreaseEnemyCount");
     }
     public override void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
+        behaviorAgent.BlackboardReference.SetVariableValue("EnemyHealthValue",CurrentHealth);
         Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
         if (CurrentHealth <= 0)
         {
             Die();
         }
     }
-
+    
     public void TakeDamage(float damage, Vector3 knockBackForce)
     {
         CurrentHealth -= damage;
+        behaviorAgent.BlackboardReference.SetVariableValue("EnemyHealthValue",CurrentHealth);
         Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
 
         if (CurrentHealth <= 0)
@@ -72,20 +110,36 @@ public class EnemyHealth : EntityHealth
             return;
         }
 
-        
-
         navMeshAgent.enabled = false;
-
-        kinematicCharacterMotor.enabled = true;
-        entityCharacterController.enabled = true;
-        kinematicCharacterMotor.SetPositionAndRotation(transform.position, transform.rotation);
-        entityCharacterController.OverrideVelocity(knockBackForce, false);
-        /*
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
         if(rb.linearVelocity.magnitude <= knockBackForce.magnitude / 2f)
             rb.linearVelocity = knockBackForce;
-        */
         Debug.Log("Knockback Vector: " + knockBackForce);
-        Debug.Log($"Linear Velocity: {entityCharacterController.Velocity}");
+        Debug.Log($"Linear Velocity: {rb.linearVelocity}");
+
+        if (enableNavMeshCoroutine != null)
+            StopCoroutine(enableNavMeshCoroutine);
+        enableNavMeshCoroutine = StartCoroutine(EnableNavMesh());
+    }
+
+    public override void TakeDamage(DamageInfo damageInfo)
+    {
+        CurrentHealth -= damageInfo.damage;
+        behaviorAgent.BlackboardReference.SetVariableValue("EnemyHealthValue",CurrentHealth);
+        Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
+
+        if (CurrentHealth <= 0)
+        {
+            Die();
+            return;
+        }
+
+        navMeshAgent.enabled = false;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        if(rb.linearVelocity.magnitude <= damageInfo.knockbackVector.magnitude / 2f)
+            rb.linearVelocity = damageInfo.knockbackVector;
+        Debug.Log("Knockback Vector: " + damageInfo.knockbackVector);
+        Debug.Log($"Linear Velocity: {rb.linearVelocity}");
 
         if (enableNavMeshCoroutine != null)
             StopCoroutine(enableNavMeshCoroutine);
@@ -94,19 +148,14 @@ public class EnemyHealth : EntityHealth
 
     private IEnumerator EnableNavMesh() {
         float timer = 0f;
-        yield return Time.deltaTime;
-        while (!entityCharacterController.IsGrounded || timer < 0.5f) {
-            // Debug.Log($"Linear Velocity: {rb.linearVelocity}");
-            timer += Time.deltaTime;
-            yield return Time.deltaTime;
+        yield return Time.fixedDeltaTime;
+        while (rb.linearVelocity.y != 0f || timer < 0.2f) {
+            Debug.Log($"Linear Velocity: {rb.linearVelocity}");
+            timer += Time.fixedDeltaTime;
+            yield return Time.fixedDeltaTime;
         }
 
-        Debug.Log("Done!");
-
-        kinematicCharacterMotor.enabled = false;
-        entityCharacterController.enabled = false;
         navMeshAgent.enabled = true;
-        navMeshAgent.Warp(transform.position);
-        // rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 }

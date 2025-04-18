@@ -148,6 +148,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.13057324
+        functionName: PlaySwing
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b546fe30900ada64d84e8aa9e16332d2, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -209,6 +216,13 @@ ModelImporter:
         functionName: ExitState
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.124203816
+        functionName: PlaySwing
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b546fe30900ada64d84e8aa9e16332d2, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -694,6 +708,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.10191083
+        functionName: PlaySwing
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b546fe30900ada64d84e8aa9e16332d2, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -758,6 +779,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.079617836
+        functionName: PlaySwing
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b546fe30900ada64d84e8aa9e16332d2, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -793,6 +821,13 @@ ModelImporter:
         objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
         floatParameter: 0
         intParameter: 0
+        messageOptions: 0
+      - time: 0.10896965
+        functionName: PlaySwing
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b546fe30900ada64d84e8aa9e16332d2, type: 3}
+        floatParameter: 0
+        intParameter: 1
         messageOptions: 0
       - time: 0.12546445
         functionName: EnableDefaultHitbox
@@ -885,6 +920,13 @@ ModelImporter:
         objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
         floatParameter: 0
         intParameter: 0
+        messageOptions: 0
+      - time: 0.35031846
+        functionName: PlaySwing
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b546fe30900ada64d84e8aa9e16332d2, type: 3}
+        floatParameter: 0
+        intParameter: 1
         messageOptions: 0
       transformMask: []
       maskType: 3

@@ -15,6 +15,7 @@ namespace ProjectSecurity.Gameplay
             timer = 0f;
 
             animator.Play("Dash", -1, 0f);
+            audioController.PlayDash();
 
             ReorientToMove();
 

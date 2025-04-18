@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Beach" ID="{8CC1A866-2854-48B7-8275-351186BB8195}">
+					<ChildrenList>
+						<Action Name="" ID="{4855C688-29B0-4B17-8A30-61198225DC67}" ShortID="826755473">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Beach Switch" ID="{050AFDCE-5078-4161-AB5C-7F6CBBAF081A}" WorkUnitID="{625FDCD4-EA78-464A-B9DA-8B1BA0D22136}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Player_Swipe_Small" ID="{A4D31EFA-515A-4F15-8556-ACB01C26491C}">
+					<ChildrenList>
+						<Action Name="" ID="{19AC53C5-75D7-4921-AF50-4A6FD035C0D6}" ShortID="352575397">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Swipe" ID="{76802219-26CE-4768-BF3E-27E2C2372747}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{76415825-030C-409F-9CEE-0C5620320A21}" ShortID="1049570438">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Pitch" Type="int32" Value="100">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{13590AA2-2BA5-4343-9357-B6F252CDD2E7}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Swipe" ID="{76802219-26CE-4768-BF3E-27E2C2372747}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Player_Swipe_Big" ID="{B48EE3D6-D669-42C7-BD04-CC9CB9661495}">
+					<ChildrenList>
+						<Action Name="" ID="{9A860D99-D471-4CBA-AD1B-1A426DDA1379}" ShortID="1056987119">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Swipe" ID="{76802219-26CE-4768-BF3E-27E2C2372747}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{62936ACC-6AA9-421F-84AF-78FC281DF891}" ShortID="938913528">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Pitch" Type="int32" Value="-100">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{2EEF789A-021E-4877-8503-F96D4598A6A3}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Swipe" ID="{76802219-26CE-4768-BF3E-27E2C2372747}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PW" ID="{5CB3CB9B-FAAC-4339-9683-AF171A1BC5D0}">
+					<ChildrenList>
+						<Action Name="" ID="{1ADF17C5-74FC-4202-B819-6C218D002352}" ShortID="780969693">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PW Switch" ID="{E6B52975-66E9-489D-B131-D1EB601CCE86}" WorkUnitID="{625FDCD4-EA78-464A-B9DA-8B1BA0D22136}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Player_Hit" ID="{48155B9D-50BB-407C-A1B4-C5D20B2A9967}">
+					<ChildrenList>
+						<Action Name="" ID="{D7F717EB-7A79-483D-BD94-C415ADE4972C}" ShortID="291430412">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Hit" ID="{5F0E248A-523A-4778-9B6A-AF76D020F879}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Player_Walk" ID="{3A314060-8B4B-42A4-BA91-E257CC58123C}">
+					<ChildrenList>
+						<Action Name="" ID="{D6D93D01-FB95-4911-9229-339C87F9946C}" ShortID="245203177">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Walk Random" ID="{51F03456-76CB-4BEA-8B43-77323148DEDB}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Player_Hurt" ID="{6189DE7F-018C-457B-B924-54C53C6DF307}">
+					<ChildrenList>
+						<Action Name="" ID="{64398910-51FA-4E62-B35B-A70B9F379050}" ShortID="267335723">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Hurt Random" ID="{D180F6A3-D303-496B-A208-5AC9F6B05930}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Player_Player_Dash" ID="{10873EFC-0676-4AE7-AAC2-C4080621AAB1}">
+					<ChildrenList>
+						<Action Name="" ID="{B7F60429-18E1-4478-AC62-2502CFC23600}" ShortID="71295609">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Dash" ID="{81C3D666-3BEB-4E0C-B73D-A639E2D65320}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Spin" ID="{94B570B4-1E9A-490C-A1C6-0831579AEF28}">
+					<ChildrenList>
+						<Action Name="" ID="{9A1E724A-6749-4823-9E57-18A37DAA7BE0}" ShortID="798497122">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Spin Sequence" ID="{9E32779C-E2F3-48FB-98A9-EE5E68ED1629}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sweep" ID="{ECABEA94-D315-40A1-A457-046BBF65C1E2}">
+					<ChildrenList>
+						<Action Name="" ID="{F0585C86-8E79-4612-ABFA-913C02B88978}" ShortID="399173170">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Sweep" ID="{113E8A47-0DD6-4662-B7E2-3EF7AFC84EF0}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Slip" ID="{5D8CD552-BB53-4242-A71D-28120E1EFB1E}">
+					<ChildrenList>
+						<Action Name="" ID="{2D80F730-4E48-4990-9798-861D8333E3C5}" ShortID="155869165">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Slip" ID="{C177E9F0-81C3-45F9-ABAF-A766F24DEBAE}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Transistor_Walk" ID="{C2C35C36-9F3C-482B-9239-DE7F6EA28EE5}">
+					<ChildrenList>
+						<Action Name="" ID="{C067B4CD-9AD3-45F6-B20F-613FE77D9735}" ShortID="201862644">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Transistor Walk Random" ID="{CD518D94-7404-4A12-9062-94A092F32E27}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Transistor_Swipe" ID="{8FA625D2-BA14-4702-87B0-9572D10BD768}">
+					<ChildrenList>
+						<Action Name="" ID="{24CDF748-A65F-4013-B4BB-EBCEDAF165A5}" ShortID="1009851889">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Transistor Swipe" ID="{92C45813-1E03-44DA-8C27-91E8F115A8B3}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Capacitor_Walk" ID="{BD25B8F7-E16B-4D32-BAF4-07B21C7C5D47}">
+					<ChildrenList>
+						<Action Name="" ID="{F5C6877D-BBB8-4DD6-848A-503804550BF3}" ShortID="382322959">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Capacitor Walk Random" ID="{3B9AE735-05D0-488C-AF82-61BC097347B2}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Entity_Death" ID="{61BB8853-2F82-4CD0-8280-6C634957F634}">
+					<ChildrenList>
+						<Action Name="" ID="{F238BD8E-F39D-4322-B9F4-FE373B79F5CE}" ShortID="436563925">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Hit" ID="{5F0E248A-523A-4778-9B6A-AF76D020F879}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{24F72331-47F4-4A21-B8CD-F4D6CF998B5D}" ShortID="349845236">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Entity Death" ID="{37B8ABB8-CAB8-4FB1-937F-40FC21607DCB}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

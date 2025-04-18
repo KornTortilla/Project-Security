@@ -26,7 +26,7 @@ namespace ProjectSecurity.Gameplay
             timer += Time.deltaTime;
 
             if (timer >= exitTime)
-                Exit();
+                stateMachine.SetStateToDefault();
         }
     }
 }
