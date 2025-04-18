@@ -54,13 +54,13 @@ namespace ProjectSecurity.Gameplay
             if(lockOnController.isLockedOn) 
             {
                 Vector3 horiVector = Vector3.ProjectOnPlane(moveVector, Vector3.up);
-                Debug.Log(horiVector);
-                Debug.Log(horiVector.magnitude);
+                // Debug.Log(horiVector);
+                // Debug.Log(horiVector.magnitude);
                 float magnitudeToTarget = lockOnController.GetHorizontalMagnitudeToTarget();
                 if (magnitudeToTarget < horizontalThreshold)
                     horiVector *= Mathf.Lerp(1f, 0.2f, magnitudeToTarget / horizontalThreshold);
 
-                Debug.Log(horiVector.magnitude);
+                // Debug.Log(horiVector.magnitude);
 
                 float addition = 0f;
                 if (!characterController.IsGrounded)

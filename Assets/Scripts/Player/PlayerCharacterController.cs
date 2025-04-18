@@ -7,6 +7,7 @@ namespace ProjectSecurity.Gameplay
     public class PlayerCharacterController : EntityCharacterController, ICharacterController
     {
         private InputBank inputBank;
+        private PlayerBody playerBody;
 
         [Header("Movement")]
         public float maxMoveSpeed = 10f;
@@ -28,6 +29,8 @@ namespace ProjectSecurity.Gameplay
         private bool tryJump;
         private float timeSinceLastAbleToJump = 0f;
 
+        public bool canWallJump;
+
         public bool hasJumpedThisFrame = false;
 
         public static Action OnLand;
@@ -37,6 +40,7 @@ namespace ProjectSecurity.Gameplay
             Motor.CharacterController = this;
 
             inputBank = GetComponent<InputBank>();
+            playerBody = GetComponent<PlayerBody>();
 
             gravity = new Vector3(0f, -gravityScale, 0f);
         }
@@ -129,7 +133,12 @@ namespace ProjectSecurity.Gameplay
 
         void ICharacterController.OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
+            if (!Motor.GroundingStatus.IsStableOnGround && !hitStabilityReport.IsStable && !playerBody.hasWallJumped)
+            {
+                Debug.Log("Can Jump Cancel!");
 
+                canWallJump = true;
+            }
         }
 
         void ICharacterController.PostGroundingUpdate(float deltaTime)
@@ -253,8 +262,11 @@ namespace ProjectSecurity.Gameplay
             if (inputBank.LastButtonInput == ButtonInput.Jump)
             {
                 // See if we actually are allowed to jump
-                if (((allowJumpingWhenSliding ? Motor.GroundingStatus.FoundAnyGround : Motor.GroundingStatus.IsStableOnGround) || timeSinceLastAbleToJump <= jumpPostGroundingGraceTime))
+                if (canWallJump || ((allowJumpingWhenSliding ? Motor.GroundingStatus.FoundAnyGround : Motor.GroundingStatus.IsStableOnGround) || timeSinceLastAbleToJump <= jumpPostGroundingGraceTime))
                 {
+                    if (canWallJump)
+                        playerBody.UseWallJump();
+
                     hasJumpedThisFrame = true;
 
                     // Calculate jump direction before ungrounding
@@ -296,6 +308,8 @@ namespace ProjectSecurity.Gameplay
                     currentVelocity.y = 0f;
                 }
             }
+
+            canWallJump = false;
         }
 
         public void DisableEnemyCollision()

@@ -1538,6 +1538,7 @@ Transform:
   - {fileID: 6081476842390402990}
   - {fileID: 3131890248766334673}
   - {fileID: 1345546728712650677}
+  - {fileID: 6862860711736294951}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3873048131102095444
@@ -2327,7 +2328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RecenterTarget: 1
   m_VerticalAxis:
-    Value: 32.730812
+    Value: 32.730816
     m_SpeedMode: 0
     m_MaxSpeed: 100
     m_AccelTime: 0.1
