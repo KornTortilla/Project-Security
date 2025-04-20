@@ -90,6 +90,7 @@ public class EnemyHealth : EntityHealth
     public override void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
+        Debug.Log(name + " has taken " + damage + " damage!");
         behaviorAgent.BlackboardReference.SetVariableValue("EnemyHealthValue",CurrentHealth);
         Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
         if (CurrentHealth <= 0)
@@ -101,6 +102,7 @@ public class EnemyHealth : EntityHealth
     public void TakeDamage(float damage, Vector3 knockBackForce)
     {
         CurrentHealth -= damage;
+        Debug.Log(name + " has taken " + damage + " damage!");
         behaviorAgent.BlackboardReference.SetVariableValue("EnemyHealthValue",CurrentHealth);
         Debug.Log("Ouch! I only have " + CurrentHealth + " health left!");
 
