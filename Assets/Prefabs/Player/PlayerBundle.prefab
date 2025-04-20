@@ -3776,6 +3776,10 @@ PrefabInstance:
       propertyPath: startingMeter
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 2696661165629453095, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
+      propertyPath: healthUI
+      value: 
+      objectReference: {fileID: 9092337205140020314}
     - target: {fileID: 3681291928225286624, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
       propertyPath: targetGroup
       value: 
