@@ -114,8 +114,7 @@ public class EnemyHealth : EntityHealth
 
         navMeshAgent.enabled = false;
         rb.constraints = RigidbodyConstraints.FreezeRotation;
-        if(rb.linearVelocity.magnitude <= knockBackForce.magnitude / 2f)
-            rb.linearVelocity = knockBackForce;
+        rb.linearVelocity = knockBackForce;
         Debug.Log("Knockback Vector: " + knockBackForce);
         Debug.Log($"Linear Velocity: {rb.linearVelocity}");
 

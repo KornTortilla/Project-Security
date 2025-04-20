@@ -1,4 +1,5 @@
 using UnityEngine;
+using ProjectSecurity.Gameplay;
 
 public class MeleeHitbox : Weapon
 {
@@ -10,6 +11,6 @@ public class MeleeHitbox : Weapon
 
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag("Player")) return;
-        other.GetComponent<EntityHealth>().TakeDamage(Damage);
+        other.GetComponent<EntityHealth>().TakeDamage(DamageInfo);
     }
 }
