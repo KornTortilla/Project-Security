@@ -537,6 +537,13 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.57712764
+        functionName: NotifyMove
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.68963253
         functionName: NextHitbox
         data: 
@@ -544,10 +551,10 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.57712764
-        functionName: NotifyMove
+      - time: 0.75056577
+        functionName: EnableTrail
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -616,6 +623,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.20382166
+        functionName: EnableTrail
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.2587269
         functionName: NextHitbox
         data: 
@@ -627,6 +641,13 @@ ModelImporter:
         functionName: CanCancel
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 0aea527b2f0842745bf63b7c721f24f9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6981416
+        functionName: DisableTrail
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c903bb39989800043afeafa6736707f4, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

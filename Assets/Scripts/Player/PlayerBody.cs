@@ -11,12 +11,12 @@ namespace ProjectSecurity.Gameplay
 
         public void OnEnable()
         {
-            PlayerCharacterController.OnLand += RefreshAirRolls;
+            PlayerCharacterController.OnLand += LandRefresh;
         }
 
         public void OnDisable()
         {
-            PlayerCharacterController.OnLand += RefreshAirRolls;
+            PlayerCharacterController.OnLand += LandRefresh;
         }
 
         private void Awake()
@@ -32,6 +32,22 @@ namespace ProjectSecurity.Gameplay
         public void RefreshAirRolls()
         {
             airRollCount = airRollMax;
+        }
+
+        public void UseWallJump()
+        {
+            hasWallJumped = true;
+        }
+
+        public void RefreshWallJump()
+        {
+            hasWallJumped = false;
+        }
+
+        private void LandRefresh()
+        {
+            RefreshAirRolls();
+            RefreshWallJump();
         }
     }
 }

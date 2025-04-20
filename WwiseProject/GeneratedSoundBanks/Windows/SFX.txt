@@ -1,19 +1,23 @@
 Event	ID	Name			Wwise Object Path	Notes
+	10169642	Play_Desktop			\Default Work Unit\Play_Desktop	
 	301125906	Play_Spin			\Default Work Unit\Play_Spin	
 	873708310	Play_Sweep			\Default Work Unit\Play_Sweep	
 	887999531	Play_Player_Hurt			\Default Work Unit\Play_Player_Hurt	
 	1074894637	Play_Player_Swipe_Big			\Default Work Unit\Play_Player_Swipe_Big	
 	1864892471	Play_Player_Hit			\Default Work Unit\Play_Player_Hit	
 	2306570000	Play_Transistor_Swipe			\Default Work Unit\Play_Transistor_Swipe	
+	2469785129	Play_Startup			\Default Work Unit\Play_Startup	
 	2708748033	Play_Transistor_Walk			\Default Work Unit\Play_Transistor_Walk	
 	2825395259	Play_Player_Walk			\Default Work Unit\Play_Player_Walk	
 	3189325242	Play_Player_Swipe_Small			\Default Work Unit\Play_Player_Swipe_Small	
 	3288250068	Play_Entity_Death			\Default Work Unit\Play_Entity_Death	
 	3925680016	Play_Slip			\Default Work Unit\Play_Slip	
+	4016355651	Stop_Startup			\Default Work Unit\Stop_Startup	
 	4203421770	Play_Capacitor_Walk			\Default Work Unit\Play_Capacitor_Walk	
 	4240219209	Player_Player_Dash			\Default Work Unit\Player_Player_Dash	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	7884074	Desktop Startup	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\E8\{E8EFA3A3-F673-7D8F-F986-29D3AFC3D731}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Desktop Startup		463060
 	112295897	Player Hurt 3	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\61\{61B73A33-2BBA-FAF3-0D30-55B0602DC89F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Hurt Random\Player Hurt 3		88300
 	180148855	Player Hurt 2	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\EF\{EFB2E1C7-3DA5-11EC-0101-73654B7CAE79}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Hurt Random\Player Hurt 2		88300
 	292454630	Player Hit	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\B9\{B9DE28BD-695E-CE11-E4D7-4A9CEF57B209}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Hit		50212
@@ -21,10 +25,12 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	376638924	Transistor Walk 3 Crushed	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\42\{42783364-52AB-AD28-D996-692B502A1668}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Transistor Walk Random\Transistor Walk 3 Crushed		26764
 	571637079	Player Hurt 1	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\B1\{B112310E-BBCC-53A6-3E51-CB78FAEC02B9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Hurt Random\Player Hurt 1		88300
 	618418219	Player Walk	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\08\{086A8A89-42E5-2252-17AD-C505BC5715DE}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Walk Random\Player Walk		34652
+	622845277	Entity Death	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\D0\{D09144E9-CC6D-D767-36BC-C5EA1D6DD5C2}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Entity Death		143468
 	665249340	Player Sweep	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\7E\{7ED1D48D-6E8C-AB9C-C041-023CB4DAAD9C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Sweep		143468
 	724176927	Player Swipe	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\8F\{8FF00D7C-8D77-1253-D9E2-44B7FEB6E0FF}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Swipe		38280
 	738268994	Transistor Swipe	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\FF\{FF17C34B-B174-46A3-E753-C7128EEEFBCF}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Transistor Swipe		42548
 	754837167	Transistor Walk 2 Crushed	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\E8\{E80D4870-ADF0-98A2-B69C-1742C7783E06}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Capacitor Walk Random\Transistor Walk 2 Crushed		27000
+	797108729	PC Startup	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\38\{38E49D67-4B3D-B06D-7233-CE5999376757}.wem		\Actor-Mixer Hierarchy\Default Work Unit\PC Startup		834652
 	805305102	Player Dash	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\89\{892C2CFB-BEBD-12CB-D804-37EA2DD39B96}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Dash		41788
 	829091581	Transistor Walk 1 Crushed	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\64\{644223CE-41DE-1C09-6550-89B42FFA409C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Transistor Walk Random\Transistor Walk 1 Crushed		25588
 	849024902	Player Spin Loop	C:\Users\lMine\Documents\Github\Project-Security\WwiseProject\.cache\B9\{B94ECDDC-3D2C-F535-015A-88B5DBB3EA77}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player Spin Sequence\Player Spin Loop		30676

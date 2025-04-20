@@ -6,7 +6,7 @@ namespace ProjectSecurity.Gameplay
     public class MeterManager : MonoBehaviour
     {
         [Header("Required Components")]
-        [SerializeField] private MeterUI meterUI;
+        [SerializeField] private SliderUI meterUI;
 
         [Header("Settings")]
         [SerializeField] private int startingMeter = 100;
@@ -53,7 +53,7 @@ namespace ProjectSecurity.Gameplay
             else if (meter < 0)
                 meter = 0;
 
-            meterUI.UpdateMeter(meter);
+            meterUI.Update(meter);
         }
 
         public bool TryCancel()

@@ -934,6 +934,71 @@
 						<ActiveSource Name="Die" ID="{947071FB-FCCC-4A71-90A5-F5C81565825E}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="PC Startup" ID="{506E6E8F-C856-4820-9C74-4E5F99965A0D}" ShortID="272221732">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="PC Startup Loop" ID="{E2859126-C878-40CE-9CAD-339BBAF7BC61}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>PC Startup Loop.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="797108729"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="PC Startup Loop" ID="{E2859126-C878-40CE-9CAD-339BBAF7BC61}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Desktop Startup" ID="{7BB139C9-0DCB-4660-BE3F-E19EEAA365AA}" ShortID="573121767">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Desktop Startup" ID="{768BA375-3DCD-4186-B312-033A10F79279}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="1.81078946490612"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="2.62423005862925"/>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Desktop Startup.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="7884074"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Desktop Startup" ID="{768BA375-3DCD-4186-B312-033A10F79279}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

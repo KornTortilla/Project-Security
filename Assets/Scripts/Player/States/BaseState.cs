@@ -46,8 +46,20 @@ namespace ProjectSecurity.Gameplay
 
         public virtual void Update()
         {
+            CheckJumpCancel();
+            CheckLand();
+        }
+
+        protected virtual void CheckLand()
+        {
             if (changeStateOnLand && characterController.HasHitGroundThisFrame)
                 stateMachine.Land();
+        }
+
+        protected virtual void CheckJumpCancel()
+        {
+            if (characterController.canWallJump && inputBank.LastButtonInput == ButtonInput.Jump)
+                stateMachine.SetStateToDefault();
         }
 
         public virtual void Move()

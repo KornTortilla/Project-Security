@@ -31,7 +31,7 @@ namespace ProjectSecurity.Gameplay
             textMeshCost.text = cost.ToString();
 
             specialAction = new SpecialAction(actionData);
-            textMeshAttDescription.text = specialAction.AddRandomAttribute();
+            textMeshAttDescription.text = "+" + specialAction.AddRandomAttribute();
         }
 
         public void NotifyTryPurchase()

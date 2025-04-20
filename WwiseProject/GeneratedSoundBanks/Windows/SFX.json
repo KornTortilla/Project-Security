@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{6F19E27E-B52D-4EFD-9582-3367B33145F2}",
     "Language": "SFX",
-    "Hash": "{FB9FD1BE-F731-BCC2-944F-60953C1F89D3}",
+    "Hash": "{EFDFC6A4-9039-43F2-7BBF-74D168CDDE33}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SFX",
     "ShortName": "SFX",
     "Path": "SFX.bnk",
     "Media": [
+     {
+      "Id": "7884074",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Desktop Startup.wav",
+      "CachePath": "E8/{E8EFA3A3-F673-7D8F-F986-29D3AFC3D731}.wem"
+     },
      {
       "Id": "112295897",
       "Language": "SFX",
@@ -72,6 +80,14 @@
       "CachePath": "08/{086A8A89-42E5-2252-17AD-C505BC5715DE}.wem"
      },
      {
+      "Id": "622845277",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Die.wav",
+      "CachePath": "D0/{D09144E9-CC6D-D767-36BC-C5EA1D6DD5C2}.wem"
+     },
+     {
       "Id": "665249340",
       "Language": "SFX",
       "Streaming": "false",
@@ -102,6 +118,14 @@
       "Location": "Memory",
       "ShortName": "Transistor Walk 2 Crushed.wav",
       "CachePath": "E8/{E80D4870-ADF0-98A2-B69C-1742C7783E06}.wem"
+     },
+     {
+      "Id": "797108729",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PC Startup Loop.wav",
+      "CachePath": "38/{38E49D67-4B3D-B06D-7233-CE5999376757}.wem"
      },
      {
       "Id": "805305102",
@@ -167,6 +191,20 @@
       ]
      },
      {
+      "Id": "10169642",
+      "Name": "Play_Desktop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Desktop",
+      "GUID": "{065BF696-D118-4F4A-9E1F-FE141CA0062E}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.6242301",
+      "DurationMax": "2.6242301",
+      "MediaRefs": [
+       {
+        "Id": "7884074"
+       }
+      ]
+     },
+     {
       "Id": "3288250068",
       "Name": "Play_Entity_Death",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Entity_Death",
@@ -177,6 +215,9 @@
       "MediaRefs": [
        {
         "Id": "292454630"
+       },
+       {
+        "Id": "622845277"
        }
       ]
      },
@@ -285,6 +326,18 @@
       ]
      },
      {
+      "Id": "2469785129",
+      "Name": "Play_Startup",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Startup",
+      "GUID": "{E5407E37-CC9B-4FD6-9306-722595275C95}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "797108729"
+       }
+      ]
+     },
+     {
       "Id": "873708310",
       "Name": "Play_Sweep",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Sweep",
@@ -346,10 +399,25 @@
         "Id": "805305102"
        }
       ]
+     },
+     {
+      "Id": "4016355651",
+      "Name": "Stop_Startup",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Startup",
+      "GUID": "{211CBA8E-B791-45C8-BB60-79D4203A69B7}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "797108729"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{E3C5D578-CB62-D5E3-77BA-B45D8501D58E}"
+  "FileHash": "{6B9E119E-EFDA-20C8-74BC-DADA9CF48387}"
  }
 }

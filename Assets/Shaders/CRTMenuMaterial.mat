@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CRTMaterial
+  m_Name: CRTMenuMaterial
   m_Shader: {fileID: -6465566751694194690, guid: 9129a4298586c034e980c532f78a8d43, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -37,9 +37,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Blur_Offset: 0.0005
-    - _Scan_Lines_Speed: 0.05
+    - _Blur_Offset: 0.00025
+    - _Scan_Line_Count: 200
+    - _Scan_Lines_Speed: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color_Correction: {r: 1, g: 1, b: 1, a: 0}
+    - _Scan_Line_Color: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

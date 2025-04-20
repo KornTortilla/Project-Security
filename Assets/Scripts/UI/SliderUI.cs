@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 namespace ProjectSecurity.Gameplay
 {
-    public class MeterUI : MonoBehaviour
+    public class SliderUI : MonoBehaviour
     {
         [SerializeField] private Slider slider;
 
-        public void UpdateMeter(int amount)
+        public void Update(int amount)
         {
             slider.value = amount;
         }

@@ -4,6 +4,8 @@ namespace ProjectSecurity.Gameplay
 {
     public class PlayerHealth : EntityHealth
     {
+        [SerializeField] private SliderUI healthUI;
+
         private PlayerStateMachine playerStateMachine;
         private PlayerCharacterController playerCharacterController;
 
@@ -13,17 +15,22 @@ namespace ProjectSecurity.Gameplay
             playerCharacterController = GetComponent<PlayerCharacterController>();
         }
 
-        public void TakeDamage(float damage, Vector3 knockbackVector)
-        {
-            base.TakeDamage(damage);
-
-            playerStateMachine.Hurt();
-            playerCharacterController.OverrideVelocity(knockbackVector, false);
-        }
-
         public void TakeNonKnockbackDamage(float damage)
         {
             base.TakeDamage(damage);
+        }
+
+        public override void TakeDamage(DamageInfo damageInfo)
+        {
+            base.TakeDamage(damageInfo);
+
+            if(damageInfo.damageType == DamageType.heavy)
+            {
+                playerStateMachine.Hurt();
+                playerCharacterController.OverrideVelocity(damageInfo.knockbackVector, false);
+            }
+
+            healthUI.Update((int)CurrentHealth);
         }
     }
 }

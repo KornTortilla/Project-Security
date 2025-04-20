@@ -33,6 +33,8 @@ namespace ProjectSecurity.Gameplay
 
             timer += Time.deltaTime;
 
+            CheckJumpCancel();
+
             if (timer >= exitTime)
                 stateMachine.SetStateToDefault();
         }

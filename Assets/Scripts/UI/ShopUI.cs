@@ -10,10 +10,7 @@ namespace ProjectSecurity.Gameplay
         [SerializeField] private InventoryManager inventoryManager;
         [SerializeField] private GameObject container;
         [SerializeField] private Transform actionItemStoringTransform;
-        [SerializeField] private GameObject specialActionItemPrefab;
-
-        [Header("Settings")]
-        [SerializeField] private int amountOfActionItems;
+        [SerializeField] private ActionShopItem[] actionShopItems;
 
         private void Start()
         {
@@ -22,11 +19,9 @@ namespace ProjectSecurity.Gameplay
             System.Random random = new System.Random();
             actionDatas = actionDatas.OrderBy(x => random.Next()).ToArray();
 
-            for(int i = 0; i < amountOfActionItems; i++)
+            for(int i = 0; i < actionShopItems.Length; i++)
             {
-                ActionShopItem actionShopItem = Instantiate(specialActionItemPrefab, 
-                    actionItemStoringTransform).GetComponent<ActionShopItem>();
-                actionShopItem.Instantiate(this, actionDatas[i]);
+                actionShopItems[i].Instantiate(this, actionDatas[i]);
             }
         }
 
