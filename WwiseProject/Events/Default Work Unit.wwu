@@ -223,6 +223,46 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Startup" ID="{E5407E37-CC9B-4FD6-9306-722595275C95}">
+					<ChildrenList>
+						<Action Name="" ID="{3F728357-9C4A-4347-830D-25F73ED9E414}" ShortID="1030608884">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PC Startup" ID="{506E6E8F-C856-4820-9C74-4E5F99965A0D}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Startup" ID="{211CBA8E-B791-45C8-BB60-79D4203A69B7}">
+					<ChildrenList>
+						<Action Name="" ID="{A1F8206A-D5EC-4BAB-9394-C1A1508A2D3C}" ShortID="784795589">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PC Startup" ID="{506E6E8F-C856-4820-9C74-4E5F99965A0D}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Desktop" ID="{065BF696-D118-4F4A-9E1F-FE141CA0062E}">
+					<ChildrenList>
+						<Action Name="" ID="{B25908E3-9310-4C50-AFE3-E6E43D20DC18}" ShortID="967073824">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Desktop Startup" ID="{7BB139C9-0DCB-4660-BE3F-E19EEAA365AA}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

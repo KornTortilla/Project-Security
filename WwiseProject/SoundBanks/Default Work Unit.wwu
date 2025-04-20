@@ -22,11 +22,14 @@
 						<ObjectRef Name="Play_Player_Walk" ID="{3A314060-8B4B-42A4-BA91-E257CC58123C}" WorkUnitID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Transistor Swipe" ID="{92C45813-1E03-44DA-8C27-91E8F115A8B3}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Player_Hurt" ID="{6189DE7F-018C-457B-B924-54C53C6DF307}" WorkUnitID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Startup" ID="{211CBA8E-B791-45C8-BB60-79D4203A69B7}" WorkUnitID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player Slip" ID="{C177E9F0-81C3-45F9-ABAF-A766F24DEBAE}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Desktop Startup" ID="{7BB139C9-0DCB-4660-BE3F-E19EEAA365AA}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player Sweep" ID="{113E8A47-0DD6-4662-B7E2-3EF7AFC84EF0}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Transistor_Swipe" ID="{8FA625D2-BA14-4702-87B0-9572D10BD768}" WorkUnitID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player Swipe" ID="{76802219-26CE-4768-BF3E-27E2C2372747}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player Hit" ID="{5F0E248A-523A-4778-9B6A-AF76D020F879}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PC Startup" ID="{506E6E8F-C856-4820-9C74-4E5F99965A0D}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Transistor_Walk" ID="{C2C35C36-9F3C-482B-9239-DE7F6EA28EE5}" WorkUnitID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Capacitor Walk Random" ID="{3B9AE735-05D0-488C-AF82-61BC097347B2}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Spin" ID="{94B570B4-1E9A-490C-A1C6-0831579AEF28}" WorkUnitID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" Origin="Manual" Filter="7"/>
@@ -37,8 +40,10 @@
 						<ObjectRef Name="Play_Capacitor_Walk" ID="{BD25B8F7-E16B-4D32-BAF4-07B21C7C5D47}" WorkUnitID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player Dash" ID="{81C3D666-3BEB-4E0C-B73D-A639E2D65320}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Player_Swipe_Small" ID="{A4D31EFA-515A-4F15-8556-ACB01C26491C}" WorkUnitID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Desktop" ID="{065BF696-D118-4F4A-9E1F-FE141CA0062E}" WorkUnitID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player Spin Intro" ID="{8ADD53DD-9DE8-4FA1-A471-329BE58CD262}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Entity Death" ID="{37B8ABB8-CAB8-4FB1-937F-40FC21607DCB}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Startup" ID="{E5407E37-CC9B-4FD6-9306-722595275C95}" WorkUnitID="{B46F6833-16E1-4C76-93F0-8110144E5D6F}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

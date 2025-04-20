@@ -64,6 +64,7 @@ namespace ProjectSecurity.Gameplay
 
         public override void Exit()
         {
+            stateMachine.hitboxController.DisableTrail();
             audioController.StopSpin();
 
             base.Exit();

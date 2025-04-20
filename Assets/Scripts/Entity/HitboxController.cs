@@ -6,9 +6,13 @@ namespace ProjectSecurity.Gameplay
 {
     public class HitboxController : MonoBehaviour
     {
+        [Header("Required Components")]
         [SerializeField] private Transform hitboxStoringTransform;
         [SerializeField] private Hitbox defaultHitbox;
         [SerializeField] private TrailRenderer defaultTrailRenderer;
+
+        [Header("Settings")]
+        [SerializeField] private bool showHitboxes;
 
         // Own event to signal
         public static event Action OnHit;
@@ -90,6 +94,8 @@ namespace ProjectSecurity.Gameplay
             currentHitbox.gameObject.SetActive(true);
             DamageInfo damageInfo = currentHitboxDatas[hitboxDataIndex].damageInfo;
             currentHitbox.Initialize(damageInfo.damage, OrientKnockback(damageInfo.knockbackVector));
+
+            CheckShowHitbox();
         }
 
         public void ReuseLastHitbox()
@@ -107,12 +113,28 @@ namespace ProjectSecurity.Gameplay
             currentHitbox = defaultHitbox;
             currentHitbox.gameObject.SetActive(true);
 
+            CheckShowHitbox();
+
             defaultTrailRenderer.gameObject.SetActive(true);
         }
 
         public void EnableTrail()
         {
             defaultTrailRenderer.gameObject.SetActive(true);
+        }
+
+        public void DisableTrail()
+        {
+            defaultTrailRenderer.gameObject.SetActive(false);
+        }
+
+        private void CheckShowHitbox()
+        {
+            MeshRenderer meshRenderer = currentHitbox.GetComponent<MeshRenderer>(); ;
+            if (showHitboxes)
+                meshRenderer.enabled = true;
+            else
+                meshRenderer.enabled = false;
         }
 
         public void StopCurrentHitbox()
