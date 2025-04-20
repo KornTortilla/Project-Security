@@ -42,7 +42,7 @@ MonoBehaviour:
   - rid: 4082006409061859551
   - rid: 4082006409061859552
   - rid: 4082006409061859553
-  m_VersionTimestamp: 638805782198048086
+  m_VersionTimestamp: 638807409075441182
   m_DebugInfo: {fileID: 2501168677733404946}
   m_RuntimeGraph: {fileID: 2081696227496646515}
   AssetID:
@@ -1551,7 +1551,7 @@ MonoBehaviour:
     - rid: 9052891833043517736
       type: {class: SequenceNodeModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
       data:
-        Position: {x: -863.8315, y: -31.767294}
+        Position: {x: -864.90906, y: -19.91364}
         ID:
           m_Value0: 10611416316602425473
           m_Value1: 7618735180719244054
@@ -3287,7 +3287,7 @@ MonoBehaviour:
   - rid: 9052891833043517593
   - rid: 9052892004349378637
   - rid: 4082006409061859419
-  m_VersionTimestamp: 638797968147728440
+  m_VersionTimestamp: 638807407197690060
   m_CommandBuffer:
     m_Commands: []
   m_RuntimeBlackboardAsset: {fileID: 9589374593393540}

@@ -757,6 +757,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8495767837733010739, guid: a085aff8aec5c004394f44f0f87beca3, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2798920664438618949, guid: a085aff8aec5c004394f44f0f87beca3, type: 3}
