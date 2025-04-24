@@ -23,6 +23,7 @@ namespace AK
         static const AkUniqueID PLAY_PLAYER_SWIPE_SMALL = 3189325242U;
         static const AkUniqueID PLAY_PLAYER_WALK = 2825395259U;
         static const AkUniqueID PLAY_PW = 2095080197U;
+        static const AkUniqueID PLAY_RAVE = 2352385814U;
         static const AkUniqueID PLAY_SLIP = 3925680016U;
         static const AkUniqueID PLAY_SPIN = 301125906U;
         static const AkUniqueID PLAY_STARTUP = 2469785129U;

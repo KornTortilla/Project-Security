@@ -263,6 +263,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Rave" ID="{D6FE84E9-848E-44EC-B97C-161FD6D0DC78}">
+					<ChildrenList>
+						<Action Name="" ID="{6B19AAF8-7897-443E-AF81-4EE8FE625AC3}" ShortID="89788769">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player Rave" ID="{8303136F-BF95-4FEA-96D4-D8B876A6260F}" WorkUnitID="{7A91E111-83D0-498B-9442-18D1C3C097E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
