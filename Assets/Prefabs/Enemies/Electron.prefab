@@ -5146,7 +5146,7 @@ PrefabInstance:
     - target: {fileID: 2453356416209190822, guid: 27b6f20d2f489d747b6ec9a17103ea52, type: 3}
       propertyPath: m_Graph
       value: 
-      objectReference: {fileID: 2081696227496646515, guid: 6924affd0af4d014dbc50324b6539c30, type: 2}
+      objectReference: {fileID: 2081696227496646515, guid: d6242d455d2ac9f42be8e81b6d25b872, type: 2}
     - target: {fileID: 2585845886762256664, guid: 27b6f20d2f489d747b6ec9a17103ea52, type: 3}
       propertyPath: m_Name
       value: ElectronBody
@@ -5186,6 +5186,10 @@ PrefabInstance:
     - target: {fileID: 4649246042530169367, guid: 27b6f20d2f489d747b6ec9a17103ea52, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.85385406
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740769839727189162, guid: 27b6f20d2f489d747b6ec9a17103ea52, type: 3}
+      propertyPath: maxHealth
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6195493764694571753, guid: 27b6f20d2f489d747b6ec9a17103ea52, type: 3}
       propertyPath: m_LocalPosition.x

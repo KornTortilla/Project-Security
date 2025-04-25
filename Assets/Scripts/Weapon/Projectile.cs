@@ -9,16 +9,7 @@ public class Projectile : MonoBehaviour
     protected IObjectPool<Projectile> objectPool;
     public IObjectPool<Projectile> ObjectPool { set => objectPool = value; }
     public DamageInfo DamageInfo;
-
-    public virtual void Deactivate() {
-        StartCoroutine(DeactivateRoutine(timeoutDelay));
-    }
-
-    public virtual IEnumerator DeactivateRoutine(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        ReleaseProjectile();
-    }
+    bool releasingProjectile = false;
 
     private void ReleaseProjectile()
     {
@@ -31,10 +22,11 @@ public class Projectile : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
+        if (releasingProjectile) return;
+        releasingProjectile = true;
         if (other.CompareTag("Player")) {
             other.GetComponent<EntityHealth>().TakeDamage(DamageInfo);
         }
-        StopCoroutine(nameof(DeactivateRoutine));
         ReleaseProjectile();
     }
 }

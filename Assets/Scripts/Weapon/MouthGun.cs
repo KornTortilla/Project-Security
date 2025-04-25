@@ -31,8 +31,6 @@ public class MouthGun : Weapon
 
             projectileObj.GetComponent<Rigidbody>().AddForce(projectileObj.transform.forward * muzzleVelocity, ForceMode.Acceleration);
 
-            projectileObj.Deactivate();
-
             nextTimeToShoot = Time.time + cooldownWindow;
             return true;
         }
