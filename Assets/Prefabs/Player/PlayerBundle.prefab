@@ -2033,7 +2033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RecenterTarget: 1
   m_VerticalAxis:
-    Value: 47.67657
+    Value: 47.676575
     m_SpeedMode: 0
     m_MaxSpeed: 100
     m_AccelTime: 0.1
@@ -2057,13 +2057,13 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_HorizontalAxis:
-    Value: -41.78119
+    Value: -41.781193
     m_SpeedMode: 0
     m_MaxSpeed: 200
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
-    m_InputAxisValue: 0.05
+    m_InputAxisValue: 0
     m_InvertInput: 0
     m_MinValue: -180
     m_MaxValue: 180
@@ -3375,7 +3375,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1479570947565703420}
   - component: {fileID: 7176902275057991786}
-  - component: {fileID: 8338096914117051341}
   - component: {fileID: 8421660351972254873}
   - component: {fileID: 2866557935371326558}
   m_Layer: 0
@@ -3393,8 +3392,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8868353100867110527}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0008085058, y: 0.09101226, z: 0.00007389063, w: 0.99584943}
-  m_LocalPosition: {x: -1.8126831, y: 1.7937624, z: -9.834322}
+  m_LocalRotation: {x: 0.3775886, y: -0.3261644, z: 0.14411607, w: 0.85456085}
+  m_LocalPosition: {x: 4.4862137, y: 9.3935585, z: -5.0208735}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3451,14 +3450,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8338096914117051341
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8868353100867110527}
-  m_Enabled: 1
 --- !u!114 &8421660351972254873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3562,7 +3553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8952266113076143858}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

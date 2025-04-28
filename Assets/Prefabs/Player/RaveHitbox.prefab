@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7525856423928493829}
   - component: {fileID: 9199410626041539375}
   m_Layer: 0
-  m_Name: ShredderHitbox
+  m_Name: RaveHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 775589523478720145}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.675, z: 1.5}
-  m_LocalScale: {x: 1, y: 3.25, z: 3}
+  m_LocalPosition: {x: 0, y: 1, z: -1.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

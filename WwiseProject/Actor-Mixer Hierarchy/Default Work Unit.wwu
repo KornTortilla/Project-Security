@@ -999,6 +999,28 @@
 						<ActiveSource Name="Desktop Startup" ID="{768BA375-3DCD-4186-B312-033A10F79279}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="Player Rave" ID="{8303136F-BF95-4FEA-96D4-D8B876A6260F}" ShortID="734038208">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B09BF840-4DA2-4651-8574-994DF4BDA48C}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D87F442-5227-4032-8D35-ACC6132B4186}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Player Rave Crushed" ID="{13B8C41B-1188-48D9-9A30-0A78EE4C5400}">
+							<Language>SFX</Language>
+							<AudioFile>Player Rave Crushed.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="6579314"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Player Rave Crushed" ID="{13B8C41B-1188-48D9-9A30-0A78EE4C5400}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

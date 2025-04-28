@@ -10,6 +10,7 @@ public class EntityAudioController : MonoBehaviour
     [SerializeField] private AK.Wwise.Event spinEvent;
     [SerializeField] private AK.Wwise.Event sweepEvent;
     [SerializeField] private AK.Wwise.Event slipEvent;
+    [SerializeField] private AK.Wwise.Event raveEvent;
 
     private float walkID;
 
@@ -66,5 +67,10 @@ public class EntityAudioController : MonoBehaviour
     public void PlaySlip()
     {
         slipEvent.Post(gameObject);
+    }
+
+    public void PlayRave()
+    {
+        raveEvent.Post(gameObject);
     }
 }

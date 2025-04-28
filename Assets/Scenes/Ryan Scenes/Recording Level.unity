@@ -5018,14 +5018,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 189436789673006747, guid: db564b99faffdbe458a6d576e474fc23, type: 3}
+      propertyPath: showHitboxes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 366688722797056039, guid: db564b99faffdbe458a6d576e474fc23, type: 3}
       propertyPath: actionDatas.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 366688722797056039, guid: db564b99faffdbe458a6d576e474fc23, type: 3}
       propertyPath: 'actionDatas.Array.data[2]'
       value: 
-      objectReference: {fileID: 11400000, guid: d892fafeebac437418097d8a76788ddb, type: 2}
+      objectReference: {fileID: 11400000, guid: da6ddfc26757a0d4e827cab30006e0be, type: 2}
     - target: {fileID: 366688722797056039, guid: db564b99faffdbe458a6d576e474fc23, type: 3}
       propertyPath: 'actionDatas.Array.data[3]'
       value: 
