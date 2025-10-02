@@ -25,12 +25,9 @@ namespace ProjectSecurity.Gameplay
             }
         }
 
-        private void Update()
+        public void Toggle()
         {
-            if(Input.GetKeyDown(KeyCode.P))
-            {
-                container.SetActive(!container.activeSelf);
-            }
+            container.SetActive(!container.activeSelf);
         }
 
         public void TryPurchase(ActionShopItem actionShopItem, int cost)

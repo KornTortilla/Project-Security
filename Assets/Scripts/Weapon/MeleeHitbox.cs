@@ -11,6 +11,15 @@ public class MeleeHitbox : Weapon
 
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag("Player")) return;
-        other.GetComponent<EntityHealth>().TakeDamage(DamageInfo);
+
+        DamageInfo damageInfo = DamageInfo;
+        damageInfo.knockbackVector = RotateKnockback(damageInfo.knockbackVector);
+        Debug.Log("Parent rotation: " + (transform.parent.eulerAngles.y - 90));
+        other.GetComponent<EntityHealth>().TakeDamage(damageInfo);
+    }
+
+    private Vector3 RotateKnockback(Vector3 knockbackVector)
+    {
+        return Quaternion.AngleAxis(transform.parent.eulerAngles.y - 90, Vector3.up) * knockbackVector;
     }
 }

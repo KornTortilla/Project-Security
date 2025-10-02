@@ -1774,7 +1774,7 @@ MonoBehaviour:
   lockOnCameraObject: {fileID: 0}
   lockOnSpriteObject: {fileID: 0}
   targetGroup: {fileID: 0}
-  maxDistanceToTarget: 15
+  maxDistanceToTarget: 20
   thresholdAngleToSuperseed: 30
   isLockedOn: 0
 --- !u!114 &1573670419216044100

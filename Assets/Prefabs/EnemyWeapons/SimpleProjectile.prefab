@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeoutDelay: 3
   DamageInfo:
-    damage: 5
+    damage: 3
     knockbackVector: {x: 0, y: 0, z: 0}
     damageType: 0
 --- !u!54 &7179748168741584510
