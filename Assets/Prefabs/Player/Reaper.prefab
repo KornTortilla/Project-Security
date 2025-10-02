@@ -1695,6 +1695,7 @@ MonoBehaviour:
   jumpPreGroundingGraceTime: 0
   jumpPostGroundingGraceTime: 0
   allowJumpingWhenSliding: 0
+  canWallJump: 0
   hasJumpedThisFrame: 0
 --- !u!114 &3977702148562350508
 MonoBehaviour:
@@ -1773,7 +1774,7 @@ MonoBehaviour:
   lockOnCameraObject: {fileID: 0}
   lockOnSpriteObject: {fileID: 0}
   targetGroup: {fileID: 0}
-  maxDistanceToTarget: 15
+  maxDistanceToTarget: 20
   thresholdAngleToSuperseed: 30
   isLockedOn: 0
 --- !u!114 &1573670419216044100
@@ -1791,6 +1792,7 @@ MonoBehaviour:
   hitboxStoringTransform: {fileID: 8815856530257112473}
   defaultHitbox: {fileID: 9174545325813740092}
   defaultTrailRenderer: {fileID: 7610614652475580412}
+  showHitboxes: 0
 --- !u!114 &1216680885776696250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1847,6 +1849,7 @@ MonoBehaviour:
   maxHealth: 100
   ClickToHeal: 0
   ClickToDamage: 0
+  healthUI: {fileID: 0}
 --- !u!114 &7981801250810620282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,6 +1897,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 0f93a7ab82e741c4eb594d1b878139e7, type: 2}
+  raveEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1b90667575ec1a2488b8578743dea0ef, type: 2}
 --- !u!4 &9166957222248970418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1482674693049317948, guid: 55db3afd35a46fe4d829d0284f7fa268, type: 3}

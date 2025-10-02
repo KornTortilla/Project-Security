@@ -10,18 +10,26 @@
     "Type": "User",
     "GUID": "{6F19E27E-B52D-4EFD-9582-3367B33145F2}",
     "Language": "SFX",
-    "Hash": "{EFDFC6A4-9039-43F2-7BBF-74D168CDDE33}",
+    "Hash": "{0C9670CD-383D-AA29-B95B-7AB5A160C521}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SFX",
     "ShortName": "SFX",
     "Path": "SFX.bnk",
     "Media": [
+     {
+      "Id": "6579314",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Player Rave Crushed.wav",
+      "CachePath": "96/{9653890A-EFB9-C751-1F3D-56184C89A8D2}.wem"
+     },
      {
       "Id": "7884074",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Desktop Startup.wav",
-      "CachePath": "E8/{E8EFA3A3-F673-7D8F-F986-29D3AFC3D731}.wem"
+      "CachePath": "A5/{A5C58A65-0B00-858C-717F-EA84C9DA9782}.wem"
      },
      {
       "Id": "112295897",
@@ -296,6 +304,20 @@
       ]
      },
      {
+      "Id": "2352385814",
+      "Name": "Play_Rave",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Rave",
+      "GUID": "{D6FE84E9-848E-44EC-B97C-161FD6D0DC78}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.46154195",
+      "DurationMax": "0.46154195",
+      "MediaRefs": [
+       {
+        "Id": "6579314"
+       }
+      ]
+     },
+     {
       "Id": "3925680016",
       "Name": "Play_Slip",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Slip",
@@ -418,6 +440,6 @@
     ]
    }
   ],
-  "FileHash": "{6B9E119E-EFDA-20C8-74BC-DADA9CF48387}"
+  "FileHash": "{139A222B-28EF-0752-9799-45ED42CE7866}"
  }
 }

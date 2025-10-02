@@ -10,6 +10,6 @@ public class Sword : Weapon
 
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag("Player")) return;
-        other.GetComponent<EntityHealth>().TakeDamage(Damage);
+        other.GetComponent<EntityHealth>().TakeDamage(DamageInfo);
     }
 }

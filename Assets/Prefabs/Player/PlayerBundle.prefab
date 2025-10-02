@@ -329,8 +329,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956826034315261542}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23025249, y: -0.55302024, z: 0.16239996, w: 0.7840783}
-  m_LocalPosition: {x: 7.924366, y: 7.406929, z: -2.8230476}
+  m_LocalRotation: {x: -0.020586336, y: -0.9680059, z: -0.084688604, w: 0.2353055}
+  m_LocalPosition: {x: 4.520672, y: 0.26353723, z: 8.749185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2033,7 +2033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RecenterTarget: 1
   m_VerticalAxis:
-    Value: 32.730812
+    Value: -9.999889
     m_SpeedMode: 0
     m_MaxSpeed: 100
     m_AccelTime: 0.1
@@ -2057,7 +2057,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_HorizontalAxis:
-    Value: -70.391594
+    Value: -152.67476
     m_SpeedMode: 0
     m_MaxSpeed: 200
     m_AccelTime: 0.1
@@ -3375,7 +3375,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1479570947565703420}
   - component: {fileID: 7176902275057991786}
-  - component: {fileID: 8338096914117051341}
   - component: {fileID: 8421660351972254873}
   - component: {fileID: 2866557935371326558}
   m_Layer: 0
@@ -3393,8 +3392,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8868353100867110527}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23025249, y: -0.55302024, z: 0.16239996, w: 0.7840783}
-  m_LocalPosition: {x: 7.924366, y: 7.406929, z: -2.8230476}
+  m_LocalRotation: {x: -0.020586336, y: -0.9680059, z: -0.084688604, w: 0.2353055}
+  m_LocalPosition: {x: 4.520672, y: 0.26353723, z: 8.749185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3451,14 +3450,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8338096914117051341
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8868353100867110527}
-  m_Enabled: 1
 --- !u!114 &8421660351972254873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3792,10 +3783,6 @@ PrefabInstance:
       propertyPath: lockOnSpriteObject
       value: 
       objectReference: {fileID: 6009301550723095218}
-    - target: {fileID: 3681291928225286624, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
-      propertyPath: maxDistanceToTarget
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4234465786202048534, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
       propertyPath: Motor
       value: 
@@ -3810,30 +3797,66 @@ PrefabInstance:
       objectReference: {fileID: 7176902275057991786}
     - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_ActionId
       value: 8b6bdc41-0aff-438f-9bb5-d72cd81afaf2
       objectReference: {fileID: 0}
     - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_ActionId
+      value: a16ec3c6-32bc-4640-8498-851f9ebe4520
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_ActionName
       value: 'Player/Lock On Switch[/DualSenseGamepadHID/rightTrigger]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_ActionName
+      value: 'Player/Shop[/Keyboard/p]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
       propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
       propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5516616525787680459}
+    - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 21805390723212149}
+    - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Toggle
+      objectReference: {fileID: 0}
     - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
       propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ProjectSecurity.Gameplay.InputBank, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ProjectSecurity.Gameplay.ShopUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
       propertyPath: m_ActionEvents.Array.data[20].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197105771561496995, guid: 6bc0bf592df88034198151962fbb3bd2, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []

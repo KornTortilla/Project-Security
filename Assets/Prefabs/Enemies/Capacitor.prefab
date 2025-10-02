@@ -163,7 +163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172cb234e21c5d3469796084dff26bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 5
+  DamageInfo:
+    damage: 10
+    knockbackVector: {x: 30, y: 0, z: 0}
+    damageType: 1
   AttackSpeed: 0
 --- !u!1 &1644037057540367035
 GameObject:

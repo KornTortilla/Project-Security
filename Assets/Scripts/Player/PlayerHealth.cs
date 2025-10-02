@@ -24,10 +24,12 @@ namespace ProjectSecurity.Gameplay
         {
             base.TakeDamage(damageInfo);
 
+            Debug.Log("Hehehehehehe!");
+
             if(damageInfo.damageType == DamageType.heavy)
             {
-                playerStateMachine.Hurt();
                 playerCharacterController.OverrideVelocity(damageInfo.knockbackVector, false);
+                playerStateMachine.Hurt();
             }
 
             healthUI.Update((int)CurrentHealth);
